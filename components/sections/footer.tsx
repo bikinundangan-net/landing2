@@ -50,7 +50,7 @@ export function Footer() {
               <Social href="#" label="Instagram" icon={Camera} />
               <Social href="#" label="TikTok" icon={Music2} />
               <Social
-                href="https://wa.me/6281234567890?text=Halo%20BikinUndangan.net%2C%20saya%20mau%20buat%20undangan%20digital%20mulai%2049rb"
+                href="https://wa.me/6285155347714?text=Halo%20BikinUndangan.net%2C%20saya%20mau%20buat%20undangan%20digital%20mulai%2049rb"
                 label="WhatsApp"
                 icon={MessageCircle}
               />

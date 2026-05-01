@@ -1,109 +1,116 @@
-Undangan digital yang menarik tidak harus penuh animasi. Sering kali, undangan rapi justru lebih nyaman dibaca.
+Undangan digital yang menarik tidak selalu yang paling penuh animasi. Seringkali, undangan yang paling rapi justru yang paling enak dilihat — dan paling membantu tamu.
+
+## Daftar isi
+
+- [Mulai dari konsep yang jelas](#mulai-dari-konsep-yang-jelas)
+- [Gunakan foto yang bercerita](#gunakan-foto-yang-bercerita)
+- [Buat teks singkat dan hangat](#buat-teks-singkat-dan-hangat)
+- [Pilih fitur yang benar-benar membantu](#pilih-fitur-yang-benar-benar-membantu)
+- [Hindari desain yang terlalu ramai](#hindari-desain-yang-terlalu-ramai)
+- [Langkah membuat undangan lebih menarik](#langkah-membuat-undangan-lebih-menarik)
+- [Detail kecil yang berdampak besar](#detail-kecil-yang-berdampak-besar)
+- [Jaga undangan tetap ringan](#jaga-undangan-tetap-ringan)
+- [Minta masukan sebelum disebarkan](#minta-masukan-sebelum-disebarkan)
+- [Ukur dari sudut pandang tamu](#ukur-dari-sudut-pandang-tamu)
+- [FAQ](#faq)
+- [Kesimpulan](#kesimpulan)
 
 ## Mulai dari konsep yang jelas
 
-Tentukan konsep acara sebelum memilih template. Apakah acaranya formal, outdoor, intimate, islami, rustic, atau minimalis?
+Sebelum pilih template apapun, tentukan dulu konsep acaramu. Apakah formal? Outdoor? Intimate? Islami? Minimalis?
 
-Konsep akan membantu kamu memilih warna, foto, font, dan gaya bahasa. Tanpa konsep, undangan mudah terasa campur aduk.
+Konsep ini yang menentukan warna, foto, gaya bahasa, dan desain. Tanpa arah yang jelas, undangan mudah terasa campur aduk.
 
-Jika bingung, lihat warna dekorasi atau busana acara. Dari sana, arah visual lebih mudah ditentukan.
+Kalau masih bingung, lihat warna dekorasi atau busana yang sudah dipilih. Dari sana, arah visualnya biasanya terbentuk sendiri.
+
+Untuk referensi gaya sebelum menentukan konsep, lihat beberapa [contoh undangan digital pernikahan modern](/blog/contoh-undangan-digital-pernikahan-modern) dan pilih yang paling dekat dengan suasana acaramu.
 
 ## Gunakan foto yang bercerita
 
-Foto membuat undangan terasa personal. Pilih foto dengan ekspresi natural dan cahaya yang baik.
+Foto membuat undangan terasa hidup dan personal. Pilih foto dengan ekspresi natural dan cahaya yang baik.
 
-Foto tidak harus selalu dari sesi prewedding profesional. Foto sederhana juga bisa bagus jika jelas dan hangat.
+Tidak harus dari sesi prewedding profesional. Foto sederhana juga bisa bagus, asal terang dan jelas.
 
-Jangan memakai terlalu banyak foto di awal halaman. Pilih satu foto utama, lalu simpan sisanya di galeri.
+Satu foto utama yang kuat di cover lebih efektif dari lima foto biasa. Simpan foto lain di galeri.
 
 ## Buat teks singkat dan hangat
 
-Tamu membuka undangan untuk melihat detail acara. Jadi, teks harus jelas dan tidak bertele-tele.
+Tamu buka undangan untuk cari tanggal, jam, dan lokasi. Jadi info itu harus mudah ditemukan.
 
-Gunakan paragraf pendek. Kalimat pembuka cukup menyampaikan rasa syukur dan ajakan hadir.
-
-Untuk cerita pasangan, tulis seperlunya. Cerita yang terlalu panjang bisa membuat tamu melewati detail penting.
+Kalimat pembuka cukup untuk sampaikan rasa syukur dan ajakan hadir. Cerita pasangan boleh ditambahkan, tapi tulis singkat — jangan sampai menutupi detail acara.
 
 ## Pilih fitur yang benar-benar membantu
 
-Fitur seperti maps, RSVP, buku tamu, musik, dan amplop digital bisa membuat undangan lebih hidup.
+Maps, RSVP, buku tamu, musik, amplop digital — semua ada fungsinya. Tapi tidak semua perlu diaktifkan sekaligus.
 
-Namun, tidak semua fitur harus dipakai. Pilih yang benar-benar membantu tamu.
-
-Jika tamu banyak, RSVP sangat berguna. Jika banyak tamu luar kota, maps harus jelas.
+Pikirkan dari sudut pandang tamu: fitur apa yang paling mereka butuhkan? Banyak tamu luar kota? Maps adalah prioritas. Tamu banyak dan perlu direkap? RSVP penting. Ada yang tidak bisa hadir tapi ingin beri hadiah? Amplop digital berguna.
 
 ## Hindari desain yang terlalu ramai
 
-Undangan membosankan bukan berarti selalu sederhana. Kadang undangan membosankan karena terlalu banyak elemen.
+Terlalu banyak warna, font berbeda-beda, animasi di mana-mana — semua itu membuat tamu cepat tutup undanganmu.
 
-Terlalu banyak warna, font, dan animasi membuat tamu cepat lelah. Beri ruang kosong agar halaman terasa lega.
-
-Pastikan tombol penting mudah terlihat. Jangan sampai tombol maps tertutup dekorasi.
+Beri ruang kosong yang cukup antar section. Pastikan tombol Maps dan RSVP terlihat jelas dan tidak tertutup dekorasi.
 
 ## Langkah membuat undangan lebih menarik
 
-Kamu bisa mengikuti langkah ini:
-
 1. Tentukan tema visual.
-2. Pilih template yang sesuai.
-3. Gunakan foto terbaik sebagai pembuka.
-4. Tulis teks singkat dan personal.
-5. Tambahkan fitur penting seperti maps dan RSVP.
-6. Cek tampilan di handphone.
-7. Minta satu orang membaca sebelum link dibagikan.
+2. Pilih template yang sesuai; kamu bisa mulai dari [template undangan digital gratis](/blog/template-undangan-digital-gratis) kalau belum ingin pakai desain premium.
+3. Gunakan satu foto terbaik sebagai pembuka.
+4. Tulis teks singkat — personal tapi tidak bertele-tele.
+5. Aktifkan fitur yang benar-benar dibutuhkan tamu.
+6. Buka preview dari handphone.
+7. Minta satu orang baca dulu sebelum link disebarkan.
 
-Masukan orang lain bisa membantu. Mereka bisa menemukan bagian yang kurang jelas.
+Masukan dari orang lain bisa sangat membantu. Mereka sering temukan hal yang terlewat.
 
-## Rekomendasi praktis
+## Detail kecil yang berdampak besar
 
-Kalau tidak ingin mulai dari nol, gunakan template dengan struktur rapi. Hasilnya akan lebih konsisten.
+Nama mempelai harus jadi elemen paling menonjol di cover. Boleh besar, tapi jangan sampai geser tanggal ke posisi yang susah dilihat.
 
-Di bikinundangan.net, kamu bisa memilih template sesuai gaya acara. Setelah itu, sesuaikan isi dengan data pernikahanmu.
+Tanggal dan lokasi perlu ditulis jelas. Ini dua info yang selalu dicari tamu pertama kali.
 
-Dengan cara ini, undangan tetap terasa personal. Kamu juga tidak perlu membuat desain sendiri dari awal.
+Tombol Maps harus terlihat seperti tombol yang bisa diklik, bukan sekadar teks kecil.
 
-## Contoh detail kecil yang berdampak besar
+## Jaga undangan tetap ringan
 
-Nama mempelai sebaiknya menjadi fokus utama di cover. Ukurannya boleh besar, tetapi jangan menutup tanggal.
+Hindari terlalu banyak foto besar. Pilih beberapa foto terbaik saja.
 
-Tanggal dan lokasi perlu ditulis jelas. Tamu biasanya mencari dua informasi ini lebih dulu.
+Kalau pakai animasi, gunakan secukupnya. Halaman yang terlalu banyak efek bisa terasa lambat saat dibuka.
 
-Tombol maps harus terlihat seperti tombol. Jika terlalu samar, tamu bisa melewatkannya.
+Musik juga tidak perlu langsung keras. Pilih lagu yang nyaman dan sesuai suasana.
 
-## Cara menjaga undangan tetap ringan
+## Minta masukan sebelum disebarkan
 
-Jangan memasukkan terlalu banyak foto besar. Pilih beberapa foto terbaik saja.
+Kirim link ke satu atau dua orang terdekat dan minta mereka buka dari handphone. Tanyakan: apakah infonya mudah ditemukan? Apakah tampilannya nyaman?
 
-Jika memakai animasi, gunakan secukupnya. Animasi terlalu banyak bisa membuat halaman terasa lambat.
+Masukan sederhana seperti "tombol Maps kurang kelihatan" bisa langsung kamu perbaiki sebelum undangan tersebar luas.
 
-Musik juga sebaiknya tidak mengejutkan. Pilih lagu yang nyaman dan sesuai suasana.
-
-## Minta masukan sebelum dibagikan
-
-Sebelum link disebar, minta satu atau dua orang membukanya. Pastikan mereka memakai handphone.
-
-Tanyakan apakah informasinya jelas. Tanyakan juga apakah tampilan terasa nyaman.
-
-Masukan kecil seperti “maps kurang terlihat” bisa sangat membantu. Perbaiki sebelum undangan tersebar.
+Setelah revisi selesai, barulah siapkan caption dan cara kirimnya lewat panduan [menyebarkan undangan digital lewat WhatsApp](/blog/cara-menyebarkan-undangan-digital-whatsapp).
 
 ## Ukur dari sudut pandang tamu
 
-Jangan hanya menilai apakah desainnya cantik. Coba posisikan diri sebagai tamu.
+Setelah selesai, coba posisikan diri sebagai tamu yang baru pertama kali buka undangan ini.
 
-Cari jam acara dan lokasi secepat mungkin. Jika mudah ditemukan, struktur undangan sudah bekerja.
+Cari jam acara dan lokasi secepat mungkin. Kalau mudah ditemukan dalam hitungan detik, strukturmu sudah bekerja dengan baik.
 
-Undangan menarik bukan hanya soal visual. Undangan juga harus memandu tamu dari awal sampai akhir.
+Undangan yang menarik bukan hanya yang enak dilihat — tapi yang juga memandu tamu dari awal sampai akhir.
 
-## FAQ membuat undangan lebih menarik
+## FAQ
 
-Apakah harus memakai banyak animasi? Tidak. Animasi secukupnya lebih nyaman.
+Q: Harus banyak animasi?
 
-Apakah foto wajib profesional? Tidak. Foto terang dan tajam sudah cukup.
+A: Tidak. Animasi secukupnya lebih nyaman dan tidak berat.
 
-Apa fitur yang paling membantu tamu? Google Maps, RSVP, dan informasi acara yang jelas.
+Q: Foto harus dari fotografer profesional?
+
+A: Tidak wajib. Foto yang terang, tajam, dan natural sudah sangat cukup.
+
+Q: Fitur apa yang paling membantu tamu?
+
+A: Google Maps, informasi acara yang jelas, dan RSVP kalau tamu banyak.
 
 ## Kesimpulan
 
-Undangan digital yang menarik punya konsep jelas, foto tepat, dan teks ringkas. Fiturnya juga harus membantu tamu.
+Undangan digital yang menarik punya tiga fondasi: konsep yang jelas, foto yang tepat, dan teks yang ringkas. Fiturnya dipilih berdasarkan kebutuhan tamu, bukan untuk memenuhi halaman.
 
-Fokuslah pada pengalaman orang yang membuka undangan. Jika mereka mudah paham, undanganmu sudah berhasil.
+Kalau tamu bisa buka undanganmu dan langsung temukan semua yang mereka butuhkan — undanganmu sudah berhasil.

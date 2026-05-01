@@ -111,7 +111,7 @@ export function PricingSection() {
               </ul>
 
               <a
-                href="https://wa.me/6281234567890?text=Halo%20BikinUndangan.net%2C%20saya%20mau%20buat%20undangan%20digital%20mulai%2049rb"
+                href="https://wa.me/6285155347714?text=Halo%20BikinUndangan.net%2C%20saya%20mau%20buat%20undangan%20digital%20mulai%2049rb"
                 className={`mt-8 inline-flex justify-center rounded-full px-5 py-4 text-center text-sm font-black transition ${
                   item.popular
                     ? "bg-cream text-maroon hover:bg-white"

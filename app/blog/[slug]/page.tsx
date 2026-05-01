@@ -182,7 +182,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
               via WhatsApp.
             </p>
             <a
-              href="https://wa.me/6281234567890?text=Halo%20BikinUndangan.net%2C%20saya%20mau%20buat%20undangan%20digital%20setelah%20membaca%20artikel%20blog"
+              href="https://wa.me/6285155347714?text=Halo%20BikinUndangan.net%2C%20saya%20mau%20buat%20undangan%20digital%20setelah%20membaca%20artikel%20blog"
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-maroon px-5 py-3 text-sm font-black !text-cream transition hover:bg-maroon-dark"
             >
               <MessageCircle className="size-4" aria-hidden="true" />

@@ -1,99 +1,100 @@
-Template gratis sering dianggap biasa. Padahal, hasilnya bisa tetap elegan jika kamu memilih dengan tepat.
+Template gratis sering dianggap remeh — dianggap pasti terlihat biasa. Padahal, dengan pilihan yang tepat, hasilnya bisa tetap elegan.
+
+## Daftar isi
+
+- [Apa itu template undangan digital gratis?](#apa-itu-template-undangan-digital-gratis)
+- [Ciri template gratis yang hasilnya tetap elegan](#ciri-template-gratis-yang-hasilnya-tetap-elegan)
+- [Cara memilih template yang cocok](#cara-memilih-template-yang-cocok)
+- [Langkah menggunakan template gratis](#langkah-menggunakan-template-gratis)
+- [Kesalahan yang sering terjadi](#kesalahan-yang-sering-terjadi)
+- [Cara buat template gratis tidak terlihat pasaran](#cara-buat-template-gratis-tidak-terlihat-pasaran)
+- [Kapan template gratis kurang cocok?](#kapan-template-gratis-kurang-cocok)
+- [Detail kecil yang perlu dicek](#detail-kecil-yang-perlu-dicek)
+- [FAQ](#faq)
+- [Kesimpulan](#kesimpulan)
 
 ## Apa itu template undangan digital gratis?
 
-Template undangan digital gratis adalah desain siap pakai tanpa biaya awal. Kamu bisa memakainya untuk membuat undangan online.
+Template undangan digital gratis adalah desain siap pakai yang bisa kamu gunakan tanpa biaya di muka.
 
-Biasanya template sudah punya bagian pembuka, detail acara, galeri, maps, dan penutup.
+Strukturnya sudah lengkap. Biasanya sudah ada bagian pembuka, detail acara, galeri, Maps, dan penutup.
 
-Kamu tinggal mengganti nama, tanggal, lokasi, foto, dan teks undangan.
+Kamu tinggal ganti nama, tanggal, lokasi, foto, dan teks undangan.
 
-## Ciri template gratis yang tetap elegan
+## Ciri template gratis yang hasilnya tetap elegan
 
-Template elegan biasanya punya warna yang konsisten. Cream, putih, gold, sage, dan dusty pink termasuk pilihan aman.
+**Warna yang konsisten.** Cream, putih, gold, sage, dan dusty pink adalah palet yang paling aman. Pilih template yang warnanya sudah harmonis dari awal.
 
-Layout juga harus lega. Jarak antar bagian membuat undangan lebih mudah dibaca.
+**Layout yang lega.** Jarak yang cukup antar section membuat undangan lebih mudah dibaca. Halaman yang terlalu penuh membuat tamu malas scroll.
 
-Font sebaiknya tidak terlalu banyak. Satu font dekoratif dan satu font isi biasanya sudah cukup.
+**Font yang tidak berlebihan.** Satu font dekoratif untuk judul dan satu font bersih untuk isi teks sudah cukup.
 
 ## Cara memilih template yang cocok
 
-Mulailah dari konsep acara. Untuk acara outdoor, pilih template floral atau botanical.
+Mulai dari konsep acaramu, bukan dari yang "paling cantik" di halaman pertama.
 
-Untuk acara formal, pilih desain yang lebih clean. Warna gelap atau aksen gold bisa terlihat elegan.
+Untuk acara outdoor, pilih template floral atau botanical. Untuk acara formal, pilih desain yang lebih bersih dengan aksen gold atau warna gelap.
 
-Lihat juga foto yang akan dipakai. Foto cerah biasanya cocok dengan template pastel atau cream.
+Perhatikan juga foto yang akan kamu pakai. Foto terang biasanya cocok dengan template cream atau pastel.
 
 ## Langkah menggunakan template gratis
 
-Kamu bisa mengikuti langkah ini:
-
 1. Pilih template sesuai tema acara.
-2. Masukkan data mempelai.
-3. Tambahkan tanggal, waktu, dan lokasi.
+2. Masukkan nama mempelai dan data keluarga.
+3. Isi tanggal, jam, dan lokasi.
 4. Upload foto terbaik.
 5. Cek urutan informasi.
-6. Preview dari handphone.
-7. Bagikan link setelah semua benar.
+6. Buka preview dari handphone.
+7. Bagikan link setelah semua detail sudah benar.
 
-Jika ada fitur yang belum tersedia, catat dulu. Mungkin kamu butuh paket yang lebih lengkap.
+Kalau ada fitur yang tidak tersedia, catat dulu. Mungkin kamu perlu paket yang lebih lengkap.
 
-## Kesalahan saat memakai template gratis
+Untuk alur lengkap dari memilih template sampai link siap dibagikan, ikuti panduan [cara membuat undangan digital gratis](/blog/cara-membuat-undangan-digital-gratis).
 
-Kesalahan paling sering adalah memilih template yang terlalu ramai. Dekorasi berlebihan bisa mengganggu teks.
+## Kesalahan yang sering terjadi
 
-Kesalahan lain adalah memakai foto yang tidak cocok dengan warna template. Hasilnya bisa terasa kurang menyatu.
+Pilih template yang terlalu ramai — ini kesalahan paling umum. Dekorasi berlebihan bisa ganggu keterbacaan teks.
 
-Jangan lupa menyesuaikan teks. Template hanya kerangka, jadi isi tetap perlu dibuat personal.
+Pakai foto yang warnanya tidak cocok dengan template juga sering terjadi. Hasilnya bisa terasa tidak menyatu.
 
-## Rekomendasi penggunaan
+Dan yang sering dilupakan: membiarkan teks template apa adanya tanpa disesuaikan. Template hanya kerangka — isi tetap perlu dibuat personal.
 
-Template gratis cocok untuk pasangan yang ingin mencoba dulu. Template ini juga cocok untuk acara sederhana.
+## Cara buat template gratis tidak terlihat pasaran
 
-Jika hanya butuh detail acara dan maps, template gratis bisa cukup. Namun, kebutuhan tiap acara berbeda.
+Gunakan foto yang benar-benar mewakili kamu dan pasangan. Foto personal membuat template yang sama terasa berbeda.
 
-Kalau ingin RSVP atau amplop digital, pertimbangkan paket berbayar. Bukan karena gratisnya buruk, tetapi fiturnya terbatas.
+Sesuaikan kalimat pembuka dan penutup. Jangan biarkan semua teks terasa seperti bawaan default. Prinsip seperti ini juga dibahas lebih lengkap di [tips membuat undangan digital menarik](/blog/tips-membuat-undangan-digital-menarik).
 
-## Inspirasi tema template gratis
-
-Untuk acara romantis, pilih template floral pastel. Tema ini cocok untuk dekorasi bunga.
-
-Untuk acara formal, pilih template minimal dengan aksen gold atau maroon. Tampilannya lebih tenang.
-
-Jika ingin suasana natural, pilih template botanical warna sage. Kesan segarnya tidak terlalu ramai.
-
-## Cara membuat template gratis tidak terlihat pasaran
-
-Gunakan foto yang benar-benar mewakili kamu dan pasangan. Foto personal membuat template terasa berbeda.
-
-Sesuaikan kalimat pembuka dan penutup. Jangan biarkan semua teks terasa default.
-
-Jika bisa mengganti musik atau warna, gunakan seperlunya. Perubahan kecil bisa memberi kesan personal.
+Kalau ada opsi ganti warna aksen atau musik, manfaatkan. Perubahan kecil ini bisa beri kesan yang jauh lebih personal.
 
 ## Kapan template gratis kurang cocok?
 
-Template gratis mungkin kurang cocok jika kamu butuh banyak fitur. Misalnya RSVP detail, amplop digital, atau galeri panjang.
+Template gratis mungkin kurang ideal kalau kamu butuh banyak fitur tambahan. Misalnya RSVP, amplop digital, galeri foto panjang, atau banyak sesi acara.
 
-Template gratis juga terbatas untuk acara dengan banyak sesi. Informasi yang kompleks butuh struktur lebih lengkap.
+Dalam kondisi seperti itu, paket berbayar lebih membantu. Sebelum upgrade, cek dulu kisaran [harga undangan digital pernikahan](/blog/harga-undangan-digital-pernikahan) supaya pilihan paketnya tetap masuk akal.
 
-Dalam kondisi seperti itu, paket berbayar membantu. Informasi acara tetap tertata dan mudah dipahami tamu.
+## Detail kecil yang perlu dicek
 
-## Cek detail kecil pada template
+Jangan hanya lihat cover. Buka demo sampai bawah dan perhatikan bagian detail acara serta tombol-tombolnya.
 
-Sebelum memilih, perhatikan tanggal, lokasi, dan tombol. Template cantik tetap kurang ideal jika detailnya sulit ditemukan.
+Perhatikan juga jarak antar section saat di-scroll. Undangan digital dibaca secara vertikal — ritme scroll yang nyaman membuat pengalaman membacanya jauh lebih baik.
 
-Lihat juga jarak antar section. Undangan digital dibaca dengan cara discroll, jadi ritmenya perlu nyaman.
+## FAQ
 
-## FAQ template undangan gratis
+Q: Apakah template gratis cocok untuk acara formal?
 
-Apakah template gratis cocok untuk acara formal? Bisa, jika desainnya bersih dan teks mudah dibaca.
+A: Bisa, kalau desainnya bersih dan teks mudah dibaca.
 
-Apakah template gratis bisa diganti fotonya? Umumnya bisa. Kamu tinggal upload foto pasangan.
+Q: Apakah fotonya bisa diganti?
 
-Apakah template gratis punya watermark? Tergantung platform. Paket berbayar biasanya punya opsi bebas watermark.
+A: Umumnya bisa. Kamu tinggal upload foto pasangan.
+
+Q: Apakah ada watermark?
+
+A: Tergantung platform. Paket berbayar biasanya punya opsi bebas watermark.
 
 ## Kesimpulan
 
-Template undangan digital gratis bisa tetap terlihat elegan. Fokus pada warna, keterbacaan, foto, dan susunan informasi.
+Template undangan digital gratis bisa tetap terlihat elegan. Fokus pada warna, keterbacaan, foto, dan susunan info.
 
 Dengan template yang tepat, undanganmu bisa rapi tanpa harus mulai dari nol.

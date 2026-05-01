@@ -5,7 +5,7 @@ import type { invitationDesigns } from "@/components/landing-data";
 
 type InvitationDesign = (typeof invitationDesigns)[number];
 
-const whatsappBase = "https://wa.me/6281234567890";
+const whatsappBase = "https://wa.me/6285155347714";
 
 export function getDesignWhatsAppUrl(templateName: string) {
   const text = `Halo BikinUndangan.net, saya mau pakai template ${templateName} untuk undangan digital mulai 49rb`;

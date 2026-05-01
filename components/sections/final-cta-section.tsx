@@ -29,7 +29,7 @@ export function FinalCtaSection() {
         </motion.p>
         <motion.div variants={fadeInUp} className="mt-8">
           <a
-            href="https://wa.me/6281234567890?text=Halo%20BikinUndangan.net%2C%20saya%20mau%20buat%20undangan%20digital%20mulai%2049rb"
+            href="https://wa.me/6285155347714?text=Halo%20BikinUndangan.net%2C%20saya%20mau%20buat%20undangan%20digital%20mulai%2049rb"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-cream px-8 py-4 text-base font-black !text-maroon transition hover:-translate-y-0.5 hover:bg-white"
           >
             Buat Undangan Sekarang — Mulai 49rb

@@ -1,85 +1,110 @@
-Mau bikin undangan, tapi belum ingin keluar banyak biaya? Undangan digital gratis bisa jadi awal yang praktis.
+Belum ingin keluar banyak biaya untuk undangan? Undangan digital gratis bisa jadi pilihan yang masuk akal — terutama kalau kebutuhanmu masih sederhana.
+
+## Daftar isi
+
+- [Apa itu undangan digital gratis?](#apa-itu-undangan-digital-gratis)
+- [Siapkan data ini sebelum mulai](#siapkan-data-ini-sebelum-mulai)
+- [Langkah membuat undangan digital gratis](#langkah-membuat-undangan-digital-gratis)
+- [Agar undangan gratis tetap terlihat elegan](#agar-undangan-gratis-tetap-terlihat-elegan)
+- [Kesalahan yang sering terjadi](#kesalahan-yang-sering-terjadi)
+- [Kapan perlu upgrade?](#kapan-perlu-upgrade)
+- [Susunan yang mudah diikuti tamu](#susunan-yang-mudah-diikuti-tamu)
+- [Cara cek sebelum link dibagikan](#cara-cek-sebelum-link-dibagikan)
+- [FAQ](#faq)
+- [Kesimpulan](#kesimpulan)
 
 ## Apa itu undangan digital gratis?
 
-Undangan digital gratis adalah undangan online yang bisa dibuat tanpa biaya awal. Biasanya bentuknya berupa link halaman undangan.
+Undangan digital gratis adalah undangan online yang bisa dibuat tanpa biaya di muka. Bentuknya berupa halaman web dengan link yang bisa dibagikan ke tamu.
 
-Halaman itu berisi nama mempelai, tanggal acara, lokasi, foto, dan informasi penting lain.
+Kalau masih baru dengan konsepnya, baca dulu penjelasan [apa itu undangan digital](/blog/apa-itu-undangan-digital) supaya kamu tahu fitur dasar yang biasanya tersedia.
 
-Walau gratis, hasilnya tetap bisa rapi. Kuncinya ada pada template, foto, dan susunan informasi.
+Isinya sama seperti undangan biasa: nama mempelai, tanggal, lokasi, foto, dan info penting lainnya.
 
-## Data yang perlu disiapkan sebelum mulai
+Meski gratis, hasilnya bisa tetap rapi. Kuncinya ada di pilihan template, kualitas foto, dan cara mengisinya.
 
-Siapkan data utama sebelum membuat undangan. Cara ini membuat proses lebih cepat.
+## Siapkan data ini sebelum mulai
 
-Kamu perlu menyiapkan nama mempelai, tanggal acara, jam acara, dan alamat venue. Tambahkan juga link Google Maps.
+Sebelum buka platform apapun, kumpulkan dulu:
 
-Jika ingin lebih personal, siapkan foto pasangan. Kamu juga bisa menyiapkan kalimat pembuka yang singkat.
+- Nama mempelai dan orang tua
+- Tanggal, jam akad, dan jam resepsi
+- Alamat venue + link Google Maps
+- Foto pasangan
+- Kalimat pembuka singkat (opsional)
+
+Punya semua ini dari awal membuat proses jauh lebih cepat.
 
 ## Langkah membuat undangan digital gratis
 
-Berikut langkah sederhana yang bisa kamu ikuti:
-
 1. Pilih platform pembuat undangan digital.
-2. Cari template gratis yang sesuai tema.
-3. Isi nama mempelai, tanggal, waktu, dan lokasi.
-4. Upload foto pasangan jika tersedia.
+2. Cari [template undangan digital gratis](/blog/template-undangan-digital-gratis) yang sesuai tema.
+3. Isi nama, tanggal, waktu, dan lokasi.
+4. Upload foto pasangan.
 5. Tambahkan link Google Maps.
-6. Preview undangan dari handphone.
-7. Salin link undangan dan bagikan ke tamu.
+6. Buka preview dari layar handphone.
+7. Salin link dan bagikan ke tamu.
 
-Sebelum link dikirim, buka dulu undangan dari handphone. Cek teks, tombol, dan lokasi.
+Satu langkah yang sering dilewati: cek tampilan dari handphone sebelum link disebarkan. Tampilan di layar kecil bisa berbeda dari yang terlihat di komputer.
 
-## Tips agar undangan gratis tetap terlihat elegan
+## Agar undangan gratis tetap terlihat elegan
 
-Pilih warna yang aman. Cream, putih, gold, sage, atau maroon lembut biasanya mudah dipakai.
+**Warna:** Pilih palet yang aman. Cream, putih, gold, sage, atau maroon lembut mudah dipadukan dan tidak cepat terlihat murahan.
 
-Gunakan foto dengan cahaya yang baik. Foto yang terang membuat template sederhana terlihat lebih premium.
+**Foto:** Gunakan foto dengan cahaya yang baik. Foto terang bisa membuat template sederhana terlihat jauh lebih premium.
 
-Hindari teks yang terlalu panjang. Tamu biasanya membaca undangan dari layar kecil.
+**Teks:** Tulis singkat dan jelas. Tamu biasanya buka undangan sambil lalu dari layar kecil.
 
 ## Kesalahan yang sering terjadi
 
-Kesalahan paling umum adalah memasukkan terlalu banyak informasi. Akhirnya, halaman terasa penuh.
+Memasukkan terlalu banyak info adalah kesalahan paling umum. Hasilnya halaman jadi penuh dan info penting susah ditemukan.
 
-Kesalahan lain adalah lupa mengecek link maps. Pastikan titik lokasi benar, bukan hanya nama gedung.
+Lupa cek link Google Maps juga sering terjadi. Pastikan titik lokasi benar-benar menunjuk ke venue, bukan ke nama jalan di sekitarnya.
 
-Jangan lupa cek ejaan nama keluarga. Detail kecil ini cukup sensitif.
+Dan yang paling sensitif: ejaan nama keluarga. Cek ulang lebih dari sekali.
 
-## Kapan perlu upgrade dari gratis?
+## Kapan perlu upgrade?
 
-Versi gratis cocok untuk undangan sederhana. Namun, kamu mungkin butuh fitur tambahan saat tamu cukup banyak.
+Template gratis cocok untuk undangan sederhana. Tapi kalau kamu butuh RSVP, buku tamu, galeri foto lebih banyak, atau amplop digital — pertimbangkan upgrade.
 
-Fitur tambahan bisa berupa RSVP, buku tamu, galeri foto, atau amplop digital. Custom link juga membuat undangan terasa lebih personal.
+Custom link juga biasanya ada di paket berbayar. Ini membuat undangan terasa lebih personal.
 
-Kamu juga bisa membuat undangan digital sendiri di bikinundangan.net. Pilih template, isi data, lalu bagikan linknya.
+## Susunan yang mudah diikuti tamu
 
-## Contoh susunan undangan yang aman dipakai
+Urutan ini mudah dipahami:
 
-Gunakan susunan yang mudah diikuti. Mulai dari nama mempelai dan tanggal acara.
+1. Cover — nama mempelai dan tanggal
+2. Kalimat pembuka
+3. Detail akad
+4. Detail resepsi
+5. Google Maps
+6. Galeri foto
+7. Penutup
 
-Setelah itu, lanjutkan dengan pembuka, detail akad, detail resepsi, maps, galeri, dan penutup.
+Dengan urutan ini, tamu bisa langsung menemukan info yang mereka cari.
 
-Susunan ini membantu tamu menemukan informasi dengan cepat. Mereka tidak perlu mencari lokasi atau jam acara terlalu lama.
+## Cara cek sebelum link dibagikan
 
-## Cara mengecek sebelum link dibagikan
+Jangan langsung kirim ke semua tamu. Buka dulu dari handphone kamu sendiri.
 
-Jangan langsung mengirim link ke semua tamu. Buka dulu undangan dari handphone kamu.
+Cek nama, tanggal, jam, dan Maps. Pastikan foto tidak terpotong aneh.
 
-Pastikan nama, tanggal, jam, dan maps sudah benar. Cek juga apakah foto tidak terpotong aneh.
+Setelah itu, kirim ke satu orang terdekat dan minta mereka membacanya. Kalau sudah final, baru ikuti cara pengiriman yang sopan seperti di panduan [menyebarkan undangan digital lewat WhatsApp](/blog/cara-menyebarkan-undangan-digital-whatsapp).
 
-Kirim link ke satu orang terdekat. Minta mereka membaca seperti tamu biasa.
+## FAQ
 
-## FAQ seputar undangan digital gratis
+Q: Apakah hasil gratis selalu terlihat sederhana?
 
-Apakah hasil gratis selalu terlihat sederhana? Tidak selalu. Template gratis tetap bisa terlihat elegan.
+A: Tidak. Template gratis yang tepat tetap bisa terlihat elegan.
 
-Apakah bisa langsung dikirim ke WhatsApp? Bisa. Salin link, lalu kirim dengan caption yang sopan.
+Q: Apakah bisa langsung dikirim lewat WhatsApp?
 
-Apakah perlu upgrade? Perlu jika kamu butuh RSVP, galeri lebih banyak, atau amplop digital.
+A: Bisa. Salin link, tambahkan caption yang sopan, dan kirim.
+
+Q: Apakah perlu upgrade?
+
+A: Perlu, kalau kamu butuh RSVP, galeri lebih banyak, atau amplop digital.
 
 ## Kesimpulan
 
-Membuat undangan digital gratis bisa kamu lakukan dengan cepat. Syaratnya, data acara sudah siap.
-
-Pilih template rapi, cek detail acara, lalu bagikan link. Jika butuh fitur lebih lengkap, kamu bisa upgrade nanti.
+Membuat undangan digital gratis bisa dilakukan dengan cepat dan hasilnya tetap layak. Mulai dari yang gratis dulu, dan kalau perlu fitur lebih, upgrade bisa dilakukan kapan saja.

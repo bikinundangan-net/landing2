@@ -26,7 +26,7 @@ export function FaqSection() {
             bantu lewat WhatsApp.
           </p>
           <a
-            href="https://wa.me/6281234567890?text=Halo%20BikinUndangan.net%2C%20saya%20mau%20tanya%20paket%20undangan%20mulai%2049rb"
+            href="https://wa.me/6285155347714?text=Halo%20BikinUndangan.net%2C%20saya%20mau%20tanya%20paket%20undangan%20mulai%2049rb"
             className="mt-8 inline-flex rounded-full bg-maroon px-6 py-4 text-sm font-black !text-cream transition hover:bg-maroon-dark"
           >
             Tanya via WhatsApp

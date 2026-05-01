@@ -1,103 +1,101 @@
-Undangan digital sudah jadi, tapi cara mengirimnya tetap penting. Link yang rapi bisa terasa kurang sopan jika dikirim asal-asalan.
+Undangan digital sudah jadi. Tapi pekerjaan belum selesai — cara mengirimnya juga penting. Link yang sama bisa terasa sopan atau tidak, tergantung bagaimana kamu mengirimnya.
+
+## Daftar isi
+
+- [Kenapa WhatsApp jadi pilihan utama?](#kenapa-whatsapp-jadi-pilihan-utama)
+- [Siapkan link dan caption sebelum mengirim](#siapkan-link-dan-caption-sebelum-mengirim)
+- [Langkah menyebarkan undangan lewat WhatsApp](#langkah-menyebarkan-undangan-lewat-whatsapp)
+- [Chat pribadi atau grup?](#chat-pribadi-atau-grup)
+- [Kesalahan yang sering terjadi](#kesalahan-yang-sering-terjadi)
+- [Contoh caption berdasarkan kelompok tamu](#contoh-caption-berdasarkan-kelompok-tamu)
+- [Kapan waktu terbaik mengirim?](#kapan-waktu-terbaik-mengirim)
+- [Cara hindari kesan spam](#cara-hindari-kesan-spam)
+- [FAQ](#faq)
+- [Kesimpulan](#kesimpulan)
 
 ## Kenapa WhatsApp jadi pilihan utama?
 
-WhatsApp sering dipakai untuk komunikasi keluarga dan teman. Karena itu, mengirim undangan lewat WhatsApp terasa paling praktis.
+WhatsApp adalah aplikasi komunikasi utama kebanyakan orang Indonesia. Untuk keluarga, teman, maupun rekan kerja.
 
-Tamu cukup menerima link. Setelah itu, mereka bisa membuka detail acara dari handphone.
+Tamu cukup klik link, buka detail acara, dan langsung bisa akses Maps atau isi RSVP. Tapi ada satu hal yang tidak boleh diabaikan: caption.
 
-Jika ada maps atau RSVP, tamu bisa langsung menggunakannya. Tapi caption tetap perlu kamu perhatikan.
+## Siapkan link dan caption sebelum mengirim
 
-## Siapkan link dan caption
+Pastikan link undangan sudah benar-benar final. Cek nama, tanggal, lokasi, Maps, foto, dan semua tombol penting.
 
-Pastikan link undangan sudah final. Cek nama, tanggal, lokasi, maps, foto, dan tombol penting.
+Kalau tampilannya masih terasa ramai atau info penting sulit ditemukan, perbaiki dulu dengan prinsip di [tips membuat undangan digital menarik](/blog/tips-membuat-undangan-digital-menarik) sebelum link dikirim ke banyak tamu.
 
-Setelah itu, siapkan caption yang sopan. Caption sebaiknya berisi salam, nama mempelai, dan ajakan membuka link.
+Baru setelah itu siapkan caption. Caption yang baik berisi salam singkat, nama mempelai, dan ajakan buka link. Tidak perlu panjang.
 
-Contoh singkat:
+Contoh sederhana:
 
-> Assalamualaikum, dengan penuh rasa syukur kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara pernikahan kami. Detail acara dapat dilihat melalui link berikut.
+> Assalamualaikum, dengan penuh rasa syukur kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara pernikahan kami. Detail lengkap bisa dilihat di link berikut 🙏
 
 ## Langkah menyebarkan undangan lewat WhatsApp
 
-Ikuti langkah berikut agar pengiriman lebih rapi:
-
 1. Buat daftar tamu yang akan dihubungi.
-2. Kelompokkan tamu keluarga, teman, kantor, dan komunitas.
-3. Siapkan caption untuk tiap kelompok.
-4. Kirim ke chat pribadi untuk tamu penting.
-5. Gunakan grup hanya jika sesuai.
-6. Cek apakah preview link muncul.
-7. Tandai tamu yang sudah dikirim.
+2. Kelompokkan: keluarga, teman, rekan kerja, komunitas.
+3. Siapkan caption yang sesuai tiap kelompok.
+4. Kirim ke chat pribadi untuk tamu yang penting.
+5. Pakai grup hanya kalau memang relevan.
+6. Tandai siapa yang sudah dikirim agar tidak ada yang terlewat.
 
-Cara ini membantu kamu menghindari pengiriman ganda. Tamu penting juga tidak mudah terlewat.
+Membuat daftar mungkin terasa berlebihan. Tapi langkah ini sangat membantu kalau tamu kamu banyak.
 
 ## Chat pribadi atau grup?
 
-Untuk keluarga, atasan, dan tamu yang dihormati, pilih chat pribadi. Cara ini terasa lebih sopan.
+Untuk keluarga, atasan, atau tamu yang kamu hormati — pilih chat pribadi. Ini terasa jauh lebih personal.
 
-Untuk teman dekat atau komunitas, grup masih wajar. Tetap gunakan caption yang rapi.
+Untuk teman dekat atau komunitas yang sudah akrab, grup masih wajar. Yang penting, caption tetap rapi.
 
-Jika memakai broadcast, pastikan nomor tamu menyimpan kontakmu. Jika tidak, pesan bisa tidak terkirim.
+Kalau pakai fitur broadcast: nomor tamu harus menyimpan kontakmu. Kalau tidak, pesan kemungkinan tidak akan terkirim.
 
 ## Kesalahan yang sering terjadi
 
-Kesalahan pertama adalah mengirim link tanpa konteks. Tamu bisa ragu membuka link tersebut.
+**Kirim link tanpa konteks.** Tamu yang tiba-tiba dapat link asing tanpa penjelasan mungkin ragu membukanya.
 
-Kesalahan kedua adalah caption terlalu panjang. Biarkan undangan digital memuat detail lengkapnya.
+**Caption terlalu panjang.** Biarkan halaman undangan yang memuat semua detail. Caption cukup sebagai pembuka yang hangat.
 
-Kesalahan ketiga adalah mengirim terlalu dekat dengan hari acara. Kirim lebih awal agar tamu bisa mengatur jadwal.
+**Kirim terlalu mepet hari H.** Tamu perlu waktu untuk atur jadwal. Kirim setidaknya dua minggu sebelumnya.
 
-## Tips agar terlihat lebih sopan
+## Contoh caption berdasarkan kelompok tamu
 
-Gunakan sapaan saat mengirim chat pribadi. Misalnya, “Halo Kak” atau “Assalamualaikum Pak/Bu”.
+**Keluarga:** Nada hangat dan personal. Sampaikan bahwa kamu mengundang mereka hadir dan mendoakan acara.
 
-Hindari mengirim pesan beruntun. Satu caption dan satu link sudah cukup.
+**Teman dekat:** Bisa lebih santai. Tetap cantumkan nama mempelai dan tanggal dengan jelas.
 
-Kamu juga bisa membuat undangan digital di bikinundangan.net. Link yang rapi membuat tamu lebih nyaman membukanya.
+**Rekan kerja:** Singkat dan profesional. Hindari gaya bercanda kalau konteksnya formal.
 
-## Contoh caption yang bisa dipakai
+## Kapan waktu terbaik mengirim?
 
-Untuk keluarga, gunakan caption yang hangat. Sampaikan bahwa kamu mengundang mereka untuk hadir dan memberi doa restu.
+Idealnya dua hingga tiga minggu sebelum hari acara. Kalau mau, boleh kirim pengingat satu kali mendekati hari H — tapi cukup sekali saja.
 
-Untuk teman dekat, bahasa bisa lebih santai. Tetap cantumkan nama mempelai dan tanggal acara.
+Kalau ada perubahan jadwal, kirim update yang jelas. Sebutkan bagian yang berubah.
 
-Untuk rekan kerja, gunakan kalimat yang ringkas. Hindari gaya terlalu bercanda jika konteksnya formal.
+## Cara hindari kesan spam
 
-## Kapan waktu terbaik mengirim undangan?
+Jangan kirim link ke orang yang tidak kamu kenal dekat tanpa konteks.
 
-Kirim undangan beberapa minggu sebelum acara. Tamu jadi punya waktu untuk mengatur jadwal.
+Hindari kirim pesan berulang di grup. Satu pesan yang rapi jauh lebih baik dari tiga pesan berturut-turut.
 
-Kamu boleh mengirim pengingat mendekati hari H. Namun, cukup sekali agar tidak terasa mengganggu.
+Kalau pakai broadcast, buat caption tetap terasa personal — bukan seperti template massal.
 
-Jika ada perubahan jadwal, kirim update dengan jelas. Sebutkan bagian yang berubah.
+Kalau undangannya belum jadi dan kamu masih menyiapkan link, mulai dari panduan [cara bikin undangan nikah online](/blog/cara-bikin-undangan-nikah-online) akan lebih tepat.
 
-## Cara menghindari kesan spam
+## FAQ
 
-Jangan mengirim link ke orang yang tidak kamu kenal dekat tanpa konteks. Beri penjelasan singkat jika perlu.
+Q: Boleh kirim ke grup?
 
-Hindari mengirim pesan berulang di grup. Satu pesan yang rapi jauh lebih baik.
+A: Boleh, kalau grup itu memang relevan.
 
-Jika memakai broadcast, buat caption tetap terasa personal. Jangan sampai pesan terasa seperti promosi massal.
+Q: Perlu kirim pengingat?
 
-## Buat daftar pengiriman
+A: Boleh, cukup satu kali mendekati hari acara.
 
-Buat daftar tamu sederhana sebelum mengirim link. Bagi daftar menjadi keluarga, teman, kantor, tetangga, dan komunitas.
+Q: Kalau link tidak muncul preview?
 
-Tandai siapa yang sudah dikirim. Cara ini membantu agar tidak ada tamu penting yang terlewat.
-
-Daftar ini juga berguna untuk pengingat. Kamu tidak akan mengirim pesan ke orang yang sama berkali-kali.
-
-## FAQ kirim undangan lewat WhatsApp
-
-Apakah boleh mengirim undangan ke grup? Boleh, jika grup itu memang relevan.
-
-Apakah perlu mengirim pengingat? Boleh, cukup satu kali mendekati hari acara.
-
-Bagaimana jika link tidak muncul preview? Tetap bisa dikirim. Pastikan caption menjelaskan isi link.
+A: Tidak masalah. Link tetap bisa diklik. Pastikan caption sudah menjelaskan isi link.
 
 ## Kesimpulan
 
-Menyebarkan undangan digital lewat WhatsApp bukan hanya soal menyalin link. Caption, waktu, dan cara mengirim juga penting.
-
-Dengan cara yang rapi, undangan terasa lebih sopan. Tamu juga lebih mudah memahami detail acara.
+Menyebarkan undangan digital lewat WhatsApp bukan sekadar copy-paste link. Caption yang sopan, waktu yang tepat, dan cara pengiriman yang personal — semuanya ikut membentuk kesan pertama tamu terhadap undanganmu.

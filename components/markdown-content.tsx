@@ -149,6 +149,16 @@ function renderInline(text: string) {
   });
 }
 
+function slugifyHeading(text: string) {
+  return text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-");
+}
+
 export function MarkdownContent({ markdown }: { markdown: string }) {
   const tokens = parseMarkdown(markdown);
 
@@ -167,11 +177,14 @@ export function MarkdownContent({ markdown }: { markdown: string }) {
         const key = `${token.type}-${index}`;
 
         if (token.type === "heading") {
+          const headingId = slugifyHeading(token.text);
+
           if (token.level === 2) {
             return (
               <h2
                 key={key}
-                className="mt-12 font-serif text-3xl font-bold text-maroon-dark"
+                id={headingId}
+                className="mt-12 scroll-mt-24 font-serif text-3xl font-bold text-maroon-dark"
               >
                 {renderInline(token.text)}
               </h2>
@@ -180,14 +193,22 @@ export function MarkdownContent({ markdown }: { markdown: string }) {
 
           if (token.level === 3) {
             return (
-              <h3 key={key} className="mt-9 text-2xl font-black text-maroon-dark">
+              <h3
+                key={key}
+                id={headingId}
+                className="mt-9 scroll-mt-24 text-2xl font-black text-maroon-dark"
+              >
                 {renderInline(token.text)}
               </h3>
             );
           }
 
           return (
-            <h4 key={key} className="mt-8 text-xl font-black text-maroon-dark">
+            <h4
+              key={key}
+              id={headingId}
+              className="mt-8 scroll-mt-24 text-xl font-black text-maroon-dark"
+            >
               {renderInline(token.text)}
             </h4>
           );

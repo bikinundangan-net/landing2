@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 const whatsappUrl =
-  "https://wa.me/6281234567890?text=Halo%20BikinUndangan.net%2C%20saya%20mau%20buat%20undangan%20digital%20mulai%2049rb";
+  "https://wa.me/6285155347714?text=Halo%20BikinUndangan.net%2C%20saya%20mau%20buat%20undangan%20digital%20mulai%2049rb";
 
 export function FloatingActions() {
   return (
