@@ -33,7 +33,7 @@ export function HeroSection() {
           </motion.h1>
           <motion.p
             variants={fadeInUp}
-            className="mt-7 max-w-2xl text-lg leading-8 text-ink/72 sm:text-xl"
+            className="mt-6 max-w-2xl text-base leading-7 text-ink/72 sm:text-lg sm:leading-8"
           >
             Buat undangan pernikahan online dalam 5 menit. Tanpa ribet,
             tanpa desainer, langsung bisa dibagikan via WhatsApp.
