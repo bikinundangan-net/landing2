@@ -61,7 +61,7 @@ export function Footer() {
 
       <div className="section-shell mt-10 flex flex-col gap-2 border-t border-maroon/10 pt-6 text-sm text-ink/52 sm:flex-row sm:items-center sm:justify-between">
         <p>Copyright © 2025 BikinUndangan.net</p>
-        <p>Dibuat dengan hati untuk pasangan Indonesia</p>
+        <p>Dibuat dengan ❤️ untuk pasangan Indonesia</p>
       </div>
     </footer>
   );
