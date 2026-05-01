@@ -55,7 +55,6 @@ export function LandingPage({
       <HeroSection />
       <HowItWorksSection />
       <DesignShowcaseSection />
-      <BlogPreviewSection articles={latestArticles} />
       <FeaturesSection />
       <PricingSection />
       <TestimonialsSection />
