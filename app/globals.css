@@ -1,0 +1,97 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+:root {
+  --background: #fff8ee;
+  --foreground: #2f1517;
+  --cream: #fff8ee;
+  --cream-2: #f9ead8;
+  --maroon: #7f1d2d;
+  --maroon-dark: #4b0f1a;
+  --rose: #c98b73;
+  --sage: #6f8266;
+  --ink: #2f1517;
+  --muted: #765b55;
+  --line: rgba(127, 29, 45, 0.14);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% 4%, rgba(201, 139, 115, 0.16), transparent 32rem),
+    linear-gradient(180deg, #fff8ee 0%, #fffdf8 42%, #fff8ee 100%);
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(127, 29, 45, 0.18);
+}
+
+.floral-corner {
+  position: absolute;
+  inset: auto;
+  pointer-events: none;
+  opacity: 0.28;
+}
+
+.floral-corner::before,
+.floral-corner::after {
+  position: absolute;
+  content: "";
+  border: 1px solid rgba(127, 29, 45, 0.2);
+  border-radius: 999px 999px 999px 0;
+  transform: rotate(-24deg);
+}
+
+.floral-corner::before {
+  width: 7rem;
+  height: 11rem;
+}
+
+.floral-corner::after {
+  width: 4rem;
+  height: 7rem;
+  transform: translate(3.3rem, 2.4rem) rotate(18deg);
+}
+
+.section-shell {
+  width: min(100% - 2rem, 1180px);
+  margin-inline: auto;
+}
+
+.maroon-gradient {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(248, 196, 157, 0.22), transparent 24rem),
+    radial-gradient(circle at 84% 100%, rgba(255, 248, 238, 0.12), transparent 30rem),
+    linear-gradient(135deg, #4b0f1a 0%, #7f1d2d 58%, #9d3941 100%);
+}
+
+.soft-shadow {
+  box-shadow: 0 24px 60px rgba(87, 35, 33, 0.12);
+}
