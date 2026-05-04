@@ -229,7 +229,7 @@ export const invitationDesigns = [
     alt: "Template undangan digital Luxury Maroon dalam mockup handphone",
     priceLabel: "Mulai 99rb",
     background:
-      "linear-gradient(145deg, rgba(127, 29, 45, 0.95), rgba(250, 222, 190, 0.72))",
+      "linear-gradient(145deg, rgba(157, 43, 63, 0.95), rgba(250, 222, 190, 0.72))",
   },
   {
     slug: "islamic-elegant",

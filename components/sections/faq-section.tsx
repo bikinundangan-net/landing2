@@ -10,7 +10,7 @@ export function FaqSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faq" className="py-20">
+    <section id="faq" className="scroll-mt-24 py-20">
       <div className="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <motion.div
           variants={fadeInUp}

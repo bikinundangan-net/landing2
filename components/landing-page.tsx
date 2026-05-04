@@ -22,31 +22,51 @@ export function LandingPage({
 }: {
   latestArticles?: ArticleSummary[];
 }) {
-  const [activeSection, setActiveSection] = useState("fitur");
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    let frame = 0;
 
-        if (visible?.target.id) {
-          setActiveSection(visible.target.id);
+    const updateActiveSection = () => {
+      frame = 0;
+      const activationLine = Math.min(window.innerHeight * 0.38, 320);
+      let currentSection = "";
+
+      for (const id of trackedSections) {
+        const section = document.getElementById(id);
+        if (!section) continue;
+
+        const rect = section.getBoundingClientRect();
+
+        if (rect.top <= activationLine && rect.bottom > activationLine) {
+          currentSection = id;
+          break;
         }
-      },
-      {
-        rootMargin: "-28% 0px -58% 0px",
-        threshold: [0.18, 0.36, 0.58],
-      },
-    );
 
-    trackedSections.forEach((id) => {
-      const section = document.getElementById(id);
-      if (section) observer.observe(section);
-    });
+        if (rect.top > activationLine) {
+          break;
+        }
+      }
 
-    return () => observer.disconnect();
+      setActiveSection((previousSection) =>
+        previousSection === currentSection ? previousSection : currentSection,
+      );
+    };
+
+    const scheduleUpdate = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(updateActiveSection);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+    };
   }, []);
 
   return (

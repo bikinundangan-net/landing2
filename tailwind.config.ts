@@ -14,9 +14,9 @@ const config: Config = {
           pale: "#fffdf8",
         },
         maroon: {
-          DEFAULT: "#7f1d2d",
+          DEFAULT: "#9D2B3F",
           dark: "#4b0f1a",
-          light: "#9d3941",
+          light: "#B94458",
         },
         rose: "#c98b73",
         sage: "#6f8266",

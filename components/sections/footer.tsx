@@ -1,4 +1,5 @@
-import { Camera, Heart, MessageCircle, Music2 } from "lucide-react";
+import Image from "next/image";
+import { Camera, MessageCircle, Music2 } from "lucide-react";
 
 const footerLinks = [
   "Fitur",
@@ -15,8 +16,14 @@ export function Footer() {
       <div className="section-shell flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
         <div className="max-w-sm">
           <a href="#home" className="flex items-center gap-3">
-            <span className="grid size-10 place-items-center rounded-full bg-maroon text-cream">
-              <Heart className="size-5 fill-current" aria-hidden="true" />
+            <span className="grid size-10 place-items-center overflow-hidden rounded-[0.8rem]">
+              <Image
+                src="/logo.png"
+                alt="logo BikinUndangan.net"
+                width={512}
+                height={512}
+                className="size-10 scale-[2.35] object-contain"
+              />
             </span>
             <span className="font-serif text-xl font-bold text-maroon-dark">
               BikinUndangan.net

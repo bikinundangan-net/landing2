@@ -7,7 +7,7 @@ import { fadeInUp, stagger } from "@/components/sections/motion";
 
 export function PricingSection() {
   return (
-    <section id="harga" className="py-[5.5rem]">
+    <section id="harga" className="scroll-mt-24 py-[5.5rem]">
       <div className="section-shell">
         <motion.div
           className="mx-auto max-w-3xl text-center"

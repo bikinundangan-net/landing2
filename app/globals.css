@@ -6,13 +6,13 @@
   --foreground: #2f1517;
   --cream: #fff8ee;
   --cream-2: #f9ead8;
-  --maroon: #7f1d2d;
+  --maroon: #9D2B3F;
   --maroon-dark: #4b0f1a;
   --rose: #c98b73;
   --sage: #6f8266;
   --ink: #2f1517;
   --muted: #765b55;
-  --line: rgba(127, 29, 45, 0.14);
+  --line: rgba(157, 43, 63, 0.14);
 }
 
 @theme inline {
@@ -50,7 +50,7 @@ input {
 }
 
 ::selection {
-  background: rgba(127, 29, 45, 0.18);
+  background: rgba(157, 43, 63, 0.18);
 }
 
 .floral-corner {
@@ -64,7 +64,7 @@ input {
 .floral-corner::after {
   position: absolute;
   content: "";
-  border: 1px solid rgba(127, 29, 45, 0.2);
+  border: 1px solid rgba(157, 43, 63, 0.2);
   border-radius: 999px 999px 999px 0;
   transform: rotate(-24deg);
 }
@@ -89,7 +89,7 @@ input {
   background:
     radial-gradient(circle at 18% 0%, rgba(248, 196, 157, 0.22), transparent 24rem),
     radial-gradient(circle at 84% 100%, rgba(255, 248, 238, 0.12), transparent 30rem),
-    linear-gradient(135deg, #4b0f1a 0%, #7f1d2d 58%, #9d3941 100%);
+    linear-gradient(135deg, #4b0f1a 0%, #9D2B3F 58%, #B94458 100%);
 }
 
 .soft-shadow {

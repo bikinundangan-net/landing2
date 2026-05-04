@@ -7,7 +7,7 @@ import { fadeInUp, stagger } from "@/components/sections/motion";
 
 export function TestimonialsSection() {
   return (
-    <section id="testimoni" className="py-20">
+    <section id="testimoni" className="scroll-mt-24 py-20">
       <div className="section-shell">
         <motion.div
           className="mx-auto max-w-3xl text-center"

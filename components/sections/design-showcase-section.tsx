@@ -9,7 +9,7 @@ import { fadeInUp, stagger } from "@/components/sections/motion";
 
 export function DesignShowcaseSection() {
   return (
-    <section id="design" className="py-20">
+    <section id="design" className="scroll-mt-24 py-20">
       <div className="section-shell">
         <motion.div
           className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"

@@ -6,7 +6,7 @@ import { fadeInUp, stagger } from "@/components/sections/motion";
 
 export function FeaturesSection() {
   return (
-    <section id="fitur" className="py-20">
+    <section id="fitur" className="scroll-mt-24 py-20">
       <div className="section-shell">
         <motion.div
           className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-end"
