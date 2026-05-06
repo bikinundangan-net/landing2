@@ -1,5 +1,8 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import { siteUrl } from "@/lib/site";
+
+export { siteUrl };
 
 export type BlogMedia = {
   url: string;
@@ -46,13 +49,8 @@ type ArticleRecord = ArticleSummary & {
   markdownFile: string;
 };
 
-const FALLBACK_SITE_URL = "https://bikinundangan.net";
 const CONTENT_DIR = path.join(process.cwd(), "content", "blog");
 const INDEX_FILE = path.join(CONTENT_DIR, "articles.json");
-
-export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL || FALLBACK_SITE_URL
-).replace(/\/$/, "");
 
 function sortByPublishedDate(a: ArticleRecord, b: ArticleRecord) {
   return (

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -14,17 +15,13 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL || "https://bikinundangan.net"
-).replace(/\/$/, "");
-
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Undangan Digital Pernikahan Online | Mulai 49rb — BikinUndangan.net",
   description:
     "Buat undangan pernikahan digital elegan dalam 5 menit. RSVP online, amplop digital, desain cantik. Harga mulai 49 ribu. Sudah dipercaya 10.000+ pasangan.",
   alternates: {
-    canonical: siteUrl,
+    canonical: "/",
   },
   robots: {
     index: true,
@@ -35,7 +32,7 @@ export const metadata: Metadata = {
       "Undangan Digital Pernikahan Online | Mulai 49rb — BikinUndangan.net",
     description:
       "Buat undangan pernikahan digital elegan dalam 5 menit. RSVP online, amplop digital, desain cantik. Harga mulai 49 ribu.",
-    url: siteUrl,
+    url: "/",
     siteName: "BikinUndangan.net",
     locale: "id_ID",
     type: "website",
