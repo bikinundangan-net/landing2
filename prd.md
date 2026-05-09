@@ -126,7 +126,7 @@ PAKET STANDARD — Rp99.000 — [badge: PALING POPULER — tampilkan secara visu
 - Countdown acara
 - Masa aktif 6 bulan
 
-PAKET PREMIUM — Rp199.000
+PAKET PREMIUM — Rp149.000
 - Semua fitur Standard
 - Link personal / subdomain
 - Amplop digital
