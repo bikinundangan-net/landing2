@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { ArticleSummary } from "@/lib/blog";
-import { BlogPreviewSection } from "@/components/sections/blog-preview-section";
 import { DesignShowcaseSection } from "@/components/sections/design-showcase-section";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { FeaturesSection } from "@/components/sections/features-section";
@@ -17,11 +15,7 @@ import { TestimonialsSection } from "@/components/sections/testimonials-section"
 
 const trackedSections = ["design", "fitur", "harga", "testimoni", "faq"];
 
-export function LandingPage({
-  latestArticles = [],
-}: {
-  latestArticles?: ArticleSummary[];
-}) {
+export function LandingPage() {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
