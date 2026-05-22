@@ -173,6 +173,7 @@ export async function createInvitationOrder(
   }
 
   const input = parsed.data;
+  const shouldPublish = formData.get("isPublished") === "on";
 
   if (reservedRootSlugs.has(input.slug)) {
     return {
@@ -223,7 +224,7 @@ export async function createInvitationOrder(
       love_story: input.loveStory || null,
       gift_account: input.giftAccount || null,
       notes: input.notes || null,
-      is_published: input.workStatus === "selesai",
+      is_published: shouldPublish,
     })
     .select("id, public_slug")
     .single();

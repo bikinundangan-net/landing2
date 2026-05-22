@@ -176,6 +176,7 @@ export function AdminDashboard({
   const [templateSlug, setTemplateSlug] = useState("luxury-maroon");
   const [selectedAddons, setSelectedAddons] = useState<string[]>(["express"]);
   const [workStatus, setWorkStatus] = useState("data_lengkap");
+  const [isPublished, setIsPublished] = useState(false);
 
   const totals = useMemo(
     () => calculateOrderTotal(packageSlug, selectedAddons),
@@ -725,6 +726,25 @@ export function AdminDashboard({
                           className="mt-2 w-full rounded-lg border border-maroon/10 bg-white px-3 py-3 text-sm font-semibold text-ink outline-none transition focus:border-maroon/45"
                         />
                       </label>
+                      <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-maroon/10 bg-cream/45 p-4 md:col-span-2">
+                        <input
+                          type="checkbox"
+                          name="isPublished"
+                          checked={isPublished}
+                          onChange={(event) => setIsPublished(event.target.checked)}
+                          className="mt-1 size-4 accent-maroon"
+                        />
+                        <span>
+                          <span className="block text-sm font-black text-maroon-dark">
+                            Publish undangan setelah pesanan dibuat
+                          </span>
+                          <span className="mt-1 block text-sm font-semibold leading-6 text-ink/58">
+                            Jika aktif, slug publik langsung bisa dibuka. Jika
+                            nonaktif, halaman undangan tetap 404 sampai admin
+                            publish.
+                          </span>
+                        </span>
+                      </label>
                     </div>
                   ) : (
                     <>
@@ -736,6 +756,9 @@ export function AdminDashboard({
                         value="Berawal dari pertemuan sederhana, kami belajar bahwa rumah adalah seseorang yang membuat hari terasa tenang."
                       />
                       <input type="hidden" name="notes" value="" />
+                      {isPublished ? (
+                        <input type="hidden" name="isPublished" value="on" />
+                      ) : null}
                     </>
                   )}
 
@@ -922,7 +945,7 @@ export function AdminDashboard({
                 <p className="text-xs font-black uppercase tracking-[0.12em] text-ink/45">
                   Checklist publikasi
                 </p>
-                <div className="mt-4 space-y-3">
+                  <div className="mt-4 space-y-3">
                   {[
                     "Data customer",
                     "Data mempelai",
@@ -930,7 +953,7 @@ export function AdminDashboard({
                     "Paket & add-on",
                     "Aset foto",
                     "Pembayaran",
-                    "Preview link",
+                    isPublished ? "Publish aktif" : "Publish draft",
                   ].map((item, index) => (
                     <div key={item} className="flex items-center gap-3 text-sm font-bold">
                       <span
