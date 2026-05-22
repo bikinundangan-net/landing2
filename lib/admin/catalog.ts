@@ -4,13 +4,16 @@ export const reservedRootSlugs = new Set([
   "admin",
   "api",
   "blog",
+  "data-deletion",
   "design",
   "favicon.ico",
   "icon.png",
   "apple-icon.png",
   "logo.png",
+  "privacy-policy",
   "robots.txt",
   "sitemap.xml",
+  "terms-of-service",
 ]);
 
 export const workStatuses = [

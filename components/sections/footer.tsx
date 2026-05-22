@@ -10,6 +10,12 @@ const footerLinks = [
   "Kontak",
 ];
 
+const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Service", href: "/terms-of-service" },
+  { label: "Data Deletion", href: "/data-deletion" },
+];
+
 export function Footer() {
   return (
     <footer className="border-t border-maroon/10 bg-white/42 py-12 pb-28 md:pb-12">
@@ -68,7 +74,13 @@ export function Footer() {
 
       <div className="section-shell mt-10 flex flex-col gap-2 border-t border-maroon/10 pt-6 text-sm text-ink/52 sm:flex-row sm:items-center sm:justify-between">
         <p>Copyright © 2025 BikinUndangan.net</p>
-        <p>Dibuat dengan ❤️ untuk pasangan Indonesia</p>
+        <div className="flex flex-wrap gap-x-4 gap-y-2 font-semibold">
+          {legalLinks.map((link) => (
+            <a key={link.href} href={link.href} className="hover:text-maroon">
+              {link.label}
+            </a>
+          ))}
+        </div>
       </div>
     </footer>
   );

@@ -28,6 +28,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    {
+      url: `${siteUrl}/privacy-policy`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.4,
+    },
+    {
+      url: `${siteUrl}/terms-of-service`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.4,
+    },
+    {
+      url: `${siteUrl}/data-deletion`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.4,
+    },
     ...invitationDesigns.map((design) => ({
       url: `${siteUrl}/design/${design.slug}`,
       lastModified: now,
