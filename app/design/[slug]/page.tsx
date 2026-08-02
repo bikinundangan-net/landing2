@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Check, MessageCircle } from "lucide-react";
+import { ArrowLeft, Check, Eye, MessageCircle } from "lucide-react";
 import {
   getDesignWhatsAppUrl,
 } from "@/components/design-template-card";
@@ -106,6 +106,13 @@ export default async function DesignDetailPage({
               <MessageCircle className="size-5" aria-hidden="true" />
               Pakai Template Ini
             </a>
+            <Link
+              href={`/demo/${design.slug}`}
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-maroon/15 bg-white/58 px-7 py-4 text-base font-black !text-maroon transition hover:bg-white"
+            >
+              <Eye className="size-5" aria-hidden="true" />
+              Buka Demo Live
+            </Link>
             <Link
               href="/design"
               className="inline-flex items-center justify-center rounded-full border border-maroon/15 bg-white/58 px-7 py-4 text-base font-black !text-maroon transition hover:bg-white"

@@ -4,11 +4,14 @@ import {
   buildTemplateContext,
   invitationTemplateRegistry,
 } from "@/components/invitation/templates";
+import type { InvitationRenderMode } from "@/components/invitation/templates/shared";
 
 export function PublicInvitationView({
   invitation,
+  renderMode = "live",
 }: {
   invitation: PublicInvitation;
+  renderMode?: InvitationRenderMode;
 }) {
   const template = getTemplate(invitation.template_slug);
   const selectedPackage = getPackage(invitation.package_slug);
@@ -18,7 +21,12 @@ export function PublicInvitationView({
 
   return (
     <TemplateComponent
-      {...buildTemplateContext(invitation, template, selectedPackage)}
+      {...buildTemplateContext(
+        invitation,
+        template,
+        selectedPackage,
+        renderMode,
+      )}
     />
   );
 }

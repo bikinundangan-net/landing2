@@ -311,6 +311,24 @@ export const testimonials = [
   },
 ];
 
+export const adTestimonials = [
+  {
+    name: "Budi H.",
+    role: "Head of Revenue, rakyatpress.com",
+    text: "Revenue iklan kami naik lebih dari 40% dalam dua bulan, dan kami tidak perlu repot sama sekali.",
+  },
+  {
+    name: "Andi S.",
+    role: "Founder, sekali.id",
+    text: "Akhirnya ada partner iklan yang transparan. Kami bisa melihat persis dari mana tiap rupiah berasal.",
+  },
+  {
+    name: "Rizky P.",
+    role: "Operations Lead, tempuh.net",
+    text: "Proteksi IVT-nya saja sudah menyelamatkan akun AdSense kami. Sangat direkomendasikan.",
+  },
+];
+
 export const faqs = [
   {
     question: "Berapa lama proses pembuatan undangannya?",

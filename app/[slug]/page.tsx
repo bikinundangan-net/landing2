@@ -67,5 +67,9 @@ export default async function InvitationPage({ params }: InvitationPageProps) {
     notFound();
   }
 
-  return <PublicInvitationView invitation={invitation} />;
+  return (
+    <div className="min-h-screen bg-black">
+      <PublicInvitationView invitation={invitation} />
+    </div>
+  );
 }

@@ -16,10 +16,13 @@ type Template = ReturnType<typeof getTemplate>;
 type Package = ReturnType<typeof getPackage>;
 type OrderAsset = PublicInvitation["order_assets"][number];
 
+export type InvitationRenderMode = "demo" | "live";
+
 export type InvitationTemplateProps = {
   invitation: PublicInvitation;
   template: Template;
   selectedPackage: Package;
+  renderMode: InvitationRenderMode;
   firstEvent: PublicInvitation["order_events"][number] | null;
   heroAsset: OrderAsset | null;
   galleryAssets: OrderAsset[];
@@ -145,10 +148,13 @@ export function buildTemplateContext(
   invitation: PublicInvitation,
   template: Template,
   selectedPackage: Package,
+  renderMode: InvitationRenderMode = "live",
 ): InvitationTemplateProps {
   const firstEvent = invitation.order_events[0] ?? null;
   const heroAsset = assetByType(invitation, "hero") ?? null;
-  const galleryAssets = invitation.order_assets.filter(isImageAsset);
+  const galleryAssets = invitation.order_assets.filter(
+    (asset) => asset.asset_type === "gallery" && isImageAsset(asset),
+  );
   const videoAsset = invitation.order_assets.find(isVideoAsset) ?? null;
   const musicAsset = invitation.order_assets.find(isAudioAsset) ?? null;
 
@@ -156,6 +162,7 @@ export function buildTemplateContext(
     invitation,
     template,
     selectedPackage,
+    renderMode,
     firstEvent,
     heroAsset,
     galleryAssets,
@@ -226,7 +233,7 @@ export function HeroImage({
         fill
         sizes="100vw"
         className="object-cover"
-        priority
+        preload
       />
       {overlayClassName ? <div className={overlayClassName} /> : null}
     </div>
@@ -376,6 +383,7 @@ export function RsvpGuestbookSection({
   inputClassName,
   buttonClassName,
   iconClassName,
+  showGiftAccount = true,
 }: {
   invitation: PublicInvitation;
   sectionClassName: string;
@@ -383,6 +391,7 @@ export function RsvpGuestbookSection({
   inputClassName: string;
   buttonClassName: string;
   iconClassName: string;
+  showGiftAccount?: boolean;
 }) {
   return (
     <section className={sectionClassName}>
@@ -426,7 +435,7 @@ export function RsvpGuestbookSection({
         <input type="hidden" name="slug" value={invitation.public_slug} />
         <Gift className={iconClassName} aria-hidden="true" />
         <h2 className="mt-4 font-serif text-3xl font-bold">Buku Tamu</h2>
-        {invitation.gift_account ? (
+        {showGiftAccount && invitation.gift_account ? (
           <p className="mt-4 rounded-2xl bg-current/5 p-4 text-sm font-bold leading-6">
             Amplop digital: {invitation.gift_account}
           </p>

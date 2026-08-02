@@ -66,11 +66,11 @@ export function DesignTemplateCard({
             Pakai
           </a>
           <Link
-            href={`/design/${design.slug}`}
+            href={`/demo/${design.slug}`}
             className="inline-flex items-center justify-center gap-2 rounded-full border border-maroon/15 bg-white/58 px-4 py-3 text-sm font-black !text-maroon transition hover:bg-white"
           >
             <Eye className="size-4" aria-hidden="true" />
-            Demo
+            Demo Live
           </Link>
         </div>
       </div>

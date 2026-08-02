@@ -5,6 +5,7 @@ export const reservedRootSlugs = new Set([
   "api",
   "blog",
   "data-deletion",
+  "demo",
   "design",
   "favicon.ico",
   "icon.png",
