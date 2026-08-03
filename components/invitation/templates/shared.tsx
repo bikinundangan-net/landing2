@@ -256,7 +256,7 @@ export function CountdownStrip({
           <span className="block font-serif text-2xl font-bold leading-none sm:text-3xl">
             {item.value}
           </span>
-          <span className="mt-1 block text-[0.62rem] font-black uppercase tracking-[0.18em] opacity-70">
+          <span className="mt-1 block text-xs font-black uppercase tracking-[0.18em] opacity-70">
             {item.label}
           </span>
         </div>

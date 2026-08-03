@@ -244,7 +244,7 @@ input {
 .classic-rose-eyebrow {
   color: var(--rose-deep);
   font-family: var(--font-playfair), Georgia, serif;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -605,7 +605,7 @@ input {
 }
 
 .classic-rose-event .classic-rose-eyebrow {
-  font-size: 0.64rem;
+  font-size: 0.75rem;
 }
 
 .classic-rose-event h3 {
@@ -743,7 +743,7 @@ input {
 
 .classic-rose-account span {
   color: rgb(75 32 35 / 55%);
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -882,7 +882,7 @@ textarea.classic-rose-input {
   display: block;
   margin-top: 1.35rem;
   color: rgb(75 32 35 / 55%);
-  font-size: 0.62rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   line-height: 1.45;
@@ -1006,7 +1006,7 @@ textarea.classic-rose-input {
 .themed-cover__kicker,
 .themed-eyebrow {
   color: var(--theme-accent);
-  font-size: 0.67rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.24em;
   line-height: 1.5;
@@ -1048,7 +1048,7 @@ textarea.classic-rose-input {
 
 .themed-cover__date span,
 .themed-cover__date small {
-  font-size: 0.62rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.16em;
 }
@@ -1066,7 +1066,7 @@ textarea.classic-rose-input {
   display: flex;
   flex-direction: column;
   margin-top: 1.05rem;
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   line-height: 1.55;
@@ -1085,7 +1085,7 @@ textarea.classic-rose-input {
   padding: 0.78rem 1.35rem;
   color: var(--theme-accent-contrast);
   font-family: var(--font-themed-body), Georgia, serif;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   line-height: 1;
@@ -1188,7 +1188,7 @@ textarea.classic-rose-input {
   display: block;
   margin-top: 0.8rem;
   color: var(--theme-accent);
-  font-size: 0.58rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.2em;
 }
@@ -1229,7 +1229,7 @@ textarea.classic-rose-input {
 
 .themed-portrait__fallback span {
   color: var(--theme-muted);
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1278,7 +1278,7 @@ textarea.classic-rose-input {
   background: color-mix(in srgb, var(--theme-surface), transparent 12%);
   padding: 0.65rem 1rem;
   color: var(--theme-muted);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 600;
 }
 
@@ -1444,7 +1444,7 @@ textarea.classic-rose-input {
 
 .themed-account span {
   color: var(--theme-muted);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -1489,7 +1489,7 @@ textarea.classic-rose-input {
   display: grid;
   gap: 0.35rem;
   color: var(--theme-muted);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1528,7 +1528,7 @@ textarea.classic-rose-input {
 
 .themed-form__status {
   color: var(--theme-muted);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   line-height: 1.4;
   text-align: center;
 }
@@ -1584,7 +1584,7 @@ textarea.classic-rose-input {
 .themed-closing small {
   display: block;
   color: var(--theme-muted);
-  font-size: 0.58rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   line-height: 1.45;
@@ -1675,7 +1675,7 @@ textarea.classic-rose-input {
 
 .modern-minimal-cover__kicker {
   margin-top: 1.35rem !important;
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.32em;
   line-height: 1;
@@ -1755,7 +1755,7 @@ textarea.classic-rose-input {
 
 .modern-minimal-cover__date span,
 .modern-minimal-cover__date small {
-  font-size: 0.69rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.26em;
   line-height: 1;
@@ -1785,7 +1785,7 @@ textarea.classic-rose-input {
   align-items: center;
   justify-content: center;
   padding-inline: 0.7rem;
-  font-size: 0.67rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.11em;
   line-height: 1.55;
@@ -1915,7 +1915,7 @@ textarea.classic-rose-input {
 
   .modern-minimal-cover__kicker {
     margin-top: 0.85rem !important;
-    font-size: 0.61rem;
+    font-size: 0.75rem;
   }
 
   .modern-minimal-cover__names {
@@ -1976,7 +1976,7 @@ textarea.classic-rose-input {
 
   .modern-minimal-cover__details > div {
     padding-inline: 0.45rem;
-    font-size: 0.61rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -2047,7 +2047,7 @@ textarea.classic-rose-input {
 
 .reference-cover__kicker {
   margin-top: 0.72rem !important;
-  font-size: 0.63rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.27em;
   line-height: 1;
@@ -2126,7 +2126,7 @@ textarea.classic-rose-input {
 
 .reference-cover__date span,
 .reference-cover__date small {
-  font-size: 0.67rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.19em;
   line-height: 1;
@@ -2147,7 +2147,7 @@ textarea.classic-rose-input {
   flex-direction: column;
   align-items: center;
   margin-top: 0.78rem;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.09em;
   line-height: 1.42;
@@ -2182,7 +2182,7 @@ textarea.classic-rose-input {
   box-shadow: 0 0.8rem 1.8rem rgb(0 0 0 / 10%);
   color: var(--theme-accent-contrast);
   font-family: var(--font-themed-body), Georgia, serif;
-  font-size: 0.69rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   line-height: 1;
@@ -2205,7 +2205,7 @@ textarea.classic-rose-input {
 .reference-cover__verse {
   max-width: 20rem;
   margin: 0.72rem 0 0;
-  font-size: 0.69rem;
+  font-size: 0.75rem;
   font-style: normal;
   font-weight: 500;
   letter-spacing: 0.025em;
@@ -2215,14 +2215,14 @@ textarea.classic-rose-input {
 .reference-cover__verse cite {
   display: block;
   margin-top: 0.24rem;
-  font-size: 0.67rem;
+  font-size: 0.75rem;
   font-style: normal;
 }
 
 .reference-cover__note {
   max-width: 19rem;
   margin-top: 0.65rem !important;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   line-height: 1.4;
 }
 
@@ -2235,7 +2235,7 @@ textarea.classic-rose-input {
 
 .reference-cover__confirmation > strong {
   display: block;
-  font-size: 0.69rem;
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -2243,7 +2243,7 @@ textarea.classic-rose-input {
 .reference-cover__confirmation > span {
   display: block;
   margin-top: 0.2rem;
-  font-size: 0.62rem;
+  font-size: 0.75rem;
 }
 
 .reference-cover__confirmation > div {
@@ -2259,7 +2259,7 @@ textarea.classic-rose-input {
   border-radius: 999px;
   padding: 0.35rem 0.65rem;
   font-family: inherit;
-  font-size: 0.63rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2348,7 +2348,7 @@ textarea.classic-rose-input {
 
 .reference-cover__countdown > p,
 .reference-cover__agenda > p {
-  font-size: 0.64rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -2385,7 +2385,7 @@ textarea.classic-rose-input {
 .reference-cover__countdown small,
 .reference-cover__agenda small {
   margin-top: 0.1rem;
-  font-size: 0.52rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -2399,7 +2399,7 @@ textarea.classic-rose-input {
 
 .reference-cover__agenda strong {
   max-width: 4rem;
-  font-size: 0.48rem;
+  font-size: 0.75rem;
   line-height: 1.2;
   text-transform: uppercase;
 }
@@ -2458,7 +2458,7 @@ textarea.classic-rose-input {
   display: block;
   margin-top: 0.12rem;
   color: #17364a;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   font-style: normal;
 }
 
@@ -2520,14 +2520,14 @@ textarea.classic-rose-input {
 .reference-cover__map > span {
   display: block;
   margin-top: 0.25rem;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
 }
 
 .reference-cover__thanks {
   display: flex;
   flex-direction: column;
   margin-top: 0.55rem !important;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
 }
 
 .reference-cover__thanks em {
@@ -2761,7 +2761,7 @@ textarea.classic-rose-input {
 
   .reference-cover__location,
   .reference-cover__confirmation > span {
-    font-size: 0.58rem;
+    font-size: 0.75rem;
   }
 }
 
