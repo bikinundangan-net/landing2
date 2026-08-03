@@ -7,7 +7,6 @@ import {
   Heart,
   MapPin,
 } from "lucide-react";
-import { formatRupiah } from "@/lib/admin/catalog";
 import type { InvitationTemplateProps } from "@/components/invitation/templates/shared";
 import {
   CountdownStrip,
@@ -49,7 +48,6 @@ function locationLines(value: string) {
 export function ClassicRose(props: InvitationTemplateProps) {
   const {
     invitation,
-    selectedPackage,
     renderMode,
     heroAsset,
     galleryAssets,
@@ -316,7 +314,6 @@ export function ClassicRose(props: InvitationTemplateProps) {
             <span />
           </div>
           <small>
-            {selectedPackage.name} · {formatRupiah(invitation.total_price)} ·
             Dibuat dengan BikinUndangan.net
           </small>
         </ClassicRoseReveal>

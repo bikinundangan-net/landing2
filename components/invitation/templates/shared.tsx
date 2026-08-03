@@ -9,7 +9,7 @@ import {
   Video,
 } from "lucide-react";
 import { submitGuestbook, submitRsvp } from "@/app/[slug]/actions";
-import { formatRupiah, getPackage, getTemplate } from "@/lib/admin/catalog";
+import { getPackage, getTemplate } from "@/lib/admin/catalog";
 import type { PublicInvitation } from "@/lib/admin/types";
 
 type Template = ReturnType<typeof getTemplate>;
@@ -474,11 +474,9 @@ export function RsvpGuestbookSection({
 
 export function ClosingCredit({
   invitation,
-  selectedPackage,
   className,
 }: {
   invitation: PublicInvitation;
-  selectedPackage: Package;
   className: string;
 }) {
   return (
@@ -487,7 +485,6 @@ export function ClosingCredit({
         {invitation.bride_name} & {invitation.groom_name}
       </p>
       <p className="mt-3 text-xs font-bold uppercase tracking-[0.16em] opacity-56">
-        {selectedPackage.name} · {formatRupiah(invitation.total_price)} ·
         Dibuat dengan BikinUndangan.net
       </p>
     </footer>

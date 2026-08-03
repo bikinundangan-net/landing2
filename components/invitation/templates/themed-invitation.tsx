@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import type { CSSProperties } from "react";
 import type { TemplateSlug } from "@/lib/admin/catalog";
-import { formatRupiah } from "@/lib/admin/catalog";
 import type { InvitationTemplateProps } from "@/components/invitation/templates/shared";
 import {
   CountdownStrip,
@@ -389,7 +388,6 @@ export function ThemedInvitation({
 }: InvitationTemplateProps & { config: ThemedInvitationConfig }) {
   const {
     invitation,
-    selectedPackage,
     renderMode,
     heroAsset,
     galleryAssets,
@@ -680,7 +678,6 @@ export function ThemedInvitation({
             <span />
           </div>
           <small>
-            {selectedPackage.name} · {formatRupiah(invitation.total_price)} ·
             Dibuat dengan BikinUndangan.net
           </small>
         </ThemedReveal>
