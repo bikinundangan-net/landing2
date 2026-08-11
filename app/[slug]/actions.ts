@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { appendSheetRow } from "@/lib/google-sheets";
 import { createClient } from "@/lib/supabase/server";
 
 export async function submitRsvp(formData: FormData) {
@@ -21,13 +22,24 @@ export async function submitRsvp(formData: FormData) {
     return;
   }
 
+  const clampedGuestCount = Math.min(Math.max(guestCount, 1), 10);
+
   await supabase.from("rsvps").insert({
     order_id: orderId,
     guest_name: guestName,
     attendance,
-    guest_count: Math.min(Math.max(guestCount, 1), 10),
+    guest_count: clampedGuestCount,
     message: message || null,
   });
+
+  await appendSheetRow("RSVP", [
+    new Date().toISOString(),
+    slug,
+    guestName,
+    attendance,
+    clampedGuestCount,
+    message,
+  ]);
 
   revalidatePath(`/${slug}`);
 }
@@ -53,6 +65,13 @@ export async function submitGuestbook(formData: FormData) {
     guest_name: guestName,
     message,
   });
+
+  await appendSheetRow("Ucapan", [
+    new Date().toISOString(),
+    slug,
+    guestName,
+    message,
+  ]);
 
   revalidatePath(`/${slug}`);
 }

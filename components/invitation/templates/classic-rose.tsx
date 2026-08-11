@@ -7,6 +7,7 @@ import {
   Heart,
   MapPin,
 } from "lucide-react";
+import { Suspense } from "react";
 import type { InvitationTemplateProps } from "@/components/invitation/templates/shared";
 import {
   CountdownStrip,
@@ -21,6 +22,7 @@ import {
   ClassicRoseGiftCopy,
   ClassicRoseReveal,
 } from "@/components/invitation/templates/classic-rose-client";
+import { siteUrl } from "@/lib/site";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-classic-rose",
@@ -82,7 +84,9 @@ export function ClassicRose(props: InvitationTemplateProps) {
     <main
       className={`${cormorant.variable} classic-rose-shell mx-auto min-h-screen max-w-[30rem] overflow-hidden bg-[#fff8f3] text-[#4b2023] shadow-[0_0_80px_rgba(0,0,0,0.22)]`}
     >
-      <ClassicRoseCover copy={coverCopy} />
+      <Suspense fallback={null}>
+        <ClassicRoseCover copy={coverCopy} />
+      </Suspense>
 
       <div
         id="invitation-content"
@@ -282,6 +286,9 @@ export function ClassicRose(props: InvitationTemplateProps) {
                 inputClassName="classic-rose-input"
                 buttonClassName="classic-rose-primary-button"
                 iconClassName="classic-rose-form-icon"
+                commentsClassName="classic-rose-comments"
+                commentListClassName="classic-rose-comments__list"
+                commentItemClassName="classic-rose-comments__item"
                 showGiftAccount={false}
               />
             )}
@@ -314,7 +321,10 @@ export function ClassicRose(props: InvitationTemplateProps) {
             <span />
           </div>
           <small>
-            Dibuat dengan BikinUndangan.net
+            Dibuat dengan{" "}
+            <a href={siteUrl} target="_blank" rel="noopener noreferrer">
+              BikinUndangan.net
+            </a>
           </small>
         </ClassicRoseReveal>
       </footer>

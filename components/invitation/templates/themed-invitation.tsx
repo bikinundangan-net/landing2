@@ -9,7 +9,7 @@ import {
   Music2,
   Quote,
 } from "lucide-react";
-import type { CSSProperties } from "react";
+import { Suspense, type CSSProperties } from "react";
 import type { TemplateSlug } from "@/lib/admin/catalog";
 import type { InvitationTemplateProps } from "@/components/invitation/templates/shared";
 import {
@@ -26,6 +26,7 @@ import {
   ThemedReveal,
 } from "@/components/invitation/templates/themed-invitation-client";
 import { ReferenceThemedCover } from "@/components/invitation/templates/reference-covers-client";
+import { siteUrl } from "@/lib/site";
 
 const playfair = Playfair_Display({
   variable: "--font-themed-display",
@@ -443,39 +444,41 @@ export function ThemedInvitation({
       style={themeStyle}
       className={`${playfair.variable} ${cormorant.variable} themed-invitation themed-invitation--${config.variant} mx-auto min-h-screen max-w-[30rem] overflow-hidden shadow-[0_0_80px_rgba(0,0,0,0.22)]`}
     >
-      {config.variant === "modern" ? (
-        <ModernMinimalCover
-          copy={{
-            ...coverCopy,
-            verse: config.verse,
-            verseSource: config.verseSource,
-            receptionLabel: (receptionEvent?.title ?? "Resepsi").toUpperCase(),
-            receptionTime: isDemo
-              ? (config.demo.receptionTime ?? config.demo.time)
-              : receptionEvent?.event_time
-                ? `${clockStyle(receptionEvent.event_time)} WIB`
-                : "Waktu menyusul",
-          }}
-        />
-      ) : (
-        <ReferenceThemedCover
-          copy={{
-            ...coverCopy,
-            verse: config.verse,
-            verseSource: config.verseSource,
-            countdown:
-              isDemo && config.demo.countdown
-                ? config.demo.countdown
-                : display.countdown,
-            events: coverEvents,
-            galleryImages,
-            confirmationDate:
-              isDemo && config.demo.confirmationDate
-                ? config.demo.confirmationDate
-                : display.eventDate,
-          }}
-        />
-      )}
+      <Suspense fallback={null}>
+        {config.variant === "modern" ? (
+          <ModernMinimalCover
+            copy={{
+              ...coverCopy,
+              verse: config.verse,
+              verseSource: config.verseSource,
+              receptionLabel: (receptionEvent?.title ?? "Resepsi").toUpperCase(),
+              receptionTime: isDemo
+                ? (config.demo.receptionTime ?? config.demo.time)
+                : receptionEvent?.event_time
+                  ? `${clockStyle(receptionEvent.event_time)} WIB`
+                  : "Waktu menyusul",
+            }}
+          />
+        ) : (
+          <ReferenceThemedCover
+            copy={{
+              ...coverCopy,
+              verse: config.verse,
+              verseSource: config.verseSource,
+              countdown:
+                isDemo && config.demo.countdown
+                  ? config.demo.countdown
+                  : display.countdown,
+              events: coverEvents,
+              galleryImages,
+              confirmationDate:
+                isDemo && config.demo.confirmationDate
+                  ? config.demo.confirmationDate
+                  : display.eventDate,
+            }}
+          />
+        )}
+      </Suspense>
 
       <div id="invitation-content" className="themed-paper">
         <section className="themed-section themed-welcome">
@@ -654,6 +657,9 @@ export function ThemedInvitation({
                 inputClassName="themed-input"
                 buttonClassName="themed-button"
                 iconClassName="themed-form-icon"
+                commentsClassName="themed-comments"
+                commentListClassName="themed-comments__list"
+                commentItemClassName="themed-comments__item"
                 showGiftAccount={false}
               />
             )}
@@ -678,7 +684,10 @@ export function ThemedInvitation({
             <span />
           </div>
           <small>
-            Dibuat dengan BikinUndangan.net
+            Dibuat dengan{" "}
+            <a href={siteUrl} target="_blank" rel="noopener noreferrer">
+              BikinUndangan.net
+            </a>
           </small>
         </ThemedReveal>
       </footer>

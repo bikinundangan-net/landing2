@@ -11,6 +11,7 @@ import {
 import { submitGuestbook, submitRsvp } from "@/app/[slug]/actions";
 import { getPackage, getTemplate } from "@/lib/admin/catalog";
 import type { PublicInvitation } from "@/lib/admin/types";
+import { siteUrl } from "@/lib/site";
 
 type Template = ReturnType<typeof getTemplate>;
 type Package = ReturnType<typeof getPackage>;
@@ -152,9 +153,13 @@ export function buildTemplateContext(
 ): InvitationTemplateProps {
   const firstEvent = invitation.order_events[0] ?? null;
   const heroAsset = assetByType(invitation, "hero") ?? null;
-  const galleryAssets = invitation.order_assets.filter(
+  const rawGalleryAssets = invitation.order_assets.filter(
     (asset) => asset.asset_type === "gallery" && isImageAsset(asset),
   );
+  const galleryAssets =
+    rawGalleryAssets.length % 2 === 1 && heroAsset
+      ? [...rawGalleryAssets, heroAsset]
+      : rawGalleryAssets;
   const videoAsset = invitation.order_assets.find(isVideoAsset) ?? null;
   const musicAsset = invitation.order_assets.find(isAudioAsset) ?? null;
 
@@ -376,6 +381,27 @@ export function MusicPanel({
   );
 }
 
+function formatRelativeTime(iso: string) {
+  const then = new Date(iso).getTime();
+  const now = Date.now();
+  const diffMinutes = Math.max(0, Math.round((now - then) / 60000));
+
+  if (diffMinutes < 1) return "Baru saja";
+  if (diffMinutes < 60) return `${diffMinutes} menit lalu`;
+
+  const diffHours = Math.round(diffMinutes / 60);
+  if (diffHours < 24) return `${diffHours} jam lalu`;
+
+  const diffDays = Math.round(diffHours / 24);
+  if (diffDays < 30) return `${diffDays} hari lalu`;
+
+  const diffMonths = Math.round(diffDays / 30);
+  if (diffMonths < 12) return `${diffMonths} bulan lalu`;
+
+  const diffYears = Math.round(diffMonths / 12);
+  return `${diffYears} tahun lalu`;
+}
+
 export function RsvpGuestbookSection({
   invitation,
   sectionClassName,
@@ -383,6 +409,9 @@ export function RsvpGuestbookSection({
   inputClassName,
   buttonClassName,
   iconClassName,
+  commentsClassName,
+  commentListClassName,
+  commentItemClassName,
   showGiftAccount = true,
 }: {
   invitation: PublicInvitation;
@@ -391,8 +420,13 @@ export function RsvpGuestbookSection({
   inputClassName: string;
   buttonClassName: string;
   iconClassName: string;
+  commentsClassName: string;
+  commentListClassName: string;
+  commentItemClassName: string;
   showGiftAccount?: boolean;
 }) {
+  const entries = invitation.guestbook_entries ?? [];
+
   return (
     <section className={sectionClassName}>
       <form action={submitRsvp} className={panelClassName}>
@@ -456,18 +490,33 @@ export function RsvpGuestbookSection({
           />
           <button className={buttonClassName}>Kirim Ucapan</button>
         </div>
+      </form>
 
-        {invitation.guestbook_entries?.length ? (
-          <div className="mt-6 space-y-3">
-            {invitation.guestbook_entries.slice(0, 3).map((entry) => (
-              <div key={`${entry.guest_name}-${entry.created_at}`} className="rounded-2xl bg-current/5 p-4">
+      <div className={commentsClassName}>
+        <h2 className="font-serif text-2xl font-bold">
+          Ucapan &amp; Doa{entries.length ? ` (${entries.length})` : ""}
+        </h2>
+        {entries.length ? (
+          <div className={commentListClassName}>
+            {entries.map((entry) => (
+              <div
+                key={`${entry.guest_name}-${entry.created_at}`}
+                className={commentItemClassName}
+              >
                 <p className="font-black">{entry.guest_name}</p>
                 <p className="mt-1 text-sm leading-6 opacity-70">{entry.message}</p>
+                <p className="mt-2 text-xs opacity-50">
+                  {formatRelativeTime(entry.created_at)}
+                </p>
               </div>
             ))}
           </div>
-        ) : null}
-      </form>
+        ) : (
+          <p className="mt-3 text-sm opacity-60">
+            Jadilah yang pertama mengirim ucapan.
+          </p>
+        )}
+      </div>
     </section>
   );
 }
@@ -485,7 +534,10 @@ export function ClosingCredit({
         {invitation.bride_name} & {invitation.groom_name}
       </p>
       <p className="mt-3 text-xs font-bold uppercase tracking-[0.16em] opacity-56">
-        Dibuat dengan BikinUndangan.net
+        Dibuat dengan{" "}
+        <a href={siteUrl} target="_blank" rel="noopener noreferrer">
+          BikinUndangan.net
+        </a>
       </p>
     </footer>
   );

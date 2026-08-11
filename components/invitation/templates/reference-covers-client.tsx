@@ -16,6 +16,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import { useSearchParams } from "next/navigation";
 import { type ReactNode, useRef, useState } from "react";
 import type { ThemedCoverCopy } from "@/components/invitation/templates/themed-invitation-client";
 
@@ -101,6 +102,17 @@ function Monogram({ copy }: { copy: ReferenceCoverCopy }) {
   );
 }
 
+function GuestName() {
+  const searchParams = useSearchParams();
+  const guestName = searchParams.get("to")?.trim();
+
+  return (
+    <p className="reference-cover__kepada">
+      Kepada: <strong>{guestName || "Tamu Undangan"}</strong>
+    </p>
+  );
+}
+
 function Names({ copy }: { copy: ReferenceCoverCopy }) {
   return (
     <h1 className="reference-cover__names">
@@ -136,6 +148,7 @@ function GardenCover({
       <CoverItem><Monogram copy={copy} /></CoverItem>
       <CoverItem><p className="reference-cover__kicker">The Wedding of</p></CoverItem>
       <CoverItem><Names copy={copy} /></CoverItem>
+      <CoverItem><GuestName /></CoverItem>
       <CoverItem className="reference-cover__leaf-rule">
         <span />
         <b>❧</b>
@@ -187,6 +200,7 @@ function PastelCover({
       <CoverItem><Monogram copy={copy} /></CoverItem>
       <CoverItem><p className="reference-cover__kicker">The Wedding of</p></CoverItem>
       <CoverItem><Names copy={copy} /></CoverItem>
+      <CoverItem><GuestName /></CoverItem>
       <CoverItem className="reference-cover__heart-rule">
         <span /><Heart /><span />
       </CoverItem>
@@ -292,6 +306,7 @@ function OrnateCover({
       <CoverItem><Monogram copy={copy} /></CoverItem>
       <CoverItem><p className="reference-cover__kicker">The Wedding of</p></CoverItem>
       <CoverItem><Names copy={copy} /></CoverItem>
+      <CoverItem><GuestName /></CoverItem>
       <CoverItem><OrnateRule /></CoverItem>
       <CoverItem>
         <blockquote className="reference-cover__verse">
@@ -343,6 +358,7 @@ function IslamicCover({
       </CoverItem>
       <CoverItem><p className="reference-cover__kicker">The Wedding of</p></CoverItem>
       <CoverItem><Names copy={copy} /></CoverItem>
+      <CoverItem><GuestName /></CoverItem>
       <CoverItem><OrnateRule /></CoverItem>
       <CoverItem><p className="reference-cover__note">Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara pernikahan kami.</p></CoverItem>
       <CoverItem>
@@ -393,6 +409,7 @@ function RusticCover({
       <CoverItem><Monogram copy={copy} /></CoverItem>
       <CoverItem><p className="reference-cover__kicker">The Wedding of</p></CoverItem>
       <CoverItem><Names copy={copy} /></CoverItem>
+      <CoverItem><GuestName /></CoverItem>
       <CoverItem className="reference-cover__leaf-rule"><b>❧</b></CoverItem>
       <CoverItem><p className="reference-cover__note">Dengan penuh cinta, kami mengundang Anda untuk merayakan hari istimewa kami.</p></CoverItem>
       <CoverItem>

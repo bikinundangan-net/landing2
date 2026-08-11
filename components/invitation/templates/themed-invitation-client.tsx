@@ -16,10 +16,13 @@ import {
   Heart,
   MapPin,
   Send,
+  X,
 } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 import {
   type FormEvent,
   type ReactNode,
+  useEffect,
   useRef,
   useState,
 } from "react";
@@ -53,6 +56,8 @@ export function ModernMinimalCover({
   const coverRef = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
   const [isOpening, setIsOpening] = useState(false);
+  const searchParams = useSearchParams();
+  const guestName = searchParams.get("to")?.trim();
   const { scrollYProgress } = useScroll({
     target: coverRef,
     offset: ["start start", "end start"],
@@ -104,137 +109,154 @@ export function ModernMinimalCover({
           },
         }}
       >
-        <motion.div
-          className="modern-minimal-cover__monogram"
-          variants={{
-            hidden: { opacity: 0, y: 12 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-          }}
-          aria-label={`Monogram ${copy.monogram}`}
-        >
-          <span>{copy.monogram.slice(0, 1)}</span>
-          <span>{copy.monogram.slice(-1)}</span>
-        </motion.div>
+        <div className="modern-minimal-cover__identity">
+          <motion.div
+            className="modern-minimal-cover__monogram"
+            variants={{
+              hidden: { opacity: 0, y: 12 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+            }}
+            aria-label={`Monogram ${copy.monogram}`}
+          >
+            <span>{copy.monogram.slice(0, 1)}</span>
+            <span>{copy.monogram.slice(-1)}</span>
+          </motion.div>
 
-        <motion.p
-          className="modern-minimal-cover__kicker"
-          variants={{
-            hidden: { opacity: 0, y: 12 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-          }}
-        >
-          {copy.kicker}
-        </motion.p>
+          <motion.p
+            className="modern-minimal-cover__kicker"
+            variants={{
+              hidden: { opacity: 0, y: 12 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+            }}
+          >
+            {copy.kicker}
+          </motion.p>
 
-        <motion.h1
-          className="modern-minimal-cover__names"
-          variants={{
-            hidden: { opacity: 0, y: 14 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.58 } },
-          }}
-        >
-          <span>{copy.brideName}</span>
-          <em>&amp;</em>
-          <span>{copy.groomName}</span>
-        </motion.h1>
+          <motion.h1
+            className="modern-minimal-cover__names"
+            variants={{
+              hidden: { opacity: 0, y: 14 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.58 } },
+            }}
+          >
+            <span>{copy.brideName}</span>
+            <em>&amp;</em>
+            <span>{copy.groomName}</span>
+          </motion.h1>
 
-        <motion.div
-          className="modern-minimal-rule"
-          variants={{
-            hidden: { opacity: 0, scaleX: 0.7 },
-            visible: { opacity: 1, scaleX: 1, transition: { duration: 0.52 } },
-          }}
-          aria-hidden="true"
-        >
-          <span />
-          <i />
-          <span />
-        </motion.div>
+          <motion.div
+            className="modern-minimal-rule"
+            variants={{
+              hidden: { opacity: 0, scaleX: 0.7 },
+              visible: { opacity: 1, scaleX: 1, transition: { duration: 0.52 } },
+            }}
+            aria-hidden="true"
+          >
+            <span />
+            <i />
+            <span />
+          </motion.div>
+        </div>
 
-        <motion.blockquote
-          className="modern-minimal-cover__verse"
-          variants={{
-            hidden: { opacity: 0, y: 12 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-          }}
-        >
-          <p>{copy.verse}</p>
-          <cite>{copy.verseSource}</cite>
-        </motion.blockquote>
+        <div className="modern-minimal-cover__schedule">
+          <motion.blockquote
+            className="modern-minimal-cover__verse"
+            variants={{
+              hidden: { opacity: 0, y: 12 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+            }}
+          >
+            <p>{copy.verse}</p>
+            <cite>{copy.verseSource}</cite>
+          </motion.blockquote>
 
-        <motion.div
-          className="modern-minimal-cover__date"
-          variants={{
-            hidden: { opacity: 0, y: 12 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-          }}
-        >
-          <span>{copy.eventDay}</span>
-          <strong>{copy.eventDate.replaceAll(".", " . ")}</strong>
-          <small>{copy.eventTime}</small>
-        </motion.div>
+          <motion.div
+            className="modern-minimal-cover__date"
+            variants={{
+              hidden: { opacity: 0, y: 12 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+            }}
+          >
+            <span>{copy.eventDay}</span>
+            <strong>{copy.eventDate.replaceAll(".", " . ")}</strong>
+            <small>{copy.eventTime}</small>
+          </motion.div>
 
-        <motion.div
-          className="modern-minimal-cover__details"
-          variants={{
-            hidden: { opacity: 0, y: 12 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-          }}
-        >
-          <div className="modern-minimal-cover__venue">
-            <MapPin aria-hidden="true" />
-            {copy.locationLines.map((line, index) =>
-              index === 0 ? <strong key={line}>{line}</strong> : <span key={line}>{line}</span>,
-            )}
-          </div>
-          <div className="modern-minimal-cover__reception">
-            <strong>{copy.receptionLabel}</strong>
-            <span>{copy.receptionTime}</span>
-          </div>
-        </motion.div>
+          <motion.div
+            className="modern-minimal-cover__details"
+            variants={{
+              hidden: { opacity: 0, y: 12 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+            }}
+          >
+            <div className="modern-minimal-cover__venue">
+              <MapPin aria-hidden="true" />
+              {copy.locationLines.map((line, index) =>
+                index === 0 ? <strong key={line}>{line}</strong> : <span key={line}>{line}</span>,
+              )}
+            </div>
+            <div className="modern-minimal-cover__reception">
+              <strong>{copy.receptionLabel}</strong>
+              <span>{copy.receptionTime}</span>
+            </div>
+          </motion.div>
+        </div>
 
-        <motion.div
-          className="modern-minimal-rule modern-minimal-rule--lower"
-          variants={{
-            hidden: { opacity: 0, scaleX: 0.7 },
-            visible: { opacity: 1, scaleX: 1, transition: { duration: 0.52 } },
-          }}
-          aria-hidden="true"
-        >
-          <span />
-          <i />
-          <span />
-        </motion.div>
+        <div className="modern-minimal-cover__invitation">
+          <motion.div
+            className="modern-minimal-rule modern-minimal-rule--lower"
+            variants={{
+              hidden: { opacity: 0, scaleX: 0.7 },
+              visible: { opacity: 1, scaleX: 1, transition: { duration: 0.52 } },
+            }}
+            aria-hidden="true"
+          >
+            <span />
+            <i />
+            <span />
+          </motion.div>
 
-        <motion.button
-          type="button"
-          className="modern-minimal-cover__button"
-          onClick={openInvitation}
-          disabled={isOpening}
-          variants={{
-            hidden: { opacity: 0, y: 12 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-          }}
-          whileHover={reduceMotion ? undefined : { y: -2 }}
-          whileTap={reduceMotion ? undefined : { scale: 0.985 }}
-        >
-          <span>{isOpening ? "Membuka..." : "Buka Undangan"}</span>
-          <i aria-hidden="true">
-            <b />
-            <b />
-          </i>
-        </motion.button>
+          <motion.p
+            className="modern-minimal-cover__recipient"
+            variants={{
+              hidden: { opacity: 0, y: 12 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+            }}
+          >
+            <span>Kepada Yth.</span>
+            <strong>{guestName || "Tamu Undangan"}</strong>
+          </motion.p>
 
-        <motion.div
-          className="modern-minimal-cover__heart"
-          variants={{
-            hidden: { opacity: 0, y: 8 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-          }}
-          aria-hidden="true"
-        >
-          <Heart />
-        </motion.div>
+          <motion.button
+            type="button"
+            className="modern-minimal-cover__button"
+            onClick={openInvitation}
+            disabled={isOpening}
+            variants={{
+              hidden: { opacity: 0, y: 12 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+            }}
+            whileHover={reduceMotion ? undefined : { y: -2 }}
+            whileTap={reduceMotion ? undefined : { scale: 0.985 }}
+          >
+            <span>{isOpening ? "Membuka..." : "Buka Undangan"}</span>
+            <i aria-hidden="true">
+              <b />
+              <b />
+            </i>
+          </motion.button>
+
+          <motion.div
+            className="modern-minimal-cover__heart"
+            variants={{
+              hidden: { opacity: 0, y: 8 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+            }}
+            aria-hidden="true"
+          >
+            <Heart />
+          </motion.div>
+        </div>
       </motion.div>
     </motion.section>
   );
@@ -388,32 +410,117 @@ type GalleryImage = {
 
 export function ThemedGallery({ images }: { images: GalleryImage[] }) {
   const reduceMotion = useReducedMotion();
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   if (images.length === 0) {
     return null;
   }
 
-  const activeImage = images[activeIndex];
+  const shown = images.slice(0, 8);
 
   return (
-    <div className="themed-gallery">
-      <div className="themed-gallery__stage">
+    <>
+      <div className="themed-gallery-grid">
+        {shown.map((image, index) => (
+          <button
+            type="button"
+            key={`${image.src}-${index}`}
+            className="themed-gallery-grid__item"
+            onClick={() => setLightboxIndex(index)}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              sizes="(min-width: 1024px) 200px, 46vw"
+              className="object-cover"
+            />
+          </button>
+        ))}
+      </div>
+
+      <AnimatePresence>
+        {lightboxIndex !== null ? (
+          <ThemedLightbox
+            images={shown}
+            index={lightboxIndex}
+            onClose={() => setLightboxIndex(null)}
+            onIndexChange={setLightboxIndex}
+            reduceMotion={!!reduceMotion}
+          />
+        ) : null}
+      </AnimatePresence>
+    </>
+  );
+}
+
+function ThemedLightbox({
+  images,
+  index,
+  onClose,
+  onIndexChange,
+  reduceMotion,
+}: {
+  images: GalleryImage[];
+  index: number;
+  onClose: () => void;
+  onIndexChange: (index: number) => void;
+  reduceMotion: boolean;
+}) {
+  const activeImage = images[index];
+
+  useEffect(() => {
+    function handleKeydown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        onClose();
+      } else if (event.key === "ArrowLeft") {
+        onIndexChange((index - 1 + images.length) % images.length);
+      } else if (event.key === "ArrowRight") {
+        onIndexChange((index + 1) % images.length);
+      }
+    }
+
+    window.addEventListener("keydown", handleKeydown);
+    return () => window.removeEventListener("keydown", handleKeydown);
+  }, [index, images.length, onClose, onIndexChange]);
+
+  return (
+    <motion.div
+      className="themed-lightbox"
+      onClick={onClose}
+      initial={reduceMotion ? false : { opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={reduceMotion ? undefined : { opacity: 0 }}
+      transition={{ duration: 0.2 }}
+    >
+      <button
+        type="button"
+        className="themed-lightbox__close"
+        onClick={onClose}
+        aria-label="Tutup galeri"
+      >
+        <X className="size-5" aria-hidden="true" />
+      </button>
+
+      <div
+        className="themed-lightbox__stage"
+        onClick={(event) => event.stopPropagation()}
+      >
         <AnimatePresence initial={false} mode="wait">
           <motion.div
-            key={activeImage.src}
+            key={`${activeImage.src}-${index}`}
             className="absolute inset-0"
             initial={reduceMotion ? false : { opacity: 0, scale: 1.025 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={reduceMotion ? undefined : { opacity: 0, scale: 0.985 }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
           >
             <Image
               src={activeImage.src}
               alt={activeImage.alt}
               fill
-              sizes="(min-width: 1024px) 410px, 88vw"
-              className="object-cover"
+              sizes="92vw"
+              className="object-contain"
             />
           </motion.div>
         </AnimatePresence>
@@ -422,22 +529,22 @@ export function ThemedGallery({ images }: { images: GalleryImage[] }) {
           <>
             <button
               type="button"
-              className="themed-gallery__arrow themed-gallery__arrow--left"
-              onClick={() =>
-                setActiveIndex(
-                  (current) => (current - 1 + images.length) % images.length,
-                )
-              }
+              className="themed-lightbox__arrow themed-lightbox__arrow--left"
+              onClick={(event) => {
+                event.stopPropagation();
+                onIndexChange((index - 1 + images.length) % images.length);
+              }}
               aria-label="Foto sebelumnya"
             >
               <ChevronLeft className="size-5" aria-hidden="true" />
             </button>
             <button
               type="button"
-              className="themed-gallery__arrow themed-gallery__arrow--right"
-              onClick={() =>
-                setActiveIndex((current) => (current + 1) % images.length)
-              }
+              className="themed-lightbox__arrow themed-lightbox__arrow--right"
+              onClick={(event) => {
+                event.stopPropagation();
+                onIndexChange((index + 1) % images.length);
+              }}
               aria-label="Foto berikutnya"
             >
               <ChevronRight className="size-5" aria-hidden="true" />
@@ -445,28 +552,7 @@ export function ThemedGallery({ images }: { images: GalleryImage[] }) {
           </>
         ) : null}
       </div>
-
-      {images.length > 1 ? (
-        <div className="themed-gallery__thumbs" aria-label="Pilih foto">
-          {images.map((image, index) => (
-            <button
-              type="button"
-              key={image.src}
-              onClick={() => setActiveIndex(index)}
-              aria-current={index === activeIndex ? "true" : undefined}
-            >
-              <Image
-                src={image.src}
-                alt=""
-                fill
-                sizes="72px"
-                className="object-cover"
-              />
-            </button>
-          ))}
-        </div>
-      ) : null}
-    </div>
+    </motion.div>
   );
 }
 
@@ -571,6 +657,44 @@ export function ThemedDemoForms() {
             : "Pesan tidak akan tersimpan pada mode demo."}
         </p>
       </form>
+
+      <div className="themed-comments">
+        <h2 className="font-serif text-2xl font-bold">
+          Ucapan &amp; Doa ({demoComments.length})
+        </h2>
+        <div className="themed-comments__list">
+          {demoComments.map((entry) => (
+            <div key={entry.guest_name} className="themed-comments__item">
+              <p className="font-black">{entry.guest_name}</p>
+              <p className="mt-1 text-sm leading-6 opacity-70">{entry.message}</p>
+              <p className="mt-2 text-xs opacity-50">{entry.time}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
+
+const demoComments = [
+  {
+    guest_name: "Sarah & Budi",
+    message: "Selamat menempuh hidup baru. Semoga selalu bahagia dan langgeng sampai kakek nenek!",
+    time: "2 hari lalu",
+  },
+  {
+    guest_name: "Mia Anggraini",
+    message: "Barakallahu laka, lancar sampai hari H ya. Happy for you both!",
+    time: "3 hari lalu",
+  },
+  {
+    guest_name: "Dimas & Keluarga",
+    message: "Selamat berbahagia. Semoga menjadi keluarga yang sakinah, mawaddah, warahmah.",
+    time: "5 hari lalu",
+  },
+  {
+    guest_name: "Tante Rina",
+    message: "Congratulations! Doain sehat-sehat terus dan cepat dikasih momongan ya.",
+    time: "1 minggu lalu",
+  },
+];

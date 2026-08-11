@@ -16,10 +16,13 @@ import {
   Heart,
   MapPin,
   Send,
+  X,
 } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 import {
   type FormEvent,
   type ReactNode,
+  useEffect,
   useRef,
   useState,
 } from "react";
@@ -38,6 +41,8 @@ export function ClassicRoseCover({ copy }: { copy: ClassicRoseCoverCopy }) {
   const coverRef = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
   const [isOpening, setIsOpening] = useState(false);
+  const searchParams = useSearchParams();
+  const guestName = searchParams.get("to")?.trim();
   const { scrollYProgress } = useScroll({
     target: coverRef,
     offset: ["start start", "end start"],
@@ -121,6 +126,9 @@ export function ClassicRoseCover({ copy }: { copy: ClassicRoseCoverCopy }) {
             <em>&amp;</em>
             <span>{copy.brideName}</span>
           </h1>,
+          <p className="classic-rose-cover__kepada" key="kepada">
+            Kepada: <strong>{guestName || "Tamu Undangan"}</strong>
+          </p>,
           <div className="classic-rose-rule" key="rule" aria-hidden="true">
             <span />
             <Heart className="size-3 fill-current" />
@@ -209,57 +217,141 @@ type GalleryImage = {
 
 export function ClassicRoseGallery({ images }: { images: GalleryImage[] }) {
   const reduceMotion = useReducedMotion();
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   if (images.length === 0) {
     return null;
   }
 
-  const activeImage = images[activeIndex];
-
-  function showPrevious() {
-    setActiveIndex((current) => (current - 1 + images.length) % images.length);
-  }
-
-  function showNext() {
-    setActiveIndex((current) => (current + 1) % images.length);
-  }
+  const shown = images.slice(0, 8);
 
   return (
-    <div className="classic-rose-gallery">
-      <div className="classic-rose-gallery__stage">
-        <AnimatePresence mode="wait" initial={false}>
+    <>
+      <div className="classic-rose-gallery-grid">
+        {shown.map((image, index) => (
+          <button
+            type="button"
+            key={`${image.src}-${index}`}
+            className="classic-rose-gallery-grid__item"
+            onClick={() => setLightboxIndex(index)}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              sizes="(min-width: 1024px) 210px, 46vw"
+              className="object-cover"
+            />
+          </button>
+        ))}
+      </div>
+
+      <AnimatePresence>
+        {lightboxIndex !== null ? (
+          <ClassicRoseLightbox
+            images={shown}
+            index={lightboxIndex}
+            onClose={() => setLightboxIndex(null)}
+            onIndexChange={setLightboxIndex}
+            reduceMotion={!!reduceMotion}
+          />
+        ) : null}
+      </AnimatePresence>
+    </>
+  );
+}
+
+function ClassicRoseLightbox({
+  images,
+  index,
+  onClose,
+  onIndexChange,
+  reduceMotion,
+}: {
+  images: GalleryImage[];
+  index: number;
+  onClose: () => void;
+  onIndexChange: (index: number) => void;
+  reduceMotion: boolean;
+}) {
+  const activeImage = images[index];
+
+  useEffect(() => {
+    function handleKeydown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        onClose();
+      } else if (event.key === "ArrowLeft") {
+        onIndexChange((index - 1 + images.length) % images.length);
+      } else if (event.key === "ArrowRight") {
+        onIndexChange((index + 1) % images.length);
+      }
+    }
+
+    window.addEventListener("keydown", handleKeydown);
+    return () => window.removeEventListener("keydown", handleKeydown);
+  }, [index, images.length, onClose, onIndexChange]);
+
+  return (
+    <motion.div
+      className="classic-rose-lightbox"
+      onClick={onClose}
+      initial={reduceMotion ? false : { opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={reduceMotion ? undefined : { opacity: 0 }}
+      transition={{ duration: 0.2 }}
+    >
+      <button
+        type="button"
+        className="classic-rose-lightbox__close"
+        onClick={onClose}
+        aria-label="Tutup galeri"
+      >
+        <X className="size-5" aria-hidden="true" />
+      </button>
+
+      <div
+        className="classic-rose-lightbox__stage"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <AnimatePresence initial={false} mode="wait">
           <motion.div
-            key={activeImage.src}
-            initial={reduceMotion ? false : { opacity: 1, scale: 1.025 }}
+            key={`${activeImage.src}-${index}`}
+            className="absolute inset-0"
+            initial={reduceMotion ? false : { opacity: 0, scale: 1.025 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={reduceMotion ? undefined : { opacity: 0, scale: 0.985 }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
-            className="absolute inset-0"
+            transition={{ duration: 0.3, ease: "easeOut" }}
           >
             <Image
               src={activeImage.src}
               alt={activeImage.alt}
               fill
-              sizes="(min-width: 1024px) 430px, 92vw"
-              className="object-cover"
+              sizes="92vw"
+              className="object-contain"
             />
           </motion.div>
         </AnimatePresence>
+
         {images.length > 1 ? (
           <>
             <button
               type="button"
-              onClick={showPrevious}
-              className="classic-rose-gallery__arrow classic-rose-gallery__arrow--left"
+              className="classic-rose-lightbox__arrow classic-rose-lightbox__arrow--left"
+              onClick={(event) => {
+                event.stopPropagation();
+                onIndexChange((index - 1 + images.length) % images.length);
+              }}
               aria-label="Foto sebelumnya"
             >
               <ChevronLeft className="size-5" aria-hidden="true" />
             </button>
             <button
               type="button"
-              onClick={showNext}
-              className="classic-rose-gallery__arrow classic-rose-gallery__arrow--right"
+              className="classic-rose-lightbox__arrow classic-rose-lightbox__arrow--right"
+              onClick={(event) => {
+                event.stopPropagation();
+                onIndexChange((index + 1) % images.length);
+              }}
               aria-label="Foto berikutnya"
             >
               <ChevronRight className="size-5" aria-hidden="true" />
@@ -267,21 +359,7 @@ export function ClassicRoseGallery({ images }: { images: GalleryImage[] }) {
           </>
         ) : null}
       </div>
-
-      {images.length > 1 ? (
-        <div className="classic-rose-gallery__dots" aria-label="Pilih foto">
-          {images.map((image, index) => (
-            <button
-              type="button"
-              key={image.src}
-              onClick={() => setActiveIndex(index)}
-              aria-label={`Tampilkan foto ${index + 1}`}
-              aria-current={index === activeIndex ? "true" : undefined}
-            />
-          ))}
-        </div>
-      ) : null}
-    </div>
+    </motion.div>
   );
 }
 
@@ -390,6 +468,44 @@ export function ClassicRoseDemoForms() {
             : "Pesan tidak akan tersimpan pada mode demo."}
         </p>
       </form>
+
+      <div className="classic-rose-comments">
+        <h2 className="font-serif text-2xl font-bold">
+          Ucapan &amp; Doa ({demoComments.length})
+        </h2>
+        <div className="classic-rose-comments__list">
+          {demoComments.map((entry) => (
+            <div key={entry.guest_name} className="classic-rose-comments__item">
+              <p className="font-black">{entry.guest_name}</p>
+              <p className="mt-1 text-sm leading-6 opacity-70">{entry.message}</p>
+              <p className="mt-2 text-xs opacity-50">{entry.time}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
+
+const demoComments = [
+  {
+    guest_name: "Sarah & Budi",
+    message: "Selamat menempuh hidup baru. Semoga selalu bahagia dan langgeng sampai kakek nenek!",
+    time: "2 hari lalu",
+  },
+  {
+    guest_name: "Mia Anggraini",
+    message: "Barakallahu laka, lancar sampai hari H ya. Happy for you both!",
+    time: "3 hari lalu",
+  },
+  {
+    guest_name: "Dimas & Keluarga",
+    message: "Selamat berbahagia. Semoga menjadi keluarga yang sakinah, mawaddah, warahmah.",
+    time: "5 hari lalu",
+  },
+  {
+    guest_name: "Tante Rina",
+    message: "Congratulations! Doain sehat-sehat terus dan cepat dikasih momongan ya.",
+    time: "1 minggu lalu",
+  },
+];
