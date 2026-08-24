@@ -41,7 +41,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 function clockStyle(value: string) {
-  return value.replace(":", ".");
+  return value.slice(0, 5).replace(":", ".");
 }
 
 function splitLocation(value: string) {
