@@ -55,7 +55,7 @@ function splitLocation(value: string) {
 const loveStoryMoments = [
   {
     title: "Pertemuan yang tak direncanakan",
-    photo: "/images/invitations/modern-minimal/hamsyah-yuyun-foto1.jpg",
+    photo: "/images/invitations/modern-minimal/hamsyah-yuyun-foto1.webp",
     alt: "Momen pertama Hamsyah dan Yuyun",
     paragraphs: [
       "Berawal dari sebuah pertemuan yang tak pernah direncanakan.",
@@ -65,7 +65,7 @@ const loveStoryMoments = [
   },
   {
     title: "Restu dua keluarga",
-    photo: "/images/invitations/modern-minimal/hamsyah-yuyun-foto2.jpeg",
+    photo: "/images/invitations/modern-minimal/hamsyah-yuyun-foto2.webp",
     alt: "Kedua keluarga Hamsyah dan Yuyun",
     paragraphs: [
       "Bukan hanya kami yang semakin dekat, tetapi juga kedua keluarga. Kehangatan, doa, dan dukungan dari orang-orang yang kami sayangi membuat hubungan ini semakin yakin untuk melangkah ke tahap berikutnya.",
@@ -74,7 +74,7 @@ const loveStoryMoments = [
   },
   {
     title: "Babak baru",
-    photo: "/images/invitations/modern-minimal/hamsyah-yuyun-foto3.png",
+    photo: "/images/invitations/modern-minimal/hamsyah-yuyun-foto3.webp",
     alt: "Hamsyah dan Yuyun menuju hari bahagia",
     paragraphs: [
       "Dari sebuah pertemuan yang tak disengaja, tumbuh sebuah cinta yang kami pilih untuk dijaga selamanya.",

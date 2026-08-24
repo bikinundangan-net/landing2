@@ -625,14 +625,10 @@ export function GentleThemedReveal({
     <motion.div
       className={className}
       initial={
-        reduceMotion
-          ? false
-          : { opacity: 0, y: 32, scale: 0.992, filter: "blur(3px)" }
+        reduceMotion ? false : { opacity: 0, y: 32, scale: 0.992 }
       }
       whileInView={
-        reduceMotion
-          ? undefined
-          : { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }
+        reduceMotion ? undefined : { opacity: 1, y: 0, scale: 1 }
       }
       viewport={{ once: true, amount: 0.14 }}
       transition={{
@@ -1099,7 +1095,7 @@ export function BackgroundMusicPlayer({ src }: { src: string }) {
 
   return (
     <>
-      <audio ref={audioRef} src={src} loop preload="auto" />
+      <audio ref={audioRef} src={src} loop preload="none" />
       <button
         type="button"
         onClick={toggle}

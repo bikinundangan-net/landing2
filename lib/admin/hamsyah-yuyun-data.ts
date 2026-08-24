@@ -42,22 +42,22 @@ export const hamsyahYuyunInvitation: PublicInvitation = {
     {
       asset_type: "hero",
       file_name: "Foto utama Hamsyah & Yuyun",
-      public_url: "/images/invitations/modern-minimal/hamsyah-yuyun-foto1.jpg",
+      public_url: "/images/invitations/modern-minimal/hamsyah-yuyun-foto1.webp",
     },
     {
       asset_type: "gallery",
       file_name: "Momen 1",
-      public_url: "/images/invitations/modern-minimal/hamsyah-yuyun-foto1.jpg",
+      public_url: "/images/invitations/modern-minimal/hamsyah-yuyun-foto1.webp",
     },
     {
       asset_type: "gallery",
       file_name: "Momen 2",
-      public_url: "/images/invitations/modern-minimal/hamsyah-yuyun-foto2.jpeg",
+      public_url: "/images/invitations/modern-minimal/hamsyah-yuyun-foto2.webp",
     },
     {
       asset_type: "gallery",
       file_name: "Momen 3",
-      public_url: "/images/invitations/modern-minimal/hamsyah-yuyun-foto3.png",
+      public_url: "/images/invitations/modern-minimal/hamsyah-yuyun-foto3.webp",
     },
   ],
   guestbook_entries: [],
