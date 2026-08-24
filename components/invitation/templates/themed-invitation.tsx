@@ -42,7 +42,7 @@ const cormorant = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
 });
 
-type ThemedInvitationConfig = {
+export type ThemedInvitationConfig = {
   slug: Exclude<TemplateSlug, "classic-rose">;
   variant: string;
   coverBackground: string;
@@ -365,6 +365,41 @@ export const themedInvitationConfigs: Record<
       line: "#b79b5c",
     },
   },
+  "hamsyah-yuyun-edition": {
+    slug: "hamsyah-yuyun-edition",
+    variant: "modern",
+    coverBackground:
+      "/images/invitations/modern-minimal/cover-background.webp",
+    sectionBackground:
+      "/images/invitations/modern-minimal/cover-background.webp",
+    demo: {
+      monogram: "HY",
+      day: "MINGGU",
+      date: "25.10.2026",
+      longDate: "Minggu, 25 Oktober 2026",
+      time: "08.00 WIB",
+      locationLines: ["JOGLO NDALIJAN", "Jl. Kabupaten No. Km. 2.5", "Sleman, Yogyakarta"],
+      receptionTime: "10.30 - 12.30 WIB",
+    },
+    kicker: "The Wedding of",
+    welcomeEyebrow: "A quiet celebration",
+    welcomeTitle: "Dua cerita, satu masa depan.",
+    coverNote: "An intimate celebration of love and a lifetime together.",
+    verse:
+      "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri.",
+    verseSource: "QS. Ar-Rum : 21",
+    storyTitle: "A love shaped by quiet moments.",
+    closingLine: "With love, always.",
+    palette: {
+      bg: "#f8f5ef",
+      surface: "#fffdf9",
+      ink: "#171512",
+      muted: "#6f685e",
+      accent: "#171512",
+      accentContrast: "#ffffff",
+      line: "#c8bba8",
+    },
+  },
 };
 
 function compactDate(value: string) {
@@ -547,6 +582,7 @@ export function ThemedInvitation({
           <ThemedReveal delay={0.06}>
             <CountdownStrip
               items={display.countdown}
+              targetDate={display.countdownTarget}
               className="themed-countdown"
               itemClassName="themed-countdown__item"
             />

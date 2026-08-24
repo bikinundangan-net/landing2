@@ -9,6 +9,12 @@ import {
   Video,
 } from "lucide-react";
 import { submitGuestbook, submitRsvp } from "@/app/[slug]/actions";
+import {
+  buildCountdownTarget,
+  calculateCountdown,
+  type CountdownItem,
+} from "@/components/invitation/templates/countdown";
+import { LiveCountdownStrip } from "@/components/invitation/templates/countdown-strip";
 import { getPackage, getTemplate } from "@/lib/admin/catalog";
 import type { PublicInvitation } from "@/lib/admin/types";
 import { siteUrl } from "@/lib/site";
@@ -37,7 +43,8 @@ export type InvitationTemplateProps = {
     eventDateShort: string;
     eventTime: string;
     location: string;
-    countdown: Array<{ label: string; value: string }>;
+    countdown: CountdownItem[];
+    countdownTarget: string | null;
   };
 };
 
@@ -122,29 +129,6 @@ function getInitials(invitation: PublicInvitation) {
   }`.toUpperCase();
 }
 
-function buildCountdown(eventDate?: string) {
-  if (!eventDate) {
-    return [
-      { label: "Hari", value: "--" },
-      { label: "Jam", value: "--" },
-      { label: "Menit", value: "--" },
-      { label: "Detik", value: "--" },
-    ];
-  }
-
-  const target = new Date(`${eventDate}T00:00:00`);
-  const today = new Date();
-  const milliseconds = Math.max(target.getTime() - today.getTime(), 0);
-  const totalDays = Math.ceil(milliseconds / 86_400_000);
-
-  return [
-    { label: "Hari", value: String(totalDays).padStart(2, "0") },
-    { label: "Jam", value: "00" },
-    { label: "Menit", value: "00" },
-    { label: "Detik", value: "00" },
-  ];
-}
-
 export function buildTemplateContext(
   invitation: PublicInvitation,
   template: Template,
@@ -162,6 +146,10 @@ export function buildTemplateContext(
       : rawGalleryAssets;
   const videoAsset = invitation.order_assets.find(isVideoAsset) ?? null;
   const musicAsset = invitation.order_assets.find(isAudioAsset) ?? null;
+  const countdownTarget = buildCountdownTarget(
+    firstEvent?.event_date,
+    firstEvent?.event_time,
+  );
 
   return {
     invitation,
@@ -181,7 +169,8 @@ export function buildTemplateContext(
       eventDateShort: formatShortDate(firstEvent?.event_date),
       eventTime: formatTime(firstEvent?.event_time),
       location: firstEvent?.location_name ?? "Lokasi menyusul",
-      countdown: buildCountdown(firstEvent?.event_date),
+      countdown: calculateCountdown(countdownTarget),
+      countdownTarget,
     },
   };
 }
@@ -247,26 +236,22 @@ export function HeroImage({
 
 export function CountdownStrip({
   items,
+  targetDate,
   className,
   itemClassName,
 }: {
   items: InvitationTemplateProps["display"]["countdown"];
+  targetDate: string | null;
   className: string;
   itemClassName: string;
 }) {
   return (
-    <div className={className}>
-      {items.map((item) => (
-        <div key={item.label} className={itemClassName}>
-          <span className="block font-serif text-2xl font-bold leading-none sm:text-3xl">
-            {item.value}
-          </span>
-          <span className="mt-1 block text-xs font-black uppercase tracking-[0.18em] opacity-70">
-            {item.label}
-          </span>
-        </div>
-      ))}
-    </div>
+    <LiveCountdownStrip
+      initialItems={items}
+      targetDate={targetDate}
+      className={className}
+      itemClassName={itemClassName}
+    />
   );
 }
 
@@ -402,6 +387,19 @@ function formatRelativeTime(iso: string) {
   return `${diffYears} tahun lalu`;
 }
 
+function getGuestInitials(name: string) {
+  const initials = name
+    .trim()
+    .split(/\s+/)
+    .map((word) => word.match(/[\p{L}\p{N}]/u)?.[0] ?? "")
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("")
+    .toLocaleUpperCase("id-ID");
+
+  return initials || "?";
+}
+
 export function RsvpGuestbookSection({
   invitation,
   sectionClassName,
@@ -497,17 +495,34 @@ export function RsvpGuestbookSection({
           Ucapan &amp; Doa{entries.length ? ` (${entries.length})` : ""}
         </h2>
         {entries.length ? (
-          <div className={commentListClassName}>
+          <div
+            className={`${commentListClassName} guestbook-scroll-list`}
+            data-scrollable={entries.length > 3 ? "true" : "false"}
+            role={entries.length > 3 ? "region" : undefined}
+            aria-label={entries.length > 3 ? "Daftar ucapan dan doa" : undefined}
+            tabIndex={entries.length > 3 ? 0 : undefined}
+          >
             {entries.map((entry) => (
               <div
                 key={`${entry.guest_name}-${entry.created_at}`}
                 className={commentItemClassName}
               >
-                <p className="font-black">{entry.guest_name}</p>
-                <p className="mt-1 text-sm leading-6 opacity-70">{entry.message}</p>
-                <p className="mt-2 text-xs opacity-50">
-                  {formatRelativeTime(entry.created_at)}
-                </p>
+                <div className="guestbook-comment-layout">
+                  <span className="guestbook-comment-avatar" aria-hidden="true">
+                    {getGuestInitials(entry.guest_name)}
+                  </span>
+                  <div className="guestbook-comment-content">
+                    <p className="guestbook-comment-name font-black">
+                      {entry.guest_name}
+                    </p>
+                    <p className="guestbook-comment-message mt-1 text-sm leading-6 opacity-70">
+                      {entry.message}
+                    </p>
+                    <p className="mt-2 text-xs opacity-50">
+                      {formatRelativeTime(entry.created_at)}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

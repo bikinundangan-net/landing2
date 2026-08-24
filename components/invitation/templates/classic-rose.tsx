@@ -168,6 +168,7 @@ export function ClassicRose(props: InvitationTemplateProps) {
           <ClassicRoseReveal delay={0.08}>
             <CountdownStrip
               items={display.countdown}
+              targetDate={display.countdownTarget}
               className="classic-rose-countdown"
               itemClassName="classic-rose-countdown__item"
             />

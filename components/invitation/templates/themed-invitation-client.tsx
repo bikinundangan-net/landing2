@@ -15,6 +15,8 @@ import {
   Copy,
   Heart,
   MapPin,
+  Pause,
+  Play,
   Send,
   X,
 } from "lucide-react";
@@ -42,19 +44,155 @@ export type ThemedCoverCopy = {
 };
 
 export type ModernMinimalCoverCopy = ThemedCoverCopy & {
+  monogramImage?: string;
+  monogramDrawn?: boolean;
   verse: string;
   verseSource: string;
   receptionLabel: string;
   receptionTime: string;
 };
 
+function AnimatedDrawnMonogram({ reduceMotion }: { reduceMotion: boolean }) {
+  const letterVariants = {
+    hidden: {
+      opacity: 0,
+      fillOpacity: 0,
+      strokeDashoffset: 520,
+    },
+    visible: {
+      opacity: 1,
+      fillOpacity: 1,
+      strokeDashoffset: 0,
+      transition: {
+        opacity: { duration: 0.4 },
+        strokeDashoffset: {
+          duration: 2.7,
+          ease: [0.16, 1, 0.3, 1] as const,
+        },
+        fillOpacity: {
+          delay: 1.6,
+          duration: 1.4,
+          ease: "easeOut" as const,
+        },
+      },
+    },
+  };
+
+  const flourishVariants = {
+    hidden: { opacity: 0, pathLength: 0 },
+    visible: {
+      opacity: 1,
+      pathLength: 1,
+      transition: {
+        opacity: { duration: 0.4, delay: 1 },
+        pathLength: {
+          duration: 2.8,
+          delay: 1,
+          ease: [0.16, 1, 0.3, 1] as const,
+        },
+      },
+    },
+  };
+
+  const trailingFlourishVariants = {
+    hidden: { opacity: 0, pathLength: 0 },
+    visible: {
+      opacity: 1,
+      pathLength: 1,
+      transition: {
+        opacity: { duration: 0.4, delay: 1.4 },
+        pathLength: {
+          duration: 2.45,
+          delay: 1.4,
+          ease: [0.16, 1, 0.3, 1] as const,
+        },
+      },
+    },
+  };
+
+  return (
+    <motion.svg
+      className="modern-minimal-cover__drawn-logo"
+      viewBox="0 0 120 120"
+      initial={reduceMotion ? false : "hidden"}
+      animate="visible"
+      aria-hidden="true"
+    >
+      <defs>
+        <linearGradient id="hamsyah-yuyun-gold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#9a7b53" />
+          <stop offset="0.48" stopColor="#d9c095" />
+          <stop offset="1" stopColor="#9f8059" />
+        </linearGradient>
+      </defs>
+
+      <motion.path
+        d="M16 68 C12 44 27 23 51 16 C68 12 84 16 97 24"
+        fill="none"
+        stroke="url(#hamsyah-yuyun-gold)"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        variants={flourishVariants}
+      />
+      <motion.path
+        d="M106 52 C110 76 94 97 69 104 C52 109 36 105 24 97"
+        fill="none"
+        stroke="url(#hamsyah-yuyun-gold)"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        variants={trailingFlourishVariants}
+      />
+
+      <motion.text
+        x="25"
+        y="88"
+        fill="#17130f"
+        stroke="#17130f"
+        strokeWidth="0.7"
+        strokeDasharray="520"
+        fontFamily="var(--font-themed-display), Georgia, serif"
+        fontSize="72"
+        fontWeight="500"
+        variants={letterVariants}
+      >
+        H
+      </motion.text>
+      <motion.text
+        x="51"
+        y="95"
+        fill="#17130f"
+        stroke="#17130f"
+        strokeWidth="0.65"
+        strokeDasharray="520"
+        fontFamily="var(--font-themed-body), Georgia, serif"
+        fontSize="82"
+        fontStyle="italic"
+        fontWeight="500"
+        variants={letterVariants}
+        transition={{ delay: reduceMotion ? 0 : 0.3 }}
+      >
+        Y
+      </motion.text>
+    </motion.svg>
+  );
+}
+
 export function ModernMinimalCover({
   copy,
+  motionPace = "default",
 }: {
   copy: ModernMinimalCoverCopy;
+  motionPace?: "default" | "gentle";
 }) {
   const coverRef = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
+  const isGentle = motionPace === "gentle";
+  const itemDuration = isGentle ? 1.6 : 0.5;
+  const headlineDuration = isGentle ? 1.8 : 0.58;
+  const ruleDuration = isGentle ? 1.7 : 0.52;
+  const itemEase = [0.16, 1, 0.3, 1] as const;
   const [isOpening, setIsOpening] = useState(false);
   const searchParams = useSearchParams();
   const guestName = searchParams.get("to")?.trim();
@@ -70,7 +208,7 @@ export function ModernMinimalCover({
       document.getElementById("invitation-content")?.scrollIntoView({
         behavior: reduceMotion ? "auto" : "smooth",
       });
-    }, reduceMotion ? 0 : 320);
+    }, reduceMotion ? 0 : isGentle ? 980 : 320);
   }
 
   return (
@@ -81,7 +219,10 @@ export function ModernMinimalCover({
         opacity: isOpening ? 0.94 : 1,
         scale: isOpening && !reduceMotion ? 0.994 : 1,
       }}
-      transition={{ duration: 0.36, ease: "easeOut" }}
+      transition={{
+        duration: isGentle ? 1.3 : 0.36,
+        ease: isGentle ? itemEase : "easeOut",
+      }}
     >
       <motion.div
         className="modern-minimal-cover__art"
@@ -105,28 +246,58 @@ export function ModernMinimalCover({
         variants={{
           hidden: {},
           visible: {
-            transition: { delayChildren: 0.12, staggerChildren: 0.055 },
+            transition: {
+              delayChildren: isGentle ? 0.4 : 0.12,
+              staggerChildren: isGentle ? 0.2 : 0.055,
+            },
           },
         }}
       >
         <div className="modern-minimal-cover__identity">
           <motion.div
-            className="modern-minimal-cover__monogram"
+            className={`modern-minimal-cover__monogram ${
+              copy.monogramImage || copy.monogramDrawn
+                ? "modern-minimal-cover__monogram--image"
+                : ""
+            }`}
             variants={{
               hidden: { opacity: 0, y: 12 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: itemDuration, ease: itemEase },
+              },
             }}
             aria-label={`Monogram ${copy.monogram}`}
           >
-            <span>{copy.monogram.slice(0, 1)}</span>
-            <span>{copy.monogram.slice(-1)}</span>
+            {copy.monogramDrawn ? (
+              <AnimatedDrawnMonogram reduceMotion={Boolean(reduceMotion)} />
+            ) : copy.monogramImage ? (
+              <Image
+                src={copy.monogramImage}
+                alt=""
+                fill
+                sizes="96px"
+                className="object-contain"
+                aria-hidden="true"
+              />
+            ) : (
+              <>
+                <span>{copy.monogram.slice(0, 1)}</span>
+                <span>{copy.monogram.slice(-1)}</span>
+              </>
+            )}
           </motion.div>
 
           <motion.p
             className="modern-minimal-cover__kicker"
             variants={{
               hidden: { opacity: 0, y: 12 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: itemDuration, ease: itemEase },
+              },
             }}
           >
             {copy.kicker}
@@ -136,7 +307,11 @@ export function ModernMinimalCover({
             className="modern-minimal-cover__names"
             variants={{
               hidden: { opacity: 0, y: 14 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.58 } },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: headlineDuration, ease: itemEase },
+              },
             }}
           >
             <span>{copy.brideName}</span>
@@ -148,7 +323,11 @@ export function ModernMinimalCover({
             className="modern-minimal-rule"
             variants={{
               hidden: { opacity: 0, scaleX: 0.7 },
-              visible: { opacity: 1, scaleX: 1, transition: { duration: 0.52 } },
+              visible: {
+                opacity: 1,
+                scaleX: 1,
+                transition: { duration: ruleDuration, ease: itemEase },
+              },
             }}
             aria-hidden="true"
           >
@@ -163,7 +342,11 @@ export function ModernMinimalCover({
             className="modern-minimal-cover__verse"
             variants={{
               hidden: { opacity: 0, y: 12 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: itemDuration, ease: itemEase },
+              },
             }}
           >
             <p>{copy.verse}</p>
@@ -174,7 +357,11 @@ export function ModernMinimalCover({
             className="modern-minimal-cover__date"
             variants={{
               hidden: { opacity: 0, y: 12 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: itemDuration, ease: itemEase },
+              },
             }}
           >
             <span>{copy.eventDay}</span>
@@ -186,7 +373,11 @@ export function ModernMinimalCover({
             className="modern-minimal-cover__details"
             variants={{
               hidden: { opacity: 0, y: 12 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: itemDuration, ease: itemEase },
+              },
             }}
           >
             <div className="modern-minimal-cover__venue">
@@ -207,7 +398,11 @@ export function ModernMinimalCover({
             className="modern-minimal-rule modern-minimal-rule--lower"
             variants={{
               hidden: { opacity: 0, scaleX: 0.7 },
-              visible: { opacity: 1, scaleX: 1, transition: { duration: 0.52 } },
+              visible: {
+                opacity: 1,
+                scaleX: 1,
+                transition: { duration: ruleDuration, ease: itemEase },
+              },
             }}
             aria-hidden="true"
           >
@@ -220,7 +415,11 @@ export function ModernMinimalCover({
             className="modern-minimal-cover__recipient"
             variants={{
               hidden: { opacity: 0, y: 12 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: itemDuration, ease: itemEase },
+              },
             }}
           >
             <span>Kepada Yth.</span>
@@ -234,7 +433,11 @@ export function ModernMinimalCover({
             disabled={isOpening}
             variants={{
               hidden: { opacity: 0, y: 12 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: itemDuration, ease: itemEase },
+              },
             }}
             whileHover={reduceMotion ? undefined : { y: -2 }}
             whileTap={reduceMotion ? undefined : { scale: 0.985 }}
@@ -250,7 +453,11 @@ export function ModernMinimalCover({
             className="modern-minimal-cover__heart"
             variants={{
               hidden: { opacity: 0, y: 8 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: itemDuration, ease: itemEase },
+              },
             }}
             aria-hidden="true"
           >
@@ -397,6 +604,42 @@ export function ThemedReveal({
       whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.14 }}
       transition={{ duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+export function GentleThemedReveal({
+  children,
+  className,
+  delay = 0,
+}: {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}) {
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <motion.div
+      className={className}
+      initial={
+        reduceMotion
+          ? false
+          : { opacity: 0, y: 32, scale: 0.992, filter: "blur(3px)" }
+      }
+      whileInView={
+        reduceMotion
+          ? undefined
+          : { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }
+      }
+      viewport={{ once: true, amount: 0.14 }}
+      transition={{
+        duration: 1.75,
+        delay: delay * 1.4,
+        ease: [0.16, 1, 0.3, 1],
+      }}
     >
       {children}
     </motion.div>
@@ -577,6 +820,110 @@ export function ThemedGiftCopy({ account }: { account: string }) {
   );
 }
 
+export type ThemedGiftAccount = {
+  owner: string;
+  bank: string;
+  number: string;
+};
+
+function ThemedGiftAccountItem({ account }: { account: ThemedGiftAccount }) {
+  const [copied, setCopied] = useState(false);
+
+  async function copyNumber() {
+    await navigator.clipboard.writeText(account.number);
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 1800);
+  }
+
+  return (
+    <div className="themed-account__item">
+      <div className="themed-account__info">
+        <span>{account.bank} &middot; {account.owner}</span>
+        <strong>{account.number}</strong>
+      </div>
+      <button
+        type="button"
+        className="themed-account__copy"
+        onClick={copyNumber}
+        aria-label={`Salin nomor rekening ${account.owner}`}
+      >
+        {copied ? (
+          <Check className="size-4" aria-hidden="true" />
+        ) : (
+          <Copy className="size-4" aria-hidden="true" />
+        )}
+      </button>
+    </div>
+  );
+}
+
+export function ThemedGiftAccountList({
+  accounts,
+}: {
+  accounts: ThemedGiftAccount[];
+}) {
+  return (
+    <div className="themed-account">
+      {accounts.map((account) => (
+        <ThemedGiftAccountItem key={account.number} account={account} />
+      ))}
+    </div>
+  );
+}
+
+export function ThemedGiftAddress({
+  recipient,
+  address,
+}: {
+  recipient: string;
+  address: string;
+}) {
+  const [copied, setCopied] = useState(false);
+
+  async function copyAddress() {
+    await navigator.clipboard.writeText(`${recipient}\n${address}`);
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 1800);
+  }
+
+  return (
+    <div className="themed-gift-address">
+      <div className="themed-gift__method-heading">
+        <span aria-hidden="true">02</span>
+        <div>
+          <p>Hadiah fisik</p>
+          <h3>Kirim Hadiah</h3>
+        </div>
+      </div>
+
+      <div className="themed-gift-address__details">
+        <MapPin className="size-5" aria-hidden="true" />
+        <div>
+          <span>Alamat pengiriman</span>
+          <strong>{recipient}</strong>
+          <address>{address}</address>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        className="themed-gift-address__copy"
+        onClick={copyAddress}
+        aria-label={copied ? "Alamat berhasil disalin" : "Salin alamat pengiriman"}
+      >
+        {copied ? (
+          <Check className="size-4" aria-hidden="true" />
+        ) : (
+          <Copy className="size-4" aria-hidden="true" />
+        )}
+        <span aria-live="polite">
+          {copied ? "Alamat tersalin" : "Salin alamat"}
+        </span>
+      </button>
+    </div>
+  );
+}
+
 export function ThemedDemoForms() {
   const [rsvpSent, setRsvpSent] = useState(false);
   const [wishSent, setWishSent] = useState(false);
@@ -698,3 +1045,74 @@ const demoComments = [
     time: "1 minggu lalu",
   },
 ];
+
+export function BackgroundMusicPlayer({ src }: { src: string }) {
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    function startPlayback() {
+      audio?.play().then(
+        () => setIsPlaying(true),
+        () => {},
+      );
+    }
+
+    function handleFirstInteraction() {
+      startPlayback();
+      window.removeEventListener("pointerdown", handleFirstInteraction);
+      window.removeEventListener("scroll", handleFirstInteraction);
+      window.removeEventListener("keydown", handleFirstInteraction);
+    }
+
+    // Try to autoplay immediately; browsers that block silent autoplay
+    // reject the promise, so fall back to starting on first interaction.
+    startPlayback();
+    window.addEventListener("pointerdown", handleFirstInteraction);
+    window.addEventListener("scroll", handleFirstInteraction, { passive: true });
+    window.addEventListener("keydown", handleFirstInteraction);
+
+    return () => {
+      window.removeEventListener("pointerdown", handleFirstInteraction);
+      window.removeEventListener("scroll", handleFirstInteraction);
+      window.removeEventListener("keydown", handleFirstInteraction);
+    };
+  }, []);
+
+  function toggle() {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (audio.paused) {
+      audio.play().then(
+        () => setIsPlaying(true),
+        () => {},
+      );
+    } else {
+      audio.pause();
+      setIsPlaying(false);
+    }
+  }
+
+  return (
+    <>
+      <audio ref={audioRef} src={src} loop preload="auto" />
+      <button
+        type="button"
+        onClick={toggle}
+        className="themed-music-toggle"
+        aria-label={isPlaying ? "Jeda musik" : "Putar musik"}
+        aria-pressed={isPlaying}
+      >
+        {isPlaying ? (
+          <Pause className="size-4" aria-hidden="true" />
+        ) : (
+          <Play className="size-4" aria-hidden="true" />
+        )}
+      </button>
+    </>
+  );
+}

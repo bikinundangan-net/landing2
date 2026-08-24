@@ -260,6 +260,18 @@ export const templateCatalog = [
       soft: "#f2dfad",
     },
   },
+  {
+    slug: "hamsyah-yuyun-edition",
+    name: "Hamsyah & Yuyun Edition",
+    theme: "Clean editorial",
+    image: "/images/designs/modern-minimal.png",
+    palette: {
+      background: "#faf7f1",
+      accent: "#35302b",
+      deep: "#171513",
+      soft: "#e7dfd4",
+    },
+  },
 ] as const;
 
 export type PackageSlug = (typeof packageCatalog)[number]["slug"];

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { PublicInvitationView } from "@/components/invitation/public-invitation";
 import { reservedRootSlugs } from "@/lib/admin/catalog";
 import { demoInvitation } from "@/lib/admin/demo-data";
+import { hamsyahYuyunInvitation } from "@/lib/admin/hamsyah-yuyun-data";
 import { getPublicInvitation } from "@/lib/admin/queries";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { siteUrl } from "@/lib/site";
@@ -16,6 +17,12 @@ export const dynamic = "force-dynamic";
 async function resolveInvitation(slug: string) {
   if (reservedRootSlugs.has(slug)) {
     return null;
+  }
+
+  if (slug === hamsyahYuyunInvitation.public_slug) {
+    const databaseInvitation = await getPublicInvitation(slug);
+
+    return databaseInvitation ?? hamsyahYuyunInvitation;
   }
 
   if (!isSupabaseConfigured() && slug === demoInvitation.public_slug) {
@@ -37,8 +44,16 @@ export async function generateMetadata({
     };
   }
 
-  const title = `Undangan ${invitation.bride_name} & ${invitation.groom_name}`;
-  const description = `Dengan hormat mengundang Anda ke acara pernikahan ${invitation.bride_name} dan ${invitation.groom_name}.`;
+  const isHamsyahYuyunInvitation =
+    invitation.public_slug === hamsyahYuyunInvitation.public_slug;
+  const firstName = isHamsyahYuyunInvitation
+    ? invitation.groom_name
+    : invitation.bride_name;
+  const secondName = isHamsyahYuyunInvitation
+    ? "Yuyun"
+    : invitation.groom_name;
+  const title = `Undangan ${firstName} & ${secondName}`;
+  const description = `Dengan hormat mengundang Anda ke acara pernikahan ${firstName} dan ${secondName}.`;
 
   return {
     title,

@@ -592,4 +592,56 @@ export const demoInvitationsByTemplate: Record<TemplateSlug, PublicInvitation> =
       },
     ],
   }),
+  "hamsyah-yuyun-edition": buildDemoInvitation({
+    template_slug: "hamsyah-yuyun-edition",
+    public_slug: "demo-hamsyah-yuyun-edition",
+    groom_name: "Hamsyah",
+    bride_name: "Yuyun",
+    package_slug: "premium",
+    love_story:
+      "Berawal dari sebuah pertemuan yang tak pernah direncanakan, kami memilih untuk menulis babak baru dalam perjalanan cinta kami bersama.",
+    gift_account: "BCA 0601133562 a.n. Yuyun Istiqomah",
+    order_events: [
+      {
+        event_type: "akad",
+        title: "Akad Nikah",
+        event_date: "2026-10-25",
+        event_time: "08:00",
+        location_name: "Joglo Ndalijan\nSleman, Yogyakarta",
+        maps_url: "https://maps.google.com",
+      },
+      {
+        event_type: "resepsi",
+        title: "Resepsi",
+        event_date: "2026-10-25",
+        event_time: "10:30",
+        location_name: "Joglo Ndalijan\nSleman, Yogyakarta",
+        maps_url: "https://maps.google.com",
+      },
+    ],
+    order_assets: [
+      {
+        asset_type: "hero",
+        file_name: "Foto utama Hamsyah dan Yuyun",
+        public_url:
+          "/images/invitations/modern-minimal/couple-portrait.webp",
+      },
+      {
+        asset_type: "gallery",
+        file_name: "Potret Hamsyah dan Yuyun",
+        public_url:
+          "/images/invitations/modern-minimal/couple-portrait.webp",
+      },
+      {
+        asset_type: "gallery",
+        file_name: "Hamsyah dan Yuyun berjalan bersama",
+        public_url: "/images/invitations/modern-minimal/gallery-02.webp",
+      },
+      {
+        asset_type: "gallery",
+        file_name: "Momen hangat Hamsyah dan Yuyun",
+        public_url: "/images/invitations/modern-minimal/gallery-03.webp",
+      },
+    ],
+  }),
 };
