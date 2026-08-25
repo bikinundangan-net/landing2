@@ -449,7 +449,8 @@ export function RsvpGuestbookSection({
             type="number"
             min="1"
             max="10"
-            defaultValue="1"
+            placeholder="Jumlah tamu"
+            aria-label="Jumlah tamu"
             className={inputClassName}
           />
           <textarea

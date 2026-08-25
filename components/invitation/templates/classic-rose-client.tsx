@@ -428,7 +428,7 @@ export function ClassicRoseDemoForms() {
             type="number"
             min="1"
             max="10"
-            defaultValue="1"
+            placeholder="Jumlah tamu"
           />
         </label>
         <button type="submit" className="classic-rose-primary-button">

@@ -960,7 +960,7 @@ export function ThemedDemoForms() {
             type="number"
             min="1"
             max="10"
-            defaultValue="1"
+            placeholder="Jumlah tamu"
           />
         </label>
         <button type="submit" className="themed-button">

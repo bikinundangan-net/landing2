@@ -1853,6 +1853,24 @@ textarea.classic-rose-input {
   text-transform: none;
 }
 
+.themed-form select {
+  height: 3.25rem;
+  min-height: 3.25rem;
+  padding-right: 2.75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, currentColor 50%),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position:
+    calc(100% - 1.15rem) 50%,
+    calc(100% - 0.85rem) 50%;
+  background-size: 0.34rem 0.34rem, 0.34rem 0.34rem;
+  background-repeat: no-repeat;
+}
+
 .themed-form textarea {
   resize: vertical;
 }
