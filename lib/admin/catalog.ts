@@ -263,13 +263,13 @@ export const templateCatalog = [
   {
     slug: "vintage-blue",
     name: "Vintage Blue",
-    theme: "Blue ivory animated",
+    theme: "Navy ivory animated",
     image: "/images/designs/vintage-blue.png",
     palette: {
       background: "#fffaf0",
-      accent: "#557797",
-      deep: "#3f607e",
-      soft: "#d9e9f2",
+      accent: "#173b69",
+      deep: "#081f3d",
+      soft: "#dbe3ed",
     },
   },
   {

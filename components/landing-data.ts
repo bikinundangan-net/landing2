@@ -279,12 +279,12 @@ export const invitationDesigns = [
   {
     slug: "vintage-blue",
     name: "Vintage Blue",
-    theme: "Blue ivory animated",
+    theme: "Navy ivory animated",
     image: "/images/designs/vintage-blue.png",
     alt: "Template undangan digital Vintage Blue dalam mockup handphone",
     priceLabel: "Mulai 149rb",
     background:
-      "linear-gradient(145deg, rgba(85, 119, 151, 0.96), rgba(255, 250, 240, 0.82))",
+      "linear-gradient(145deg, rgba(8, 31, 61, 0.98), rgba(255, 250, 240, 0.82))",
   },
 ];
 

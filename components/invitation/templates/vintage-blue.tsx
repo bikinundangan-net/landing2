@@ -82,7 +82,7 @@ export function VintageBlue(props: InvitationTemplateProps) {
             <VintageBlueReveal>
               <div className={styles.couplePortrait}>
                 <Image
-                  src="/images/invitations/vintage-blue/couple.webp"
+                  src="/images/invitations/vintage-blue/navy/couple.png"
                   alt={`Ilustrasi ${groomName} dan ${brideName}`}
                   fill
                   sizes="(min-width: 1025px) 304px, 78vw"
@@ -106,7 +106,7 @@ export function VintageBlue(props: InvitationTemplateProps) {
               <article className={styles.profile}>
                 <div className={styles.profileImage}>
                   <Image
-                    src="/images/invitations/vintage-blue/groom.webp"
+                    src="/images/invitations/vintage-blue/navy/groom.png"
                     alt={`Ilustrasi mempelai pria ${groomName}`}
                     fill
                     sizes="(min-width: 1025px) 208px, 55vw"
@@ -121,7 +121,7 @@ export function VintageBlue(props: InvitationTemplateProps) {
               <article className={styles.profile}>
                 <div className={styles.profileImage}>
                   <Image
-                    src="/images/invitations/vintage-blue/bride.webp"
+                    src="/images/invitations/vintage-blue/navy/bride.png"
                     alt={`Ilustrasi mempelai wanita ${brideName}`}
                     fill
                     sizes="(min-width: 1025px) 208px, 55vw"
@@ -136,7 +136,7 @@ export function VintageBlue(props: InvitationTemplateProps) {
           <section className={`${styles.section} ${styles.countdownSection}`}>
             <div className={styles.countdownCouple} aria-hidden="true">
               <Image
-                src="/images/invitations/vintage-blue/couple.webp"
+                src="/images/invitations/vintage-blue/navy/couple.png"
                 alt=""
                 fill
                 sizes="(min-width: 1025px) 500px, 100vw"
@@ -188,7 +188,7 @@ export function VintageBlue(props: InvitationTemplateProps) {
             <VintageBlueReveal>
               <div className={styles.storyOrnament} aria-hidden="true">
                 <Image
-                  src="/images/invitations/vintage-blue/ornament.webp"
+                  src="/images/invitations/vintage-blue/navy/ornament.png"
                   alt=""
                   fill
                   sizes="64px"
@@ -315,7 +315,7 @@ export function VintageBlue(props: InvitationTemplateProps) {
             <div className={styles.closingBackground} aria-hidden="true" />
             <div className={styles.closingCouple} aria-hidden="true">
               <Image
-                src="/images/invitations/vintage-blue/closing-couple.png"
+                src="/images/invitations/vintage-blue/navy/closing-couple.png"
                 alt=""
                 fill
                 sizes="(min-width: 1025px) 352px, 88vw"

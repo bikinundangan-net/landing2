@@ -1,13 +1,13 @@
 .experience {
-  --vb-blue: #557797;
-  --vb-blue-deep: #3f607e;
-  --vb-blue-soft: #a9c4da;
+  --vb-blue: #173b69;
+  --vb-blue-deep: #081f3d;
+  --vb-blue-soft: #8ea6c2;
   --vb-champagne: #d7aa75;
   --vb-ivory: #fffaf0;
-  --vb-ink: #3c5369;
+  --vb-ink: #162e4d;
   min-height: 100svh;
   overflow-x: clip;
-  background: #d9e9f2;
+  background: #0b2443;
   color: var(--vb-ink);
   font-family: var(--font-vintage-blue-serif), Georgia, serif;
 }
@@ -50,7 +50,7 @@
   position: absolute;
   inset: 0;
   z-index: -2;
-  background: linear-gradient(180deg, rgb(25 43 62 / 12%) 24%, rgb(31 57 81 / 76%) 100%);
+  background: linear-gradient(180deg, rgb(6 23 47 / 20%) 20%, rgb(5 24 49 / 88%) 100%);
 }
 
 .coverContent {
@@ -61,7 +61,7 @@
   padding-bottom: max(10vh, 5rem);
   color: #fff;
   text-align: center;
-  text-shadow: 0 2px 12px rgb(17 33 49 / 45%);
+  text-shadow: 0 2px 12px rgb(3 16 35 / 58%);
 }
 
 .coverKicker {
@@ -106,14 +106,14 @@
   gap: 0.5rem;
   border: 0;
   border-radius: 999px;
-  background: linear-gradient(180deg, #86a8c8, #4f718f);
+  background: linear-gradient(180deg, #244f7f, #09274b);
   color: #fff;
   cursor: pointer;
   font-family: var(--font-vintage-blue-trajan), serif;
   font-size: 0.68rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  box-shadow: 0 0.8rem 1.8rem rgb(43 70 96 / 18%);
+  box-shadow: 0 0.8rem 1.8rem rgb(5 25 50 / 24%);
   transition: transform 180ms ease, filter 180ms ease;
 }
 
@@ -154,14 +154,14 @@
   isolation: isolate;
   place-items: center;
   overflow: hidden;
-  background: #eae0d2;
+  background: #dfe5ed;
 }
 
 .intro::after {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(180deg, transparent 56%, rgb(255 255 255 / 18%));
+  background: linear-gradient(180deg, rgb(8 31 61 / 7%), transparent 42%, rgb(255 255 255 / 18%));
   content: "";
 }
 
@@ -227,10 +227,10 @@
   place-items: center;
   border: 3px solid #fff;
   border-radius: 999px;
-  background: #607f9c;
+  background: #0b2c55;
   color: #fff;
   cursor: pointer;
-  box-shadow: 0 0.35rem 1.2rem rgb(22 47 72 / 30%);
+  box-shadow: 0 0.35rem 1.2rem rgb(3 18 38 / 38%);
 }
 
 .musicButton svg {
@@ -281,7 +281,7 @@
   margin: 0 auto 2.8rem;
   overflow: hidden;
   border-radius: 1.25rem;
-  background: #b5cadb;
+  background: #9caec3;
 }
 
 .couplePortrait img {
@@ -302,7 +302,7 @@
 }
 
 .profilesSection {
-  background: #d9ebf6 url("/images/invitations/vintage-blue/profile-background.jpg") center / cover;
+  background: #dbe3ed url("/images/invitations/vintage-blue/navy/profile-background.jpg") center / cover;
   padding-inline: 1.15rem;
 }
 
@@ -316,7 +316,7 @@
   border-radius: 1.25rem;
   background: rgb(255 255 255 / 78%);
   padding: 3.2rem 1.5rem;
-  box-shadow: 0 0.7rem 1.7rem rgb(58 88 114 / 13%);
+  box-shadow: 0 0.7rem 1.7rem rgb(8 31 61 / 18%);
   backdrop-filter: blur(2px);
 }
 
@@ -331,7 +331,7 @@
   aspect-ratio: 0.71;
   overflow: hidden;
   border-radius: 999px;
-  background: #a9c0d3;
+  background: #aab8c9;
 }
 
 .profileImage img {
@@ -358,7 +358,7 @@
 }
 
 .countdownSection {
-  background: #7799b8;
+  background: #0d315b;
   color: #fff;
   padding-top: 0;
 }
@@ -395,7 +395,7 @@
   border-radius: 0.75rem;
   background: rgb(255 255 255 / 88%);
   color: var(--vb-blue-deep);
-  box-shadow: 0 0.5rem 1.2rem rgb(40 66 89 / 14%);
+  box-shadow: 0 0.5rem 1.2rem rgb(4 24 48 / 20%);
 }
 
 .countdownItem strong {
@@ -411,7 +411,7 @@
 .eventsSection,
 .giftSection,
 .rsvpSection {
-  background: #4f7190;
+  background: #082746;
 }
 
 .eventList {
@@ -426,12 +426,12 @@
 .rsvpCard {
   position: relative;
   overflow: hidden;
-  border: 3px double rgb(84 116 145 / 80%);
+  border: 3px double rgb(23 59 105 / 82%);
   border-radius: 1.15rem;
-  background: #fffaf0 url("/images/invitations/vintage-blue/event-card.jpg") center bottom / cover no-repeat;
+  background: #fffaf0 url("/images/invitations/vintage-blue/navy/event-card.jpg") center bottom / cover no-repeat;
   padding: 4rem 1.5rem 7.5rem;
   color: var(--vb-blue);
-  box-shadow: 0 1rem 2rem rgb(29 53 76 / 16%);
+  box-shadow: 0 1rem 2rem rgb(3 20 42 / 24%);
 }
 
 .eventCard h3,
@@ -471,7 +471,7 @@
 
 .storySection {
   min-height: 54rem;
-  background: #f8faf8 url("/images/invitations/vintage-blue/story-background.jpg") center / cover;
+  background: #f8faf8 url("/images/invitations/vintage-blue/navy/story-background.jpg") center / cover;
 }
 
 .storyOrnament {
@@ -514,7 +514,7 @@
   aspect-ratio: 0.8;
   overflow: hidden;
   border-radius: 1rem;
-  background: #d9e6ee;
+  background: #d4dee9;
 }
 
 .galleryItem img {
@@ -526,7 +526,7 @@
   margin: 1.25rem auto 0;
   overflow: hidden;
   border-radius: 1rem;
-  background: #20364a;
+  background: #071d38;
 }
 
 .videoFrame video {
@@ -586,11 +586,11 @@
 .formControl {
   width: 100%;
   min-height: 3rem;
-  border: 1px solid rgb(85 119 151 / 28%);
+  border: 1px solid rgb(23 59 105 / 30%);
   border-radius: 0.65rem;
   background: rgb(255 255 255 / 88%);
   padding: 0.8rem 0.9rem;
-  color: #30485d;
+  color: #142f50;
   outline: none;
 }
 
@@ -624,7 +624,7 @@ textarea.formControl {
   min-height: 2.8rem;
   cursor: pointer;
   place-items: center;
-  border: 1px solid rgb(85 119 151 / 28%);
+  border: 1px solid rgb(23 59 105 / 30%);
   border-radius: 999px;
   background: #fff;
   font-family: ui-sans-serif, system-ui, sans-serif;
@@ -632,9 +632,9 @@ textarea.formControl {
 }
 
 .attendanceOption input:checked + span {
-  border-color: #6d93b3;
-  background: #dcebf5;
-  color: #355675;
+  border-color: #173b69;
+  background: #dce5ef;
+  color: #0b2b52;
   font-weight: 700;
 }
 
@@ -654,7 +654,7 @@ textarea.formControl {
   display: grid;
   gap: 0.75rem;
   margin-top: 1.8rem;
-  border-top: 1px solid rgb(85 119 151 / 20%);
+  border-top: 1px solid rgb(23 59 105 / 22%);
   padding-top: 1.25rem;
 }
 
@@ -690,7 +690,7 @@ textarea.formControl {
   position: absolute;
   inset: 0;
   z-index: -3;
-  background: url("/images/invitations/vintage-blue/closing-background.jpg") center / cover;
+  background: url("/images/invitations/vintage-blue/navy/closing-background.jpg") center / cover;
 }
 
 .closingCouple {
@@ -756,13 +756,15 @@ textarea.formControl {
     display: block;
     min-height: 100svh;
     overflow: hidden;
-    background: url("/images/invitations/vintage-blue/desktop-landscape.jpg") center / cover;
+    background: url("/images/invitations/vintage-blue/navy/desktop-landscape.jpg") center / cover;
   }
 
   .scenicShade {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 88% 80%, rgb(255 255 255 / 82%) 0 18%, transparent 46%);
+    background:
+      radial-gradient(circle at 88% 80%, rgb(255 255 255 / 82%) 0 18%, transparent 46%),
+      linear-gradient(180deg, rgb(8 31 61 / 10%), rgb(8 31 61 / 24%));
   }
 
   .scenicCopy {
@@ -800,7 +802,7 @@ textarea.formControl {
 
   .invitationColumn {
     width: 500px;
-    box-shadow: -1.5rem 0 4rem rgb(34 60 82 / 13%);
+    box-shadow: -1.5rem 0 4rem rgb(4 21 43 / 22%);
   }
 
   .musicButton {

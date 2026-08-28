@@ -103,7 +103,7 @@ export function VintageBlueExperience({
               transition={{ duration: 0.8, ease }}
             >
               <Image
-                src="/images/invitations/vintage-blue/cover.webp"
+                src="/images/invitations/vintage-blue/navy/cover.png"
                 alt=""
                 fill
                 priority
@@ -215,7 +215,7 @@ function VintageBlueIntro({ cover }: { cover: CoverCopy }) {
     <section className={styles.intro} id="invitation-content">
       {reduceMotion ? (
         <Image
-          src="/images/invitations/vintage-blue/intro-poster.jpg"
+          src="/images/invitations/vintage-blue/navy/intro-poster.jpg"
           alt=""
           fill
           priority
@@ -225,7 +225,7 @@ function VintageBlueIntro({ cover }: { cover: CoverCopy }) {
       ) : (
         <video
           className={styles.introMedia}
-          poster="/images/invitations/vintage-blue/intro-poster.jpg"
+          poster="/images/invitations/vintage-blue/navy/intro-poster.jpg"
           muted
           autoPlay
           playsInline
@@ -233,7 +233,7 @@ function VintageBlueIntro({ cover }: { cover: CoverCopy }) {
           onEnded={() => setIntroReady(true)}
         >
           <source
-            src="/images/invitations/vintage-blue/intro.mp4"
+            src="/images/invitations/vintage-blue/navy/intro.mp4"
             type="video/mp4"
           />
         </video>
