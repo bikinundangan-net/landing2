@@ -42,8 +42,13 @@ const cormorant = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
 });
 
+type ThemedTemplateSlug = Exclude<
+  TemplateSlug,
+  "classic-rose" | "vintage-blue"
+>;
+
 export type ThemedInvitationConfig = {
-  slug: Exclude<TemplateSlug, "classic-rose">;
+  slug: ThemedTemplateSlug;
   variant: string;
   coverBackground: string;
   sectionBackground: string;
@@ -79,7 +84,7 @@ export type ThemedInvitationConfig = {
 };
 
 export const themedInvitationConfigs: Record<
-  Exclude<TemplateSlug, "classic-rose">,
+  ThemedTemplateSlug,
   ThemedInvitationConfig
 > = {
   "modern-minimal": {

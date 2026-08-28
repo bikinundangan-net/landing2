@@ -46,7 +46,7 @@ export function DesignShowcaseSection() {
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
         >
-          {invitationDesigns.slice(0, 8).map((design, index) => (
+          {invitationDesigns.slice(0, 9).map((design, index) => (
             <motion.div key={design.slug} variants={fadeInUp}>
               <DesignTemplateCard design={design} priority={index < 2} compact />
             </motion.div>

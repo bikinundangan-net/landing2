@@ -261,6 +261,18 @@ export const templateCatalog = [
     },
   },
   {
+    slug: "vintage-blue",
+    name: "Vintage Blue",
+    theme: "Blue ivory animated",
+    image: "/images/designs/vintage-blue.png",
+    palette: {
+      background: "#fffaf0",
+      accent: "#557797",
+      deep: "#3f607e",
+      soft: "#d9e9f2",
+    },
+  },
+  {
     slug: "hamsyah-yuyun-edition",
     name: "Hamsyah & Yuyun Edition",
     theme: "Clean editorial",
@@ -310,6 +322,7 @@ export const orderFormSchema = z.object({
     "rustic-cream",
     "pastel-floral",
     "gold-premium",
+    "vintage-blue",
   ]),
   paymentStatus: z.enum(paymentStatuses),
   workStatus: z.enum(workStatuses),

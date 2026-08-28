@@ -276,6 +276,16 @@ export const invitationDesigns = [
     background:
       "linear-gradient(145deg, rgba(12, 12, 13, 0.98), rgba(166, 120, 45, 0.72))",
   },
+  {
+    slug: "vintage-blue",
+    name: "Vintage Blue",
+    theme: "Blue ivory animated",
+    image: "/images/designs/vintage-blue.png",
+    alt: "Template undangan digital Vintage Blue dalam mockup handphone",
+    priceLabel: "Mulai 149rb",
+    background:
+      "linear-gradient(145deg, rgba(85, 119, 151, 0.96), rgba(255, 250, 240, 0.82))",
+  },
 ];
 
 export const testimonials = [

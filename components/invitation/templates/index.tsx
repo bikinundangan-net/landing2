@@ -10,6 +10,7 @@ import { RusticCream } from "@/components/invitation/templates/rustic-cream";
 import { PastelFloral } from "@/components/invitation/templates/pastel-floral";
 import { GoldPremium } from "@/components/invitation/templates/gold-premium";
 import { HamsyahYuyunEdition } from "@/components/invitation/templates/hamsyah-yuyun-edition";
+import { VintageBlue } from "@/components/invitation/templates/vintage-blue";
 
 export { buildTemplateContext };
 export { ClassicRose } from "@/components/invitation/templates/classic-rose";
@@ -21,6 +22,7 @@ export { RusticCream } from "@/components/invitation/templates/rustic-cream";
 export { PastelFloral } from "@/components/invitation/templates/pastel-floral";
 export { GoldPremium } from "@/components/invitation/templates/gold-premium";
 export { HamsyahYuyunEdition } from "@/components/invitation/templates/hamsyah-yuyun-edition";
+export { VintageBlue } from "@/components/invitation/templates/vintage-blue";
 
 export const invitationTemplateRegistry: Record<
   TemplateSlug,
@@ -34,5 +36,6 @@ export const invitationTemplateRegistry: Record<
   "rustic-cream": RusticCream,
   "pastel-floral": PastelFloral,
   "gold-premium": GoldPremium,
+  "vintage-blue": VintageBlue,
   "hamsyah-yuyun-edition": HamsyahYuyunEdition,
 };

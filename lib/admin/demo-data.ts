@@ -592,6 +592,39 @@ export const demoInvitationsByTemplate: Record<TemplateSlug, PublicInvitation> =
       },
     ],
   }),
+  "vintage-blue": buildDemoInvitation({
+    template_slug: "vintage-blue",
+    public_slug: "demo-vintage-blue",
+    groom_name: "Habib",
+    bride_name: "Adiba",
+    package_slug: "exclusive",
+    total_price: 149000,
+    music_title: "Kusuma Wijaya",
+    love_story:
+      "Berawal dari pertemuan sederhana, kami saling mengenal dan mulai berbagi banyak cerita. Tanpa disadari, kebersamaan itu tumbuh menjadi rasa nyaman yang semakin kuat dari hari ke hari.\n\nDengan niat yang tulus dan restu keluarga, kami memutuskan untuk melangkah ke tahap yang lebih serius. Momen lamaran menjadi awal dari perjalanan baru yang penuh harapan dan doa baik.\n\nKini kami sampai pada hari yang kami nantikan, hari di mana dua hati dipersatukan dalam ikatan suci pernikahan. Semoga langkah ini menjadi awal kehidupan baru yang penuh cinta, kebahagiaan, dan keberkahan.",
+    gift_account: "BCA 1234567890 a.n. Habib & Adiba",
+    order_events: [
+      {
+        event_type: "akad",
+        title: "Akad Nikah",
+        event_date: "2026-12-28",
+        event_time: "08:00",
+        location_name:
+          "Kediaman Mempelai Wanita\nDs. Pagu, Wates, Kediri, Jawa Timur",
+        maps_url: "https://maps.google.com",
+      },
+      {
+        event_type: "resepsi",
+        title: "Resepsi",
+        event_date: "2026-12-28",
+        event_time: "10:00",
+        location_name:
+          "Kediaman Mempelai Wanita\nDs. Pagu, Wates, Kediri, Jawa Timur",
+        maps_url: "https://maps.google.com",
+      },
+    ],
+    order_assets: [],
+  }),
   "hamsyah-yuyun-edition": buildDemoInvitation({
     template_slug: "hamsyah-yuyun-edition",
     public_slug: "demo-hamsyah-yuyun-edition",

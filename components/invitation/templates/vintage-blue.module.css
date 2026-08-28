@@ -1,0 +1,836 @@
+.experience {
+  --vb-blue: #557797;
+  --vb-blue-deep: #3f607e;
+  --vb-blue-soft: #a9c4da;
+  --vb-champagne: #d7aa75;
+  --vb-ivory: #fffaf0;
+  --vb-ink: #3c5369;
+  min-height: 100svh;
+  overflow-x: clip;
+  background: #d9e9f2;
+  color: var(--vb-ink);
+  font-family: var(--font-vintage-blue-serif), Georgia, serif;
+}
+
+.experience button,
+.experience input,
+.experience select,
+.experience textarea {
+  font: inherit;
+}
+
+.scenicPanel {
+  display: none;
+}
+
+.invitationColumn {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--vb-ivory);
+}
+
+.cover {
+  position: relative;
+  display: grid;
+  min-height: 100svh;
+  isolation: isolate;
+  place-items: end center;
+  overflow: hidden;
+}
+
+.coverImage {
+  z-index: -3;
+  object-fit: cover;
+  object-position: center;
+}
+
+.coverOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(180deg, rgb(25 43 62 / 12%) 24%, rgb(31 57 81 / 76%) 100%);
+}
+
+.coverContent {
+  display: grid;
+  width: min(100% - 2.5rem, 24rem);
+  justify-items: center;
+  gap: 0.8rem;
+  padding-bottom: max(10vh, 5rem);
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 12px rgb(17 33 49 / 45%);
+}
+
+.coverKicker {
+  font-family: var(--font-vintage-blue-trajan), serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.coverNames {
+  max-width: 22rem;
+  font-family: var(--font-vintage-blue-alcantera), Georgia, serif;
+  font-size: clamp(2.45rem, 11vw, 3.35rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+  text-wrap: balance;
+}
+
+.recipientLabel {
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+}
+
+.recipientName {
+  margin-top: 0.3rem;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.openButton,
+.introCopy a,
+.eventButton,
+.submitButton,
+.copyButton {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #86a8c8, #4f718f);
+  color: #fff;
+  cursor: pointer;
+  font-family: var(--font-vintage-blue-trajan), serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 0.8rem 1.8rem rgb(43 70 96 / 18%);
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.openButton {
+  margin-top: 0.35rem;
+  padding: 0.75rem 1.6rem;
+}
+
+.openButton:hover,
+.introCopy a:hover,
+.eventButton:hover,
+.submitButton:hover,
+.copyButton:hover {
+  filter: brightness(1.06);
+  transform: translateY(-2px);
+}
+
+.openButton:focus-visible,
+.introCopy a:focus-visible,
+.eventButton:focus-visible,
+.submitButton:focus-visible,
+.copyButton:focus-visible,
+.musicButton:focus-visible,
+.formControl:focus-visible {
+  outline: 3px solid rgb(215 170 117 / 78%);
+  outline-offset: 3px;
+}
+
+.openedContent {
+  min-height: 100svh;
+  overflow: hidden;
+}
+
+.intro {
+  position: relative;
+  display: grid;
+  min-height: max(95svh, 45rem);
+  isolation: isolate;
+  place-items: center;
+  overflow: hidden;
+  background: #eae0d2;
+}
+
+.intro::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, transparent 56%, rgb(255 255 255 / 18%));
+  content: "";
+}
+
+.introMedia {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.introCopy {
+  display: grid;
+  width: min(100% - 4rem, 18rem);
+  min-height: 27rem;
+  place-content: center;
+  justify-items: center;
+  border-radius: 48% 48% 45% 45% / 25% 25% 35% 35%;
+  background: rgb(255 253 246 / 64%);
+  padding: 3rem 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(2px);
+}
+
+.introCopy > span {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}
+
+.introCopy h2 {
+  margin-top: 1.2rem;
+  color: var(--vb-champagne);
+  font-family: var(--font-vintage-blue-script), cursive;
+  font-size: clamp(2.75rem, 13vw, 4rem);
+  font-weight: 400;
+  line-height: 0.88;
+  text-shadow: 2px 2px 1px #fff;
+}
+
+.introCopy p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+}
+
+.introCopy a {
+  margin-top: 1.4rem;
+  min-height: 2.45rem;
+  padding: 0.65rem 1.35rem;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.musicButton {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 60;
+  display: grid;
+  width: 2.8rem;
+  height: 2.8rem;
+  place-items: center;
+  border: 3px solid #fff;
+  border-radius: 999px;
+  background: #607f9c;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0.35rem 1.2rem rgb(22 47 72 / 30%);
+}
+
+.musicButton svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 5.5rem 1.25rem;
+  text-align: center;
+}
+
+.sectionEyebrow {
+  color: var(--vb-champagne);
+  font-family: var(--font-vintage-blue-script), cursive;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.sectionTitle {
+  margin-top: 0.7rem;
+  color: var(--vb-blue-deep);
+  font-family: var(--font-vintage-blue-snell), cursive;
+  font-size: clamp(2.4rem, 11vw, 3.3rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.sectionCopy {
+  max-width: 22rem;
+  margin: 1.4rem auto 0;
+  font-size: 0.88rem;
+  line-height: 1.75;
+}
+
+.verseSection {
+  background: var(--vb-ivory);
+}
+
+.couplePortrait {
+  position: relative;
+  width: min(100%, 19rem);
+  aspect-ratio: 1 / 1;
+  margin: 0 auto 2.8rem;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: #b5cadb;
+}
+
+.couplePortrait img {
+  object-fit: cover;
+}
+
+.verse {
+  max-width: 22rem;
+  margin: 0 auto;
+  font-size: 0.85rem;
+  line-height: 1.75;
+}
+
+.verse cite {
+  display: block;
+  margin-top: 1.4rem;
+  font-style: normal;
+}
+
+.profilesSection {
+  background: #d9ebf6 url("/images/invitations/vintage-blue/profile-background.jpg") center / cover;
+  padding-inline: 1.15rem;
+}
+
+.profilePanel {
+  position: relative;
+  display: grid;
+  gap: 2.6rem;
+  max-width: 27rem;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: rgb(255 255 255 / 78%);
+  padding: 3.2rem 1.5rem;
+  box-shadow: 0 0.7rem 1.7rem rgb(58 88 114 / 13%);
+  backdrop-filter: blur(2px);
+}
+
+.profile {
+  display: grid;
+  justify-items: center;
+}
+
+.profileImage {
+  position: relative;
+  width: min(70%, 13rem);
+  aspect-ratio: 0.71;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #a9c0d3;
+}
+
+.profileImage img {
+  object-fit: cover;
+}
+
+.profile h3 {
+  margin-top: 1.2rem;
+  color: var(--vb-blue);
+  font-size: 1.9rem;
+  font-weight: 400;
+}
+
+.profile p {
+  margin-top: 0.55rem;
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.profileSeparator {
+  color: #6c6f72;
+  font-family: var(--font-vintage-blue-script), cursive;
+  font-size: 2rem;
+}
+
+.countdownSection {
+  background: #7799b8;
+  color: #fff;
+  padding-top: 0;
+}
+
+.countdownCouple {
+  position: relative;
+  width: calc(100% + 2.5rem);
+  aspect-ratio: 1.42 / 1;
+  margin-inline: -1.25rem;
+}
+
+.countdownCouple img {
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.countdownSection .sectionTitle,
+.countdownSection .sectionCopy {
+  color: #fff;
+}
+
+.countdown {
+  display: grid;
+  max-width: 22rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin: 1.5rem auto 0;
+}
+
+.countdownItem {
+  display: grid;
+  min-height: 4rem;
+  place-content: center;
+  border-radius: 0.75rem;
+  background: rgb(255 255 255 / 88%);
+  color: var(--vb-blue-deep);
+  box-shadow: 0 0.5rem 1.2rem rgb(40 66 89 / 14%);
+}
+
+.countdownItem strong {
+  font-size: 1.15rem;
+}
+
+.countdownItem span,
+.countdownItem small {
+  margin-top: 0.1rem;
+  font-size: 0.62rem;
+}
+
+.eventsSection,
+.giftSection,
+.rsvpSection {
+  background: #4f7190;
+}
+
+.eventList {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 27rem;
+  margin: 0 auto;
+}
+
+.eventCard,
+.giftCard,
+.rsvpCard {
+  position: relative;
+  overflow: hidden;
+  border: 3px double rgb(84 116 145 / 80%);
+  border-radius: 1.15rem;
+  background: #fffaf0 url("/images/invitations/vintage-blue/event-card.jpg") center bottom / cover no-repeat;
+  padding: 4rem 1.5rem 7.5rem;
+  color: var(--vb-blue);
+  box-shadow: 0 1rem 2rem rgb(29 53 76 / 16%);
+}
+
+.eventCard h3,
+.giftCard h2,
+.rsvpCard h2 {
+  color: var(--vb-champagne);
+  font-family: var(--font-vintage-blue-snell), cursive;
+  font-size: 2.35rem;
+  font-weight: 400;
+}
+
+.eventDate {
+  margin-top: 1.5rem;
+  font-weight: 700;
+}
+
+.eventMeta,
+.eventLocation {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  line-height: 1.65;
+  white-space: pre-line;
+}
+
+.eventButton {
+  margin-top: 1.5rem;
+  min-height: 2.4rem;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(180deg, #e8cda9, #d4a56d);
+  text-transform: none;
+}
+
+.eventButton svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.storySection {
+  min-height: 54rem;
+  background: #f8faf8 url("/images/invitations/vintage-blue/story-background.jpg") center / cover;
+}
+
+.storyOrnament {
+  position: relative;
+  width: 4rem;
+  height: 5rem;
+  margin: 0 auto;
+}
+
+.storyOrnament img {
+  object-fit: contain;
+}
+
+.storyBody {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 22rem;
+  margin: 2.5rem auto 0;
+}
+
+.storyBody p {
+  font-size: 0.82rem;
+  line-height: 1.85;
+}
+
+.mediaSection {
+  background: #f7fbfc;
+}
+
+.galleryGrid {
+  display: grid;
+  max-width: 27rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin: 2rem auto 0;
+}
+
+.galleryItem {
+  position: relative;
+  aspect-ratio: 0.8;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #d9e6ee;
+}
+
+.galleryItem img {
+  object-fit: cover;
+}
+
+.videoFrame {
+  max-width: 27rem;
+  margin: 1.25rem auto 0;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #20364a;
+}
+
+.videoFrame video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.giftCard,
+.rsvpCard {
+  max-width: 27rem;
+  margin: 0 auto;
+  padding-bottom: 7.5rem;
+}
+
+.giftValue {
+  margin-top: 1.5rem;
+  white-space: pre-line;
+  font-size: 0.83rem;
+  line-height: 1.75;
+}
+
+.copyButton {
+  margin-top: 1.4rem;
+  min-height: 2.5rem;
+  padding: 0.65rem 1.2rem;
+  background: linear-gradient(180deg, #e8cda9, #d4a56d);
+  text-transform: none;
+}
+
+.copyButton svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.rsvpCard {
+  text-align: left;
+}
+
+.rsvpCard h2,
+.rsvpLead {
+  text-align: center;
+}
+
+.rsvpLead {
+  margin-top: 0.8rem;
+  font-size: 0.82rem;
+}
+
+.formGrid {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.formControl {
+  width: 100%;
+  min-height: 3rem;
+  border: 1px solid rgb(85 119 151 / 28%);
+  border-radius: 0.65rem;
+  background: rgb(255 255 255 / 88%);
+  padding: 0.8rem 0.9rem;
+  color: #30485d;
+  outline: none;
+}
+
+textarea.formControl {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.attendanceLabel {
+  margin-top: 0.25rem;
+  font-size: 0.78rem;
+}
+
+.attendanceOptions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.attendanceOption {
+  position: relative;
+}
+
+.attendanceOption input {
+  position: absolute;
+  opacity: 0;
+}
+
+.attendanceOption span {
+  display: grid;
+  min-height: 2.8rem;
+  cursor: pointer;
+  place-items: center;
+  border: 1px solid rgb(85 119 151 / 28%);
+  border-radius: 999px;
+  background: #fff;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.82rem;
+}
+
+.attendanceOption input:checked + span {
+  border-color: #6d93b3;
+  background: #dcebf5;
+  color: #355675;
+  font-weight: 700;
+}
+
+.attendanceOption input:focus-visible + span {
+  outline: 3px solid rgb(215 170 117 / 78%);
+  outline-offset: 3px;
+}
+
+.submitButton {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.8rem 1.3rem;
+  text-transform: none;
+}
+
+.comments {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.8rem;
+  border-top: 1px solid rgb(85 119 151 / 20%);
+  padding-top: 1.25rem;
+}
+
+.comment {
+  border-radius: 0.75rem;
+  background: rgb(255 255 255 / 68%);
+  padding: 0.9rem;
+}
+
+.comment strong {
+  font-size: 0.78rem;
+}
+
+.comment p {
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.closing {
+  position: relative;
+  display: grid;
+  min-height: max(88svh, 42rem);
+  isolation: isolate;
+  place-items: end center;
+  overflow: hidden;
+  background: #f9f5ea;
+  padding: 4rem 1.25rem;
+  text-align: center;
+}
+
+.closingBackground {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background: url("/images/invitations/vintage-blue/closing-background.jpg") center / cover;
+}
+
+.closingCouple {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  z-index: -1;
+  width: min(88%, 22rem);
+  aspect-ratio: 0.72;
+  transform: translateX(-50%);
+}
+
+.closingCouple img {
+  object-fit: contain;
+  object-position: center top;
+}
+
+.closingContent {
+  width: min(100% - 2rem, 21rem);
+  border-radius: 11rem 11rem 1.25rem 1.25rem;
+  background: rgb(255 250 240 / 94%);
+  padding: 5.5rem 1.4rem 2rem;
+}
+
+.closingContent p {
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.closingContent h2 {
+  margin-top: 1rem;
+  color: var(--vb-blue);
+  font-family: var(--font-vintage-blue-snell), cursive;
+  font-size: 2.8rem;
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.closingContent small {
+  display: block;
+  margin-top: 1.8rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.closingContent a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.18rem;
+}
+
+@media (min-width: 1025px) {
+  .experience {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 500px;
+    align-items: start;
+  }
+
+  .scenicPanel {
+    position: sticky;
+    top: 0;
+    display: block;
+    min-height: 100svh;
+    overflow: hidden;
+    background: url("/images/invitations/vintage-blue/desktop-landscape.jpg") center / cover;
+  }
+
+  .scenicShade {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 88% 80%, rgb(255 255 255 / 82%) 0 18%, transparent 46%);
+  }
+
+  .scenicCopy {
+    position: absolute;
+    right: 3.5rem;
+    bottom: 4rem;
+    display: grid;
+    justify-items: end;
+    color: var(--vb-blue);
+    text-align: right;
+  }
+
+  .scenicCopy span {
+    font-family: var(--font-vintage-blue-trajan), serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .scenicCopy strong {
+    margin-top: 1rem;
+    color: var(--vb-champagne);
+    font-family: var(--font-vintage-blue-script), cursive;
+    font-size: clamp(2.5rem, 4vw, 4.2rem);
+    font-weight: 400;
+    line-height: 0.9;
+    text-shadow: 2px 2px 1px #fff;
+  }
+
+  .scenicCopy small {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+  }
+
+  .invitationColumn {
+    width: 500px;
+    box-shadow: -1.5rem 0 4rem rgb(34 60 82 / 13%);
+  }
+
+  .musicButton {
+    right: 1.25rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .section {
+    padding-inline: 0.85rem;
+  }
+
+  .eventCard,
+  .giftCard,
+  .rsvpCard {
+    padding-inline: 1rem;
+  }
+
+  .countdown {
+    gap: 0.35rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience *,
+  .experience *::before,
+  .experience *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

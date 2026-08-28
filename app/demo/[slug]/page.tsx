@@ -54,10 +54,17 @@ export default async function DemoPage({ params }: DemoPageProps) {
 
   const invitation = demoInvitationsByTemplate[slug];
   const template = getTemplate(slug);
+  const isVintageBlue = slug === "vintage-blue";
 
   return (
     <div className="relative min-h-screen bg-black">
-      <div className="fixed left-[calc(50%+17rem)] top-8 z-50 hidden w-52 flex-col gap-3 rounded-[1.5rem] border border-white/10 bg-black/80 p-4 text-white shadow-2xl backdrop-blur-xl lg:flex">
+      <div
+        className={`fixed top-8 z-50 hidden w-52 flex-col gap-3 rounded-[1.5rem] border border-white/10 bg-black/80 p-4 text-white shadow-2xl backdrop-blur-xl ${
+          isVintageBlue
+            ? "left-8 min-[1025px]:flex"
+            : "left-[calc(50%+17rem)] lg:flex"
+        }`}
+      >
         <p className="px-2 text-[0.65rem] font-bold uppercase tracking-[0.18em] text-white/55">
           Demo Live &middot; {template.name}
         </p>
