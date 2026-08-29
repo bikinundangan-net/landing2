@@ -24,6 +24,8 @@ type CoverCopy = {
 
 type VintageBlueExperienceProps = {
   cover: CoverCopy;
+  coverImageSrc: string;
+  hasPersonalPhotos?: boolean;
   audioSrc: string;
   children: ReactNode;
 };
@@ -32,6 +34,8 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 export function VintageBlueExperience({
   cover,
+  coverImageSrc,
+  hasPersonalPhotos = false,
   audioSrc,
   children,
 }: VintageBlueExperienceProps) {
@@ -103,12 +107,18 @@ export function VintageBlueExperience({
               transition={{ duration: 0.8, ease }}
             >
               <Image
-                src="/images/invitations/vintage-blue/navy/cover.png"
-                alt=""
+                src={coverImageSrc}
+                alt={
+                  hasPersonalPhotos
+                    ? `Foto ${cover.groomName} dan ${cover.brideName}`
+                    : ""
+                }
                 fill
                 priority
                 sizes="(min-width: 1025px) 500px, 100vw"
-                className={styles.coverImage}
+                className={`${styles.coverImage} ${
+                  hasPersonalPhotos ? styles.realCoverImage : ""
+                }`}
               />
               <div className={styles.coverOverlay} />
               <motion.div
@@ -215,17 +225,17 @@ function VintageBlueIntro({ cover }: { cover: CoverCopy }) {
     <section className={styles.intro} id="invitation-content">
       {reduceMotion ? (
         <Image
-          src="/images/invitations/vintage-blue/navy/intro-poster.jpg"
+          src="/images/invitations/vintage-blue/navy/intro-poster-portrait.jpg"
           alt=""
           fill
           priority
           sizes="(min-width: 1025px) 500px, 100vw"
-          className={styles.introMedia}
+          className={`${styles.introMedia} ${styles.introPoster}`}
         />
       ) : (
         <video
           className={styles.introMedia}
-          poster="/images/invitations/vintage-blue/navy/intro-poster.jpg"
+          poster="/images/invitations/vintage-blue/navy/intro-poster-portrait.jpg"
           muted
           autoPlay
           playsInline
@@ -233,7 +243,7 @@ function VintageBlueIntro({ cover }: { cover: CoverCopy }) {
           onEnded={() => setIntroReady(true)}
         >
           <source
-            src="/images/invitations/vintage-blue/navy/intro.mp4"
+            src="/images/invitations/vintage-blue/navy/intro-portrait.mp4"
             type="video/mp4"
           />
         </video>
@@ -249,9 +259,10 @@ function VintageBlueIntro({ cover }: { cover: CoverCopy }) {
         transition={{ duration: reduceMotion ? 0 : 1.5, ease }}
       >
         <span>The Wedding of</span>
-        <h2>
-          {cover.groomName}
-          <br />&amp; {cover.brideName}
+        <h2 className={styles.introNames}>
+          <span className={styles.introName}>{cover.groomName}</span>
+          <span className={styles.introAmpersand}>&amp;</span>
+          <span className={styles.introName}>{cover.brideName}</span>
         </h2>
         <p>{cover.eventDate}</p>
         <a href="#verse">Save The Date</a>

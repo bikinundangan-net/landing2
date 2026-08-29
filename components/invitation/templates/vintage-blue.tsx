@@ -43,20 +43,49 @@ const vintageAlcantera = localFont({
 const quranVerse =
   "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.";
 
-function formatClock(value: string | null) {
-  return value ? `${value.slice(0, 5).replace(":", ".")} WIB` : "Waktu menyusul";
+function formatClock(value: string | null, endValue?: string | null) {
+  if (!value) {
+    return "Waktu menyusul";
+  }
+
+  const start = value.slice(0, 5).replace(":", ".");
+  const end = endValue?.slice(0, 5).replace(":", ".");
+
+  return `${start}${end ? `-${end}` : ""} WIB`;
 }
 
 export function VintageBlue(props: InvitationTemplateProps) {
   const {
     invitation,
     display,
+    heroAsset,
     galleryAssets,
     videoAsset,
     musicAsset,
   } = props;
   const groomName = invitation.groom_name;
   const brideName = invitation.bride_name;
+  const visualAsset = (fileName: string) =>
+    invitation.order_assets.find(
+      (asset) =>
+        asset.asset_type === "other" && asset.file_name === fileName,
+    )?.public_url;
+  const verseCoupleSrc = visualAsset("vintage-blue-verse-couple");
+  const groomPortraitSrc = visualAsset("vintage-blue-groom-portrait");
+  const bridePortraitSrc = visualAsset("vintage-blue-bride-portrait");
+  const closingCoupleSrc = visualAsset("vintage-blue-closing-couple");
+  const hasPersonalPhotos = Boolean(
+    verseCoupleSrc ||
+      groomPortraitSrc ||
+      bridePortraitSrc ||
+      closingCoupleSrc,
+  );
+  const coverImageSrc = hasPersonalPhotos
+    ? heroAsset?.public_url ?? "/images/invitations/vintage-blue/navy/cover.png"
+    : "/images/invitations/vintage-blue/navy/cover.png";
+  const displayedGalleryAssets = galleryAssets.filter(
+    (asset) => asset.asset_type === "gallery",
+  );
   const storyParagraphs = (invitation.love_story ||
     "Berawal dari pertemuan sederhana, kami saling mengenal dan mulai berbagi banyak cerita. Kini kami menanti hari istimewa untuk memulai perjalanan baru bersama.")
     .split(/\n\s*\n/)
@@ -72,6 +101,8 @@ export function VintageBlue(props: InvitationTemplateProps) {
       <Suspense fallback={null}>
         <VintageBlueExperience
           audioSrc={audioSrc}
+          coverImageSrc={coverImageSrc}
+          hasPersonalPhotos={hasPersonalPhotos}
           cover={{
             groomName,
             brideName,
@@ -82,8 +113,11 @@ export function VintageBlue(props: InvitationTemplateProps) {
             <VintageBlueReveal>
               <div className={styles.couplePortrait}>
                 <Image
-                  src="/images/invitations/vintage-blue/navy/couple.png"
-                  alt={`Ilustrasi ${groomName} dan ${brideName}`}
+                  src={
+                    verseCoupleSrc ??
+                    "/images/invitations/vintage-blue/navy/couple.png"
+                  }
+                  alt={`Potret ${groomName} dan ${brideName}`}
                   fill
                   sizes="(min-width: 1025px) 304px, 78vw"
                 />
@@ -106,14 +140,22 @@ export function VintageBlue(props: InvitationTemplateProps) {
               <article className={styles.profile}>
                 <div className={styles.profileImage}>
                   <Image
-                    src="/images/invitations/vintage-blue/navy/groom.png"
-                    alt={`Ilustrasi mempelai pria ${groomName}`}
+                    src={
+                      groomPortraitSrc ??
+                      "/images/invitations/vintage-blue/navy/groom.png"
+                    }
+                    alt={`Potret mempelai pria ${groomName}`}
                     fill
                     sizes="(min-width: 1025px) 208px, 55vw"
                   />
                 </div>
-                <h3>{groomName}</h3>
-                <p>Mempelai Pria</p>
+                <h3>{invitation.profile_details?.groom_name ?? groomName}</h3>
+                <p className={styles.profileRole}>Mempelai Pria</p>
+                {invitation.profile_details?.groom ? (
+                  <p className={styles.profileFamily}>
+                    {invitation.profile_details.groom}
+                  </p>
+                ) : null}
               </article>
 
               <span className={styles.profileSeparator}>dan</span>
@@ -121,27 +163,41 @@ export function VintageBlue(props: InvitationTemplateProps) {
               <article className={styles.profile}>
                 <div className={styles.profileImage}>
                   <Image
-                    src="/images/invitations/vintage-blue/navy/bride.png"
-                    alt={`Ilustrasi mempelai wanita ${brideName}`}
+                    src={
+                      bridePortraitSrc ??
+                      "/images/invitations/vintage-blue/navy/bride.png"
+                    }
+                    alt={`Potret mempelai wanita ${brideName}`}
                     fill
                     sizes="(min-width: 1025px) 208px, 55vw"
                   />
                 </div>
-                <h3>{brideName}</h3>
-                <p>Mempelai Wanita</p>
+                <h3>{invitation.profile_details?.bride_name ?? brideName}</h3>
+                <p className={styles.profileRole}>Mempelai Wanita</p>
+                {invitation.profile_details?.bride ? (
+                  <p className={styles.profileFamily}>
+                    {invitation.profile_details.bride}
+                  </p>
+                ) : null}
               </article>
             </VintageBlueReveal>
           </section>
 
-          <section className={`${styles.section} ${styles.countdownSection}`}>
-            <div className={styles.countdownCouple} aria-hidden="true">
-              <Image
-                src="/images/invitations/vintage-blue/navy/couple.png"
-                alt=""
-                fill
-                sizes="(min-width: 1025px) 500px, 100vw"
-              />
-            </div>
+          <section
+            className={`${styles.section} ${styles.countdownSection} ${
+              hasPersonalPhotos ? styles.countdownWithoutPhoto : ""
+            }`}
+          >
+            {!hasPersonalPhotos ? (
+              <div className={styles.countdownCouple} aria-hidden="true">
+                <Image
+                  src="/images/invitations/vintage-blue/navy/couple.png"
+                  alt=""
+                  fill
+                  sizes="(min-width: 1025px) 500px, 100vw"
+                />
+              </div>
+            ) : null}
             <VintageBlueReveal>
               <p className={styles.sectionEyebrow}>Save The Date</p>
               <h2 className={styles.sectionTitle}>Menuju Hari Bahagia</h2>
@@ -168,7 +224,9 @@ export function VintageBlue(props: InvitationTemplateProps) {
                   <article className={styles.eventCard}>
                     <h3>{event.title}</h3>
                     <p className={styles.eventDate}>{formatDate(event.event_date)}</p>
-                    <p className={styles.eventMeta}>Pukul : {formatClock(event.event_time)}</p>
+                    <p className={styles.eventMeta}>
+                      Pukul : {formatClock(event.event_time, event.event_end_time)}
+                    </p>
                     <p className={styles.eventLocation}>
                       Tempat : {event.location_name}
                     </p>
@@ -203,14 +261,14 @@ export function VintageBlue(props: InvitationTemplateProps) {
             </VintageBlueReveal>
           </section>
 
-          {galleryAssets.length > 0 || videoAsset ? (
+          {displayedGalleryAssets.length > 0 || videoAsset ? (
             <section className={`${styles.section} ${styles.mediaSection}`}>
               <VintageBlueReveal>
                 <p className={styles.sectionEyebrow}>Our Memories</p>
                 <h2 className={styles.sectionTitle}>Galeri Kenangan</h2>
-                {galleryAssets.length > 0 ? (
+                {displayedGalleryAssets.length > 0 ? (
                   <div className={styles.galleryGrid}>
-                    {galleryAssets.slice(0, 8).map((asset) => (
+                    {displayedGalleryAssets.slice(0, 8).map((asset) => (
                       <div className={styles.galleryItem} key={asset.public_url}>
                         <Image
                           src={asset.public_url}
@@ -315,7 +373,10 @@ export function VintageBlue(props: InvitationTemplateProps) {
             <div className={styles.closingBackground} aria-hidden="true" />
             <div className={styles.closingCouple} aria-hidden="true">
               <Image
-                src="/images/invitations/vintage-blue/navy/closing-couple.png"
+                src={
+                  closingCoupleSrc ??
+                  "/images/invitations/vintage-blue/navy/closing-couple.png"
+                }
                 alt=""
                 fill
                 sizes="(min-width: 1025px) 352px, 88vw"

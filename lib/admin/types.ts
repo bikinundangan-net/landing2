@@ -37,11 +37,18 @@ export type PublicInvitation = {
   love_story: string | null;
   gift_account: string | null;
   notes: string | null;
+  profile_details?: {
+    groom_name?: string | null;
+    bride_name?: string | null;
+    groom: string | null;
+    bride: string | null;
+  };
   order_events: Array<{
     event_type: "akad" | "resepsi" | "other";
     title: string;
     event_date: string;
     event_time: string | null;
+    event_end_time?: string | null;
     location_name: string;
     maps_url: string | null;
   }>;

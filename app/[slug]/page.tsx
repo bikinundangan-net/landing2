@@ -3,7 +3,10 @@ import { notFound } from "next/navigation";
 import { PublicInvitationView } from "@/components/invitation/public-invitation";
 import { reservedRootSlugs } from "@/lib/admin/catalog";
 import { demoInvitation } from "@/lib/admin/demo-data";
-import { hamsyahYuyunInvitation } from "@/lib/admin/hamsyah-yuyun-data";
+import {
+  hamsyahYuyunInvitation,
+  normalizeHamsyahYuyunInvitation,
+} from "@/lib/admin/hamsyah-yuyun-data";
 import { getPublicInvitation } from "@/lib/admin/queries";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { siteUrl } from "@/lib/site";
@@ -22,7 +25,9 @@ async function resolveInvitation(slug: string) {
   if (slug === hamsyahYuyunInvitation.public_slug) {
     const databaseInvitation = await getPublicInvitation(slug);
 
-    return databaseInvitation ?? hamsyahYuyunInvitation;
+    return normalizeHamsyahYuyunInvitation(
+      databaseInvitation ?? hamsyahYuyunInvitation,
+    );
   }
 
   if (!isSupabaseConfigured() && slug === demoInvitation.public_slug) {
