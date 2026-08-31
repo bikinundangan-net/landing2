@@ -1,5 +1,11 @@
 import type { PublicInvitation } from "@/lib/admin/types";
 
+const hamsyahYuyunGalleryOrder = [
+  "/images/invitations/modern-minimal/hamsyah-yuyun-foto2.webp",
+  "/images/invitations/modern-minimal/hamsyah-yuyun-foto1.webp",
+  "/images/invitations/modern-minimal/hamsyah-yuyun-foto3.webp",
+];
+
 const hamsyahYuyunVintageBlueAssets: PublicInvitation["order_assets"] = [
   {
     asset_type: "hero",
@@ -103,13 +109,13 @@ export const hamsyahYuyunInvitation: PublicInvitation = {
     },
     {
       asset_type: "gallery",
-      file_name: "Momen 1",
-      public_url: "/images/invitations/modern-minimal/hamsyah-yuyun-foto1.webp",
+      file_name: "Momen 2",
+      public_url: "/images/invitations/modern-minimal/hamsyah-yuyun-foto2.webp",
     },
     {
       asset_type: "gallery",
-      file_name: "Momen 2",
-      public_url: "/images/invitations/modern-minimal/hamsyah-yuyun-foto2.webp",
+      file_name: "Momen 1",
+      public_url: "/images/invitations/modern-minimal/hamsyah-yuyun-foto1.webp",
     },
     {
       asset_type: "gallery",
@@ -144,6 +150,32 @@ export function normalizeHamsyahYuyunInvitation(
     seenGalleryUrls.add(asset.public_url);
     return true;
   });
+  const galleryOrder = new Map(
+    hamsyahYuyunGalleryOrder.map((publicUrl, index) => [publicUrl, index]),
+  );
+  const orderedGalleryAssets = orderAssets
+    .filter((asset) => asset.asset_type === "gallery")
+    .map((asset, index) => ({ asset, index }))
+    .sort((first, second) => {
+      const firstOrder = galleryOrder.get(first.asset.public_url);
+      const secondOrder = galleryOrder.get(second.asset.public_url);
+
+      if (firstOrder === undefined && secondOrder === undefined) {
+        return first.index - second.index;
+      }
+
+      return (
+        (firstOrder ?? hamsyahYuyunGalleryOrder.length + first.index) -
+        (secondOrder ?? hamsyahYuyunGalleryOrder.length + second.index)
+      );
+    })
+    .map(({ asset }) => asset);
+  let galleryIndex = 0;
+  const orderedAssets = orderAssets.map((asset) =>
+    asset.asset_type === "gallery"
+      ? orderedGalleryAssets[galleryIndex++]
+      : asset,
+  );
 
   return {
     ...invitation,
@@ -163,6 +195,6 @@ export function normalizeHamsyahYuyunInvitation(
         ? { ...event, event_time: "10:30", event_end_time: "12:00" }
         : event,
     ),
-    order_assets: [...orderAssets, ...hamsyahYuyunVintageBlueAssets],
+    order_assets: [...orderedAssets, ...hamsyahYuyunVintageBlueAssets],
   };
 }
