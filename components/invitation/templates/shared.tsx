@@ -15,6 +15,7 @@ import {
   type CountdownItem,
 } from "@/components/invitation/templates/countdown";
 import { LiveCountdownStrip } from "@/components/invitation/templates/countdown-strip";
+import { SubmitButton } from "@/components/invitation/templates/submit-button";
 import { getPackage, getTemplate } from "@/lib/admin/catalog";
 import type { PublicInvitation } from "@/lib/admin/types";
 import { siteUrl } from "@/lib/site";
@@ -459,7 +460,7 @@ export function RsvpGuestbookSection({
             placeholder="Ucapan singkat"
             className={inputClassName}
           />
-          <button className={buttonClassName}>Kirim RSVP</button>
+          <SubmitButton className={buttonClassName}>Kirim RSVP</SubmitButton>
         </div>
       </form>
 
@@ -487,7 +488,7 @@ export function RsvpGuestbookSection({
             placeholder="Tulis doa dan ucapan"
             className={inputClassName}
           />
-          <button className={buttonClassName}>Kirim Ucapan</button>
+          <SubmitButton className={buttonClassName}>Kirim Ucapan</SubmitButton>
         </div>
       </form>
 

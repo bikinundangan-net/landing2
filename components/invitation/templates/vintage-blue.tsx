@@ -8,6 +8,7 @@ import {
   CountdownStrip,
   formatDate,
 } from "@/components/invitation/templates/shared";
+import { SubmitButton } from "@/components/invitation/templates/submit-button";
 import {
   GiftCopyButton,
   VintageBlueExperience,
@@ -348,9 +349,9 @@ export function VintageBlue(props: InvitationTemplateProps) {
                     <span>Tidak Hadir</span>
                   </label>
                 </div>
-                <button type="submit" className={styles.submitButton}>
+                <SubmitButton className={styles.submitButton}>
                   Kirim
-                </button>
+                </SubmitButton>
               </form>
 
               {invitation.guestbook_entries?.length ? (

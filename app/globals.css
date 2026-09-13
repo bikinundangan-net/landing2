@@ -1149,6 +1149,12 @@ textarea.classic-rose-input {
   transform: translateY(-1px);
 }
 
+.themed-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+}
+
 .themed-button:focus-visible,
 .themed-gallery-grid__item:focus-visible,
 .themed-form :is(input, select, textarea):focus-visible {

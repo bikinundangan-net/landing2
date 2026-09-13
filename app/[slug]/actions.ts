@@ -4,6 +4,22 @@ import { revalidatePath } from "next/cache";
 import { appendSheetRow } from "@/lib/google-sheets";
 import { createClient } from "@/lib/supabase/server";
 
+const MIN_SUBMIT_DURATION_MS = 500;
+
+async function ensureMinDuration<T>(task: Promise<T>): Promise<T> {
+  const start = Date.now();
+  const result = await task;
+  const elapsed = Date.now() - start;
+
+  if (elapsed < MIN_SUBMIT_DURATION_MS) {
+    await new Promise((resolve) =>
+      setTimeout(resolve, MIN_SUBMIT_DURATION_MS - elapsed),
+    );
+  }
+
+  return result;
+}
+
 async function getOrderSheetId(
   supabase: NonNullable<Awaited<ReturnType<typeof createClient>>>,
   orderId: number,
@@ -53,6 +69,10 @@ async function saveGuestbookEntry({
 }
 
 export async function submitRsvp(formData: FormData) {
+  await ensureMinDuration(submitRsvpInternal(formData));
+}
+
+async function submitRsvpInternal(formData: FormData) {
   const supabase = await createClient();
 
   if (!supabase) {
@@ -101,6 +121,10 @@ export async function submitRsvp(formData: FormData) {
 }
 
 export async function submitGuestbook(formData: FormData) {
+  await ensureMinDuration(submitGuestbookInternal(formData));
+}
+
+async function submitGuestbookInternal(formData: FormData) {
   const supabase = await createClient();
 
   if (!supabase) {
