@@ -4,6 +4,54 @@ import { revalidatePath } from "next/cache";
 import { appendSheetRow } from "@/lib/google-sheets";
 import { createClient } from "@/lib/supabase/server";
 
+async function getOrderSheetId(
+  supabase: NonNullable<Awaited<ReturnType<typeof createClient>>>,
+  orderId: number,
+) {
+  const { data } = await supabase
+    .from("invitation_orders")
+    .select("google_sheet_id")
+    .eq("id", orderId)
+    .maybeSingle();
+
+  return data?.google_sheet_id ?? null;
+}
+
+async function saveGuestbookEntry({
+  supabase,
+  orderId,
+  slug,
+  guestName,
+  message,
+}: {
+  supabase: NonNullable<Awaited<ReturnType<typeof createClient>>>;
+  orderId: number;
+  slug: string;
+  guestName: string;
+  message: string;
+}) {
+  const { error: guestbookError } = await supabase
+    .from("guestbook_entries")
+    .insert({
+      order_id: orderId,
+      guest_name: guestName,
+      message,
+    });
+
+  if (guestbookError) {
+    console.error("Failed to insert guestbook entry", guestbookError.message);
+    return;
+  }
+
+  const sheetId = await getOrderSheetId(supabase, orderId);
+
+  await appendSheetRow(
+    "Ucapan",
+    [new Date().toISOString(), slug, guestName, message],
+    sheetId,
+  );
+}
+
 export async function submitRsvp(formData: FormData) {
   const supabase = await createClient();
 
@@ -24,7 +72,7 @@ export async function submitRsvp(formData: FormData) {
 
   const clampedGuestCount = Math.min(Math.max(guestCount, 1), 10);
 
-  await supabase.from("rsvps").insert({
+  const { error: rsvpError } = await supabase.from("rsvps").insert({
     order_id: orderId,
     guest_name: guestName,
     attendance,
@@ -32,14 +80,22 @@ export async function submitRsvp(formData: FormData) {
     message: message || null,
   });
 
-  await appendSheetRow("RSVP", [
-    new Date().toISOString(),
-    slug,
-    guestName,
-    attendance,
-    clampedGuestCount,
-    message,
-  ]);
+  if (rsvpError) {
+    console.error("Failed to insert rsvp", rsvpError.message);
+    return;
+  }
+
+  const sheetId = await getOrderSheetId(supabase, orderId);
+
+  await appendSheetRow(
+    "RSVP",
+    [new Date().toISOString(), slug, guestName, attendance, clampedGuestCount, message],
+    sheetId,
+  );
+
+  if (message) {
+    await saveGuestbookEntry({ supabase, orderId, slug, guestName, message });
+  }
 
   revalidatePath(`/${slug}`);
 }
@@ -60,18 +116,7 @@ export async function submitGuestbook(formData: FormData) {
     return;
   }
 
-  await supabase.from("guestbook_entries").insert({
-    order_id: orderId,
-    guest_name: guestName,
-    message,
-  });
-
-  await appendSheetRow("Ucapan", [
-    new Date().toISOString(),
-    slug,
-    guestName,
-    message,
-  ]);
+  await saveGuestbookEntry({ supabase, orderId, slug, guestName, message });
 
   revalidatePath(`/${slug}`);
 }

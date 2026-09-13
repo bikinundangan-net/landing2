@@ -177,6 +177,7 @@ export function AdminDashboard({
   const [selectedAddons, setSelectedAddons] = useState<string[]>(["express"]);
   const [workStatus, setWorkStatus] = useState("data_lengkap");
   const [isPublished, setIsPublished] = useState(false);
+  const [googleSheetId, setGoogleSheetId] = useState("");
 
   const totals = useMemo(
     () => calculateOrderTotal(packageSlug, selectedAddons),
@@ -726,6 +727,22 @@ export function AdminDashboard({
                           className="mt-2 w-full rounded-lg border border-maroon/10 bg-white px-3 py-3 text-sm font-semibold text-ink outline-none transition focus:border-maroon/45"
                         />
                       </label>
+                      <label className="block text-xs font-black text-ink/72">
+                        Google Sheet (URL atau ID) — opsional
+                        <input
+                          name="googleSheetId"
+                          type="text"
+                          value={googleSheetId}
+                          onChange={(event) => setGoogleSheetId(event.target.value)}
+                          placeholder="https://docs.google.com/spreadsheets/d/xxx/edit"
+                          className="mt-2 h-11 w-full rounded-lg border border-maroon/10 bg-white px-3 text-sm font-semibold text-ink outline-none transition placeholder:text-ink/30 focus:border-maroon/45"
+                        />
+                      </label>
+                      <p className="text-[11px] font-semibold text-ink/45 md:col-span-2">
+                        Kosongkan untuk pakai spreadsheet default. Pastikan sheet ini
+                        sudah di-share (Editor) ke service account, dan punya tab
+                        bernama &quot;RSVP&quot; dan &quot;Ucapan&quot;.
+                      </p>
                       <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-maroon/10 bg-cream/45 p-4 md:col-span-2">
                         <input
                           type="checkbox"
@@ -756,6 +773,11 @@ export function AdminDashboard({
                         value="Berawal dari pertemuan sederhana, kami belajar bahwa rumah adalah seseorang yang membuat hari terasa tenang."
                       />
                       <input type="hidden" name="notes" value="" />
+                      <input
+                        type="hidden"
+                        name="googleSheetId"
+                        value={googleSheetId}
+                      />
                       {isPublished ? (
                         <input type="hidden" name="isPublished" value="on" />
                       ) : null}

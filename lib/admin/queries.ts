@@ -129,5 +129,18 @@ export async function getPublicInvitation(slug: string) {
     return null;
   }
 
-  return data as PublicInvitation | null;
+  if (!data) {
+    return null;
+  }
+
+  const invitation = data as PublicInvitation;
+
+  if (invitation.guestbook_entries) {
+    invitation.guestbook_entries = [...invitation.guestbook_entries].sort(
+      (a, b) =>
+        new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
+    );
+  }
+
+  return invitation;
 }

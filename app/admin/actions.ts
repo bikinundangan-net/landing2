@@ -34,6 +34,12 @@ function getFileArray(formData: FormData, key: string) {
     .filter((value): value is File => value instanceof File && value.size > 0);
 }
 
+function extractSpreadsheetId(value: string) {
+  const trimmed = value.trim();
+  const match = trimmed.match(/\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
+  return match ? match[1] : trimmed;
+}
+
 function sanitizeFileName(fileName: string) {
   return fileName
     .toLowerCase()
@@ -162,6 +168,7 @@ export async function createInvitationOrder(
     loveStory: formData.get("loveStory"),
     giftAccount: formData.get("giftAccount"),
     notes: formData.get("notes"),
+    googleSheetId: formData.get("googleSheetId"),
   });
 
   if (!parsed.success) {
@@ -224,6 +231,9 @@ export async function createInvitationOrder(
       love_story: input.loveStory || null,
       gift_account: input.giftAccount || null,
       notes: input.notes || null,
+      google_sheet_id: input.googleSheetId
+        ? extractSpreadsheetId(input.googleSheetId)
+        : null,
       is_published: shouldPublish,
     })
     .select("id, public_slug")

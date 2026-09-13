@@ -1,11 +1,12 @@
 import { google } from "googleapis";
 
-function getSheetsClient() {
+function getSheetsClient(spreadsheetId: string | null | undefined) {
   const email = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
   const key = process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY;
-  const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
+  const resolvedSpreadsheetId =
+    spreadsheetId?.trim() || process.env.GOOGLE_SHEETS_SPREADSHEET_ID?.trim();
 
-  if (!email || !key || !spreadsheetId) {
+  if (!email || !key || !resolvedSpreadsheetId) {
     return null;
   }
 
@@ -15,14 +16,18 @@ function getSheetsClient() {
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
   });
 
-  return { sheets: google.sheets({ version: "v4", auth }), spreadsheetId };
+  return {
+    sheets: google.sheets({ version: "v4", auth }),
+    spreadsheetId: resolvedSpreadsheetId,
+  };
 }
 
 export async function appendSheetRow(
   sheetName: string,
   row: (string | number)[],
+  spreadsheetId?: string | null,
 ) {
-  const client = getSheetsClient();
+  const client = getSheetsClient(spreadsheetId);
 
   if (!client) {
     return;

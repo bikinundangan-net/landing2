@@ -330,6 +330,7 @@ export const orderFormSchema = z.object({
   loveStory: z.string().trim().optional(),
   giftAccount: z.string().trim().optional(),
   notes: z.string().trim().optional(),
+  googleSheetId: z.string().trim().optional(),
 });
 
 export type OrderFormInput = z.infer<typeof orderFormSchema>;
