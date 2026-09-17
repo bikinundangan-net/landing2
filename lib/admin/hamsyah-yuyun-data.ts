@@ -9,8 +9,8 @@ const hamsyahYuyunGalleryOrder = [
 const hamsyahYuyunVintageBlueAssets: PublicInvitation["order_assets"] = [
   {
     asset_type: "music",
-    file_name: "sotya.mp3",
-    public_url: "/song/sotya.mp3",
+    file_name: "kusuma-wijaya2.mp3",
+    public_url: "/song/vintage-blue/kusuma-wijaya2.mp3",
   },
   {
     asset_type: "hero",
@@ -79,7 +79,7 @@ export const hamsyahYuyunInvitation: PublicInvitation = {
   work_status: "selesai",
   total_price: 0,
   active_until: null,
-  music_title: "Sotya",
+  music_title: "Kusuma Wijaya",
   love_story: hamsyahYuyunLoveStory,
   gift_account:
     "Yuyun Istiqomah - BCA 0601133562\nHamsyah - BCA 8465510494\n\nWedding Gift dikirim ke:\nJl Monjali, Gemawang Rt 02/43 No.102, Sinduadi, Mlati, Sleman, Yogyakarta",
@@ -186,7 +186,7 @@ export function normalizeHamsyahYuyunInvitation(
     ...invitation,
     bride_name: "Yuyun",
     template_slug: "vintage-blue",
-    music_title: "Sotya",
+    music_title: "Kusuma Wijaya",
     love_story: invitation.love_story?.trim() || hamsyahYuyunLoveStory,
     profile_details: {
       groom_name: "Hamsyah",
