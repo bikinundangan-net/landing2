@@ -133,7 +133,7 @@ export function ThemedInvitationHamsyahYuyun({
       style={themeStyle}
       className={`${playfair.variable} ${cormorant.variable} themed-invitation themed-invitation--${config.variant} themed-invitation--hamsyah-yuyun mx-auto min-h-screen max-w-[30rem] overflow-hidden shadow-[0_0_80px_rgba(0,0,0,0.22)]`}
     >
-      <BackgroundMusicPlayer src="/song/pawestri.mp3" />
+      <BackgroundMusicPlayer src="/song/sotya.mp3" />
       <Suspense fallback={null}>
         <ModernMinimalCover
           motionPace="gentle"
