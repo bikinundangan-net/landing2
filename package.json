@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
+    "dev:invitation": "IBNU_DINATA_PREVIEW=1 next dev --hostname 127.0.0.1",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:invitation": "node node_modules/@playwright/test/cli.js test tests/ibnu-dinata.spec.ts",
+    "seed:ibnu-dinata": "node scripts/seed-ibnu-dinata.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.10.3",

@@ -96,12 +96,7 @@ export async function getPublicInvitation(slug: string) {
       gift_account,
       notes,
       order_events (
-        event_type,
-        title,
-        event_date,
-        event_time,
-        location_name,
-        maps_url
+        *
       ),
       order_addons (
         addon_slug,

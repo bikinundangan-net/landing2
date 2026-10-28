@@ -10,6 +10,8 @@ import {
 import { getPublicInvitation } from "@/lib/admin/queries";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { siteUrl } from "@/lib/site";
+import ibnuDinata from "@/lib/admin/ibnu-dinata.json";
+import { getIbnuDinataPreview } from "@/lib/supabase/ibnu-dinata-preview";
 
 type InvitationPageProps = {
   params: Promise<{ slug: string }>;
@@ -20,6 +22,11 @@ export const dynamic = "force-dynamic";
 async function resolveInvitation(slug: string) {
   if (reservedRootSlugs.has(slug)) {
     return null;
+  }
+
+  if (slug === ibnuDinata.slug) {
+    const preview = await getIbnuDinataPreview();
+    if (preview) return preview;
   }
 
   if (slug === hamsyahYuyunInvitation.public_slug) {
@@ -51,14 +58,17 @@ export async function generateMetadata({
 
   const isHamsyahYuyunInvitation =
     invitation.public_slug === hamsyahYuyunInvitation.public_slug;
-  const firstName = isHamsyahYuyunInvitation
+  const isIbnuDinata = invitation.public_slug === ibnuDinata.slug;
+  const firstName = isIbnuDinata ? "Ibnu" : isHamsyahYuyunInvitation
     ? invitation.groom_name
     : invitation.bride_name;
-  const secondName = isHamsyahYuyunInvitation
+  const secondName = isIbnuDinata ? "Dinata" : isHamsyahYuyunInvitation
     ? "Yuyun"
     : invitation.groom_name;
   const title = `Undangan ${firstName} & ${secondName}`;
-  const description = `Dengan hormat mengundang Anda ke acara pernikahan ${firstName} dan ${secondName}.`;
+  const description = isIbnuDinata
+    ? "Undangan pernikahan Ibnu Hardani & Pebriani Dinata. Akad Nikah, 8 November 2026, pukul 07.00–09.00 WIB di Bunut, Gang Jambu."
+    : `Dengan hormat mengundang Anda ke acara pernikahan ${firstName} dan ${secondName}.`;
 
   return {
     title,
@@ -71,7 +81,9 @@ export async function generateMetadata({
       description,
       url: `${siteUrl}/${invitation.public_slug}`,
       type: "website",
+      ...(isIbnuDinata ? { images: [{ url: ibnuDinata.illustration, width: 1024, height: 1536, alt: "Ilustrasi pernikahan Ibnu & Dinata" }] } : {}),
     },
+    ...(isIbnuDinata ? { twitter: { card: "summary_large_image" as const, title, description, images: [ibnuDinata.illustration] } } : {}),
     robots: {
       index: true,
       follow: true,
