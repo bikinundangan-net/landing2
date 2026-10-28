@@ -72,7 +72,7 @@
 .gateHeading { position: relative; z-index: 5; }
 .coverNames { font-size: clamp(30px, 8vw, 44px); white-space: nowrap; line-height: 1.2; margin-top: 4px !important; letter-spacing: -.05em; }
 .coverNames em { font-family: var(--font-id-body), Georgia, serif; font-size: .8em; font-weight: 400; color: #8d9679; }
-.gateScene { --gate-h: clamp(230px, calc(100svh - 360px), 540px); position: relative; height: var(--gate-h); width: min(100%, calc(var(--gate-h) * .8)); margin: calc(var(--gate-h) * .1 + 8px) auto 2px; }
+.gateScene { --gate-h: clamp(230px, calc(100svh - 360px), 540px); position: relative; transform-origin: 50% 52%; height: var(--gate-h); width: min(100%, calc(var(--gate-h) * .8)); margin: calc(var(--gate-h) * .1 + 8px) auto 2px; }
 .gateGlow { position: absolute; left: 13%; right: 13%; top: 10%; bottom: 1%; border-radius: 50% 50% 0 0 / 34% 34% 0 0; background: radial-gradient(ellipse at 50% 50%, #fffef6 0%, #fbf3d6 38%, #e7ebd8 78%, #dfe6d2 100%); box-shadow: 0 0 70px 24px #fff8dd99; }
 .gateDoors { position: absolute; left: 12%; right: 12%; top: 12%; bottom: 1%; display: flex; perspective: 1400px; z-index: 2; }
 .gateDoor { position: relative; width: 50%; height: 100%; transform-style: preserve-3d; }

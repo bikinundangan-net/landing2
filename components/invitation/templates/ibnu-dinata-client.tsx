@@ -94,7 +94,7 @@ function OpeningPetals() {
         style={{ left: `${index % 2 === 0 ? 2 + (index * 7) % 25 : 73 + (index * 3) % 24}%`, width: 9 + index % 4 * 3, height: 15 + index % 3 * 4 }}
         initial={{ y: "-12vh", x: index % 2 === 0 ? -30 : 30, rotate: index * 31, opacity: 0 }}
         animate={{ y: "110vh", x: [index % 2 === 0 ? -30 : 30, index % 2 === 0 ? 45 : -45, index % 2 === 0 ? 10 : -10], rotate: index * 31 + (index % 2 === 0 ? 330 : -300), opacity: [0, 0.95, 0.85, 0] }}
-        transition={{ duration: 1.5 + index % 4 * 0.12, delay: 0.55 + index % 6 * 0.09, ease: "easeInOut" }}
+        transition={{ duration: 2.1 + index % 4 * 0.15, delay: 0.8 + index % 6 * 0.1, ease: "easeInOut" }}
       />
     ))}
   </div>;
@@ -192,19 +192,20 @@ export function InvitationGate({ children }: { children: ReactNode }) {
     let cancelled = false;
     const door = [0.4, 0, 0.2, 1] as const;
     const sequence: AnimationSequence = [
-      ["[data-gate-copy]", { opacity: [1, 0], y: [0, 18] }, { at: 0, duration: 0.4 }],
-      ["[data-logo-half]", { scale: [1, 1.12, 1.04] }, { at: 0, duration: 0.45 }],
-      ["[data-gate-burst]", { opacity: [0, 1, 0], scale: [0.5, 1.7] }, { at: 0.05, duration: 0.9 }],
-      ["[data-testid='gate-left']", { rotateY: [0, -105], x: [0, -6] }, { at: 0.45, duration: 1.45, ease: door }],
-      ["[data-testid='gate-right']", { rotateY: [0, 105], x: [0, 6] }, { at: 0.45, duration: 1.45, ease: door }],
-      ["[data-logo-half]", { opacity: [1, 0] }, { at: 1, duration: 0.5 }],
-      ["[data-gate-glow]", { scale: [1, 2.2], opacity: [0.75, 1, 0.7] }, { at: 0.5, duration: 1.4 }],
-      ["[data-gate-arch]", { y: [0, -90], opacity: [1, 0] }, { at: 0.7, duration: 1.4 }],
-      ["[data-gate-side='left']", { x: [0, -130], opacity: [1, 0] }, { at: 0.6, duration: 1.6 }],
-      ["[data-gate-side='right']", { x: [0, 130], opacity: [1, 0] }, { at: 0.6, duration: 1.6 }],
-      ["[data-gate-scene]", { scale: [1, 1.38] }, { at: 0.8, duration: 1.3, ease: [0.55, 0, 0.2, 1] }],
-      ["#invitation-content > section:first-child", { scale: [0.94, 1] }, { at: 1.55, duration: 0.8, ease: [0.2, 0.6, 0.3, 1] }],
-      ["[data-testid='opening-cover']", { opacity: [1, 0] }, { at: 1.55, duration: 0.8 }],
+      ["[data-gate-copy]", { opacity: [1, 0], y: [0, 18] }, { at: 0, duration: 0.5 }],
+      ["[data-logo-half]", { scale: [1, 1.12, 1.04] }, { at: 0, duration: 0.6 }],
+      ["[data-gate-burst]", { opacity: [0, 1, 0], scale: [0.5, 1.7] }, { at: 0.1, duration: 1.1 }],
+      // Push in toward the logo before the doors move, then keep walking through.
+      ["[data-gate-scene]", { scale: [1, 1.3, 2] }, { at: 0, duration: 3.2, times: [0, 0.3, 1], ease: [0.45, 0, 0.25, 1] }],
+      ["[data-testid='gate-left']", { rotateY: [0, -105], x: [0, -6] }, { at: 0.75, duration: 2.4, ease: door }],
+      ["[data-testid='gate-right']", { rotateY: [0, 105], x: [0, 6] }, { at: 0.75, duration: 2.4, ease: door }],
+      ["[data-logo-half]", { opacity: [1, 0] }, { at: 1.6, duration: 0.7 }],
+      ["[data-gate-glow]", { scale: [1, 2.2], opacity: [0.75, 1, 0.7] }, { at: 0.8, duration: 2.3 }],
+      ["[data-gate-arch]", { y: [0, -90], opacity: [1, 0] }, { at: 1.1, duration: 2 }],
+      ["[data-gate-side='left']", { x: [0, -130], opacity: [1, 0] }, { at: 0.9, duration: 2.2 }],
+      ["[data-gate-side='right']", { x: [0, 130], opacity: [1, 0] }, { at: 0.9, duration: 2.2 }],
+      ["#invitation-content > section:first-child", { scale: [0.94, 1] }, { at: 2.85, duration: 1, ease: [0.2, 0.6, 0.3, 1] }],
+      ["[data-testid='opening-cover']", { opacity: [1, 0] }, { at: 2.85, duration: 1 }],
     ];
     const playback = animate(sequence);
     void playback.then(() => {
