@@ -49,7 +49,7 @@ for (const viewport of [{ width: 360, height: 640 }, { width: 390, height: 844 }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await expect(page.getByTestId("opening-petals")).toHaveCount(0);
     expect(await page.locator("#invitation-content > section").first().evaluate(el => getComputedStyle(el).transform)).toBe("none");
-    await expect(page.locator("audio")).toHaveCount(0);
+    await expect(page.locator("audio")).toHaveAttribute("src", "/song/youre-still-the-one.mp3");
     await expect(page.getByRole("heading", { name: "Galeri Kenangan" })).toHaveCount(0);
     expect(errors).toEqual([]);
   });
@@ -110,6 +110,19 @@ test("rapid clicks start only one gate opening sequence", async ({ page }) => {
   await expect(page.locator("#invitation-content")).toHaveAttribute("data-open", "true");
   await expect(page.locator("#invitation-content")).toBeFocused();
   await expect(page.getByTestId("invitation-gate")).toHaveCount(0);
+});
+
+test("music starts with the opening click and the disc button pauses and resumes it", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/ibnu-dinata");
+  await expect(page.getByRole("button", { name: /musik/ })).toHaveCount(0);
+  await page.getByRole("button", { name: "Buka Undangan", exact: true }).click();
+  const audio = page.locator("audio");
+  await expect.poll(() => audio.evaluate(el => (el as HTMLAudioElement).paused)).toBe(false);
+  await page.getByRole("button", { name: "Jeda musik: You're Still the One", exact: true }).click();
+  await expect.poll(() => audio.evaluate(el => (el as HTMLAudioElement).paused)).toBe(true);
+  await page.getByRole("button", { name: "Putar musik: You're Still the One", exact: true }).click();
+  await expect.poll(() => audio.evaluate(el => (el as HTMLAudioElement).paused)).toBe(false);
 });
 
 test("metadata includes date, illustration, and canonical URL", async ({ request }) => {

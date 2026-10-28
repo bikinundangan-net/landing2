@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { motion, useAnimate, useReducedMotion, useScroll, useTransform, type AnimationSequence, type TargetAndTransition, type Variants } from "framer-motion";
-import { ArrowDown, ArrowUpRight, Check, Copy, Heart, LoaderCircle, MailOpen } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Check, Copy, Disc3, Heart, LoaderCircle, MailOpen } from "lucide-react";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useActionState, useEffect, useId, useRef, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from "react";
+import { Suspense, useActionState, useEffect, useId, useRef, useState, useSyncExternalStore, type CSSProperties, type ReactNode, type RefObject } from "react";
 import { LiveCountdownStrip } from "./countdown-strip";
 import type { CountdownItem } from "./countdown";
 import { submitIbnuRsvp, submitIbnuWish } from "@/app/[slug]/ibnu-dinata-actions";
@@ -100,6 +100,17 @@ function OpeningPetals() {
   </div>;
 }
 
+function MusicToggle({ audio, playing }: { audio: RefObject<HTMLAudioElement | null>; playing: boolean }) {
+  return <button type="button" className={styles.musicToggle} data-playing={playing} aria-pressed={playing} aria-label={playing ? `Jeda musik: ${content.musicTitle}` : `Putar musik: ${content.musicTitle}`} onClick={() => {
+    const element = audio.current;
+    if (!element) return;
+    if (element.paused) void element.play().catch(() => {});
+    else element.pause();
+  }}>
+    <Disc3 size={22} strokeWidth={1.4} aria-hidden="true" />
+  </button>;
+}
+
 function GateDoor({ side }: { side: "left" | "right" }) {
   const id = useSvgId();
   const gold = `url(#${id}-gold)`;
@@ -170,6 +181,26 @@ export function InvitationGate({ children }: { children: ReactNode }) {
   const [scope, animate] = useAnimate<HTMLDivElement>();
   const bodyRef = useRef<HTMLDivElement>(null);
   const opening = useRef(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [playing, setPlaying] = useState(false);
+
+  useEffect(() => {
+    // Pause while the tab is hidden and resume only what the guest was already hearing.
+    let resume = false;
+    function onVisibility() {
+      const audio = audioRef.current;
+      if (!audio) return;
+      if (document.hidden) {
+        resume = !audio.paused;
+        audio.pause();
+      } else if (resume) {
+        resume = false;
+        void audio.play().catch(() => {});
+      }
+    }
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => document.removeEventListener("visibilitychange", onVisibility);
+  }, []);
 
   useEffect(() => {
     if (phase === "open") {
@@ -223,6 +254,8 @@ export function InvitationGate({ children }: { children: ReactNode }) {
   function open() {
     if (opening.current) return;
     opening.current = true;
+    // Start inside the click so browsers treat playback as user initiated.
+    void audioRef.current?.play().catch(() => {});
     window.scrollTo({ top: 0, behavior: "instant" });
     setPhase(reduceMotion ? "open" : "opening");
   }
@@ -270,6 +303,8 @@ export function InvitationGate({ children }: { children: ReactNode }) {
         {children}
       </div>
       {phase === "open" && <AmbientPetals count={10} className={styles.pageAmbient} />}
+      <audio ref={audioRef} src={content.music} preload="none" loop onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} />
+      {phase !== "closed" && <MusicToggle audio={audioRef} playing={playing} />}
       <noscript><style>{`#invitation-content { visibility: visible !important; } #invitation-content[inert] { display: none; }`}</style><p className={styles.noScript}>Aktifkan JavaScript untuk membuka undangan dan mengirim konfirmasi kehadiran.</p></noscript>
     </div>
   );

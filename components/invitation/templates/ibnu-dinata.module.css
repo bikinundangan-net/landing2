@@ -265,6 +265,11 @@
 .content[data-open="false"] .bottomNav { opacity: 0; translate: -50% 30px; pointer-events: none; }
 .bottomNav a { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 54px; padding: 6px 8px; border-radius: 999px; color: var(--ink); font-size: 10px; letter-spacing: .04em; line-height: 1.2; transition: background .2s; }
 .bottomNav a:hover { background: #e5eada; }
+.musicToggle { position: fixed; z-index: 85; right: max(16px, calc((100vw - 620px) / 2 + 16px)); bottom: calc(max(14px, env(safe-area-inset-bottom)) + 72px); display: grid; place-items: center; width: 48px; height: 48px; padding: 0; border: 1px solid #b8a476; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fffdf3, #efe9d2); color: #6f5a2e; box-shadow: 0 8px 22px #31463530, inset 0 0 0 3px #fffdf3, inset 0 0 0 4px #b8a47655; }
+.musicToggle svg { animation: spin 4s linear infinite; animation-play-state: paused; }
+.musicToggle[data-playing="true"] svg { animation-play-state: running; }
+.musicToggle[data-playing="true"]::after { content: ""; position: absolute; inset: -1px; border-radius: 50%; border: 1px solid #b8a476; pointer-events: none; animation: ring 2.4s ease-out infinite; }
+.musicToggle[data-playing="false"] { opacity: .8; }
 .noScript { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; padding: 20px; background: var(--ivory); text-align: center; }
 @media (min-width: 900px) { .shell { background: radial-gradient(ellipse at 0% 30%, #c4d1bc, transparent 55%), radial-gradient(ellipse at 100% 80%, #bac9b2, transparent 50%), #e2e7dc; background-attachment: fixed; } }
 @media (max-width: 390px) { .section { padding-inline: 27px; } .closing { padding-inline: 29px; } .bankCard { padding-inline: 21px; } .hero { padding-inline: 24px; } .heroNames { font-size: 41px; } .eyebrow { font-size: 10px; letter-spacing: .18em; } .countdown { gap: 6px; } .countdownItem > span:first-child { font-size: 27px; } .verseCard, .event { padding-inline: 22px; } .formCard { padding-inline: 18px; } .bottomNav a { min-width: 50px; padding-inline: 5px; } }

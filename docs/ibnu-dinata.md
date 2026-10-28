@@ -38,7 +38,7 @@ The current environment has a Supabase service-role credential for order data, b
 
 The two forms use separate server actions and resolve the real order by slug on the server. The normal production client and database policies require a published, active order. Validation limits names to 2–100 characters, guest counts to integers 1–10, and wishes to 2–2,000 characters. Success follows a successful database insert. An optional per-order Google Sheet mirrors persisted answers; failure to mirror does not change a saved response to a failure.
 
-The invitation is silent. No photos or demo guest messages are used. An actual uploaded gallery can be displayed later. Image generation provenance and prompt descriptions are in `public/images/invitations/ibnu-dinata/ASSETS.md`.
+Music is `public/song/youre-still-the-one.mp3` (`music` and `musicTitle` in the JSON). Playback starts inside the "Buka Undangan" click so browsers allow it, loops, pauses while the tab is hidden, and is controlled by a floating disc button that appears once opening starts. No photos or demo guest messages are used. An actual uploaded gallery can be displayed later. Image generation provenance and prompt descriptions are in `public/images/invitations/ibnu-dinata/ASSETS.md`.
 
 ## Checks
 
