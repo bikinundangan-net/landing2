@@ -18,7 +18,7 @@ function GuestName() {
 }
 
 export function FloralOrnament({ kind = "corner", className = "", priority = false }: { kind?: "arch" | "corner"; className?: string; priority?: boolean }) {
-  return <Image src={`/images/invitations/ibnu-dinata/${kind === "arch" ? "floral-arch" : "corner-bouquet"}.webp`} width={kind === "arch" ? 1400 : 1000} height={kind === "arch" ? 700 : 1000} alt="" aria-hidden="true" className={`${styles.floralOrnament} ${className}`} preload={priority} sizes={kind === "arch" ? "(min-width: 620px) 720px, 120vw" : "(min-width: 620px) 320px, 60vw"} />;
+  return <Image src={`/images/invitations/ibnu-dinata/${kind === "arch" ? "floral-arch" : "corner-bouquet"}.webp`} width={kind === "arch" ? 1400 : 1000} height={kind === "arch" ? 700 : 1000} alt="" aria-hidden="true" className={`${styles.floralOrnament} ${className}`} loading={priority ? "eager" : "lazy"} fetchPriority={priority && kind === "arch" ? "high" : undefined} sizes={kind === "arch" ? "(min-width: 620px) 720px, 120vw" : "(min-width: 620px) 320px, 60vw"} />;
 }
 
 // React ids contain characters that are awkward inside url(#…) references.
