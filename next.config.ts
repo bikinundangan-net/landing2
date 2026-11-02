@@ -7,6 +7,8 @@ const siteUrl = (
 const nextConfig: NextConfig = {
   allowedDevOrigins: ["127.0.0.1", "localhost"],
   images: {
+    // 90 is used by the detailed watercolor ornaments; everything else keeps the default 75.
+    qualities: [75, 90],
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "images.pexels.com" },
