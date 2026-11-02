@@ -43,8 +43,8 @@ for (const viewport of [{ width: 360, height: 640 }, { width: 390, height: 844 }
     await expect(page.locator("#invitation-content")).not.toHaveAttribute("inert", "");
     expect(await page.evaluate(() => getComputedStyle(document.body).overflow)).not.toBe("hidden");
     await expect(page.getByRole("heading", { name: "Ibnu Hardani", exact: true })).toHaveCount(1);
-    await page.getByText("07.00–09.00 WIB", { exact: true }).scrollIntoViewIfNeeded();
-    await expect(page.getByText("07.00–09.00 WIB", { exact: true })).toBeVisible();
+    await page.getByText("07.00–13.00 WIB", { exact: true }).scrollIntoViewIfNeeded();
+    await expect(page.getByText("07.00–13.00 WIB", { exact: true })).toBeVisible();
     await expect(page.getByRole("link", { name: "Petunjuk lokasi" })).toHaveAttribute("href", "https://maps.app.goo.gl/JUYQyFZva6c8rDW87");
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await expect(page.getByTestId("opening-petals")).toHaveCount(0);
@@ -133,7 +133,7 @@ test("metadata includes date, couple photo, and canonical URL", async ({ request
   const html = await response.text();
   const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
   expect(canonical).toBe(`${(process.env.NEXT_PUBLIC_SITE_URL || "https://bikinundangan.net").replace(/\/$/, "")}/ibnu-dinata`);
-  expect(html).toContain("07.00–09.00 WIB");
+  expect(html).toContain("07.00–13.00 WIB");
   expect(html).toContain("photo-05.webp");
 });
 

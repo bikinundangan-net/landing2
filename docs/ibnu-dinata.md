@@ -32,11 +32,11 @@ If this draft route returns 404 after restarting, confirm the server was started
 ## Release order
 
 1. Apply `supabase/migrations/202610270001_event_end_time.sql` with the existing database migration process.
-2. Run `node scripts/seed-ibnu-dinata.mjs` again. Confirm one managed akad event and two managed asset records, with end time `09:00:00`.
+2. Run `node scripts/seed-ibnu-dinata.mjs` again. Confirm one managed akad event and two managed asset records, with end time `13:00:00`.
 3. Run TypeScript and the production build, then deploy through the existing Vercel project for bikinundangan.net.
 4. After deployment is ready, run `node scripts/seed-ibnu-dinata.mjs --publish`. Confirm the custom design, assets, metadata, anonymous RSVP, and guestbook on the production URL. Publication is separate so the old production template never displays incomplete assets during development.
 
-`order_events(*)` in the public query includes the additive end-time column once applied and stays compatible with an older schema. Until migration, the custom view uses the configured `09:00:00` end time. This does not mean the SQL migration has been applied.
+`order_events(*)` in the public query includes the additive end-time column once applied and stays compatible with an older schema. Until migration, the custom view uses the configured `13:00:00` end time. This does not mean the SQL migration has been applied.
 
 The current environment has a Supabase service-role credential for order data, but no direct database/migration credential or Vercel/GitHub deployment credential. A service-role API key alone cannot run SQL migrations or deploy application source.
 

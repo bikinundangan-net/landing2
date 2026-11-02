@@ -66,4 +66,4 @@ for (const asset of [
     : await client.from("order_assets").insert(values), "Save managed asset");
 }
 console.log(JSON.stringify({ slug: content.slug, orderId: order.id, published: order.is_published, endTimeMigrationApplied: hasEndTime }));
-if (!hasEndTime) console.warn("Apply supabase/migrations/202610270001_event_end_time.sql. The invitation uses its configured 09.00 end time until then.");
+if (!hasEndTime) console.warn("Apply supabase/migrations/202610270001_event_end_time.sql. The invitation uses its configured 13.00 end time until then.");

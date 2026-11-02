@@ -72,7 +72,7 @@ export function IbnuDinataInvitation({ invitation, firstEvent, display }: Invita
         </section>
 
         <section id="mempelai" className={`${styles.section} ${styles.coupleSection}`}>
-          <FloralOrnament className={`${styles.coupleFlowers} ${styles.swayBottom}`} /><FloralOrnament className={`${styles.coupleFlowersLeft} ${styles.swayBottom}`} />
+          <FloralOrnament className={`${styles.coupleFlowers} ${styles.swayBottom}`} />
           <Reveal>
             <p className={styles.arabic} lang="ar" dir="rtl">السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ</p>
             <p className={styles.intro}>Dengan memohon rahmat dan rida Allah SWT., kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada pernikahan kami.</p>

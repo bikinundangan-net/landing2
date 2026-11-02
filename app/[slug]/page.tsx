@@ -67,7 +67,7 @@ export async function generateMetadata({
     : invitation.groom_name;
   const title = `Undangan ${firstName} & ${secondName}`;
   const description = isIbnuDinata
-    ? "Undangan pernikahan Ibnu Hardani & Pebriani Dinata. Akad Nikah, 8 November 2026, pukul 07.00–09.00 WIB di Bunut, Gang Jambu."
+    ? "Undangan pernikahan Ibnu Hardani & Pebriani Dinata. Akad Nikah, 8 November 2026, pukul 07.00–13.00 WIB di Bunut, Gang Jambu."
     : `Dengan hormat mengundang Anda ke acara pernikahan ${firstName} dan ${secondName}.`;
 
   return {
