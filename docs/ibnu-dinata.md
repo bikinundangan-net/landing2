@@ -13,6 +13,12 @@ While closed, the cover has slowly turning light rays, falling petals, twinkling
 
 A finite burst of opening petals still runs only while opening: 18 visible on screens up to 620 px, 30 on larger screens. Reduced motion bypasses the sequence and hides petals and sparkles. Scroll remains locked and content inert until the sequence ends; focus moves after React has committed the active content. Unmounting stops playback and restores scroll styles. This revision changes no order data, database schema, or publication state.
 
+## Photos and red theme
+
+The hero and the "Galeri Kenangan" section use the couple's prewedding photos (`heroPhoto` and `photos` in the JSON), served as local WebP files rather than order assets, so they do not depend on the database. The gallery reuses `ThemedGallery` (lightbox included) with portrait 2:3 tiles and a wide arched first tile.
+
+The palette follows the photos: warm cream paper with burgundy `#7a1020` and maroon `#4f0a14` accents (from the stage curtains and velvet kebaya) plus the existing antique gold; no blush or pink backgrounds. The watercolor florals are separate burgundy asset files (`*-burgundy.webp`, see `ASSETS.md`), not CSS filters. They use new file names so cached optimized images of the old sage versions are never served.
+
 ## Data and local preview
 
 Run `node scripts/seed-ibnu-dinata.mjs` with the existing local Supabase environment. It creates a draft with a real database ID, an empty customer contact, Basic as the technical package, zero unconfirmed totals, and the default unpaid state. Repeated runs update invitation content and managed assets without changing existing contact, package, billing, workflow, expiry, guestbook entries, or publication state. Do not run concurrent seeds for the same order.
@@ -38,7 +44,7 @@ The current environment has a Supabase service-role credential for order data, b
 
 The two forms use separate server actions and resolve the real order by slug on the server. The normal production client and database policies require a published, active order. Validation limits names to 2–100 characters, guest counts to integers 1–10, and wishes to 2–2,000 characters. Success follows a successful database insert. An optional per-order Google Sheet mirrors persisted answers; failure to mirror does not change a saved response to a failure.
 
-Music is `public/song/youre-still-the-one.mp3` (`music` and `musicTitle` in the JSON). Playback starts inside the "Buka Undangan" click so browsers allow it, loops, pauses while the tab is hidden, and is controlled by a floating disc button that appears once opening starts. No photos or demo guest messages are used. An actual uploaded gallery can be displayed later. Image generation provenance and prompt descriptions are in `public/images/invitations/ibnu-dinata/ASSETS.md`.
+Music is `public/song/youre-still-the-one.mp3` (`music` and `musicTitle` in the JSON). Playback starts inside the "Buka Undangan" click so browsers allow it, loops, pauses while the tab is hidden, and is controlled by a floating disc button that appears once opening starts. No demo guest messages are used. Image provenance is in `public/images/invitations/ibnu-dinata/ASSETS.md`.
 
 ## Checks
 

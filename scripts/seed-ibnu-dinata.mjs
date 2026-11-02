@@ -56,7 +56,7 @@ checked(events.length
   : await client.from("order_events").insert(event), "Save event");
 
 for (const asset of [
-  { asset_type: "hero", file_name: "ibnu-dinata-couple-illustration.webp", public_url: content.illustration },
+  { asset_type: "hero", file_name: "ibnu-dinata-couple-illustration.webp", public_url: content.heroPhoto },
   { asset_type: "other", file_name: "ibnu-dinata-botanical-spray.webp", public_url: content.botanical },
 ]) {
   const assets = checked(await client.from("order_assets").select("id").eq("order_id", order.id).eq("file_name", asset.file_name).order("id").limit(1), "Read managed asset");

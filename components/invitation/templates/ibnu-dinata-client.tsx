@@ -18,7 +18,7 @@ function GuestName() {
 }
 
 export function FloralOrnament({ kind = "corner", className = "", priority = false }: { kind?: "arch" | "corner"; className?: string; priority?: boolean }) {
-  return <Image src={`/images/invitations/ibnu-dinata/${kind === "arch" ? "floral-arch" : "corner-bouquet"}.webp`} width={kind === "arch" ? 1400 : 1000} height={kind === "arch" ? 700 : 1000} alt="" aria-hidden="true" className={`${styles.floralOrnament} ${className}`} loading={priority ? "eager" : "lazy"} fetchPriority={priority && kind === "arch" ? "high" : undefined} sizes={kind === "arch" ? "(min-width: 620px) 720px, 120vw" : "(min-width: 620px) 320px, 60vw"} />;
+  return <Image src={`/images/invitations/ibnu-dinata/${kind === "arch" ? "floral-arch" : "corner-bouquet"}-burgundy.webp`} width={kind === "arch" ? 1400 : 1000} height={kind === "arch" ? 700 : 1000} alt="" aria-hidden="true" className={`${styles.floralOrnament} ${className}`} loading={priority ? "eager" : "lazy"} fetchPriority={priority && kind === "arch" ? "high" : undefined} sizes={kind === "arch" ? "(min-width: 620px) 720px, 120vw" : "(min-width: 620px) 320px, 60vw"} />;
 }
 
 // React ids contain characters that are awkward inside url(#…) references.
@@ -46,7 +46,7 @@ export function IbnuDinataLogo({ className = "", animated = false, decorative = 
   return <svg viewBox="0 0 200 200" className={`${styles.logo} ${animated ? styles.logoAnimated : ""} ${className}`} {...decorative ? { "aria-hidden": true } : { role: "img", "aria-label": "Logo Ibnu & Dinata" }}>
     <defs>
       <GoldGradient id={gold} />
-      <radialGradient id={`${id}-disc`} cx=".4" cy=".35" r=".75"><stop offset="0" stopColor="#fffdf4" /><stop offset=".7" stopColor="#f6f1df" /><stop offset="1" stopColor="#e9e5cf" /></radialGradient>
+      <radialGradient id={`${id}-disc`} cx=".4" cy=".35" r=".75"><stop offset="0" stopColor="#fffaf3" /><stop offset=".7" stopColor="#f7efe2" /><stop offset="1" stopColor="#eadcc6" /></radialGradient>
       <linearGradient id={`${id}-shine`} x1="0" x2="1"><stop offset="0" stopColor="#fff" stopOpacity="0" /><stop offset=".5" stopColor="#fff" stopOpacity=".75" /><stop offset="1" stopColor="#fff" stopOpacity="0" /></linearGradient>
       <clipPath id={`${id}-clip`}><circle cx="100" cy="100" r="98" /></clipPath>
       <path id={`${id}-ring`} d="M100 100m-82 0a82 82 0 1 1 164 0a82 82 0 1 1-164 0" />
@@ -60,14 +60,14 @@ export function IbnuDinataLogo({ className = "", animated = false, decorative = 
     </g>
     <circle cx="100" cy="100" r="72" fill="none" stroke={`url(#${gold})`} strokeWidth="1.4" />
     <circle cx="100" cy="100" r="68.5" fill="none" stroke="#c9b27a" strokeWidth=".5" strokeDasharray="1.5 3" />
-    <g fill="#8fa083" opacity=".9">
+    <g fill="#6b0f1a" opacity=".9">
       {laurel.map((leaf, index) => <ellipse key={index} cx={leaf.x} cy={leaf.y} rx="2.6" ry="6.6" transform={`rotate(${leaf.rotate} ${leaf.x} ${leaf.y})`} fill={index % 3 === 1 ? `url(#${gold})` : undefined} />)}
     </g>
     <path d="M100 38l4 6-4 6-4-6z" fill={`url(#${gold})`} />
-    <text x="72" y="116" textAnchor="middle" fontSize="46" fill="#314635" style={{ fontFamily: "var(--font-id-display), Georgia, serif" }}>I</text>
-    <text x="128" y="116" textAnchor="middle" fontSize="46" fill="#314635" style={{ fontFamily: "var(--font-id-display), Georgia, serif" }}>D</text>
+    <text x="72" y="116" textAnchor="middle" fontSize="46" fill="#4f0a14" style={{ fontFamily: "var(--font-id-display), Georgia, serif" }}>I</text>
+    <text x="128" y="116" textAnchor="middle" fontSize="46" fill="#4f0a14" style={{ fontFamily: "var(--font-id-display), Georgia, serif" }}>D</text>
     <text x="100" y="112" textAnchor="middle" fontSize="28" fontStyle="italic" fill={`url(#${gold})`} style={{ fontFamily: "var(--font-id-body), Georgia, serif" }}>&amp;</text>
-    <text x="100" y="140" textAnchor="middle" fontSize="7.5" letterSpacing="2.4" fill="#677060" style={{ fontFamily: "var(--font-id-body), Georgia, serif", fontWeight: 600 }}>08.11.26</text>
+    <text x="100" y="140" textAnchor="middle" fontSize="7.5" letterSpacing="2.4" fill="#6f5048" style={{ fontFamily: "var(--font-id-body), Georgia, serif", fontWeight: 600 }}>08.11.26</text>
     {animated && <g clipPath={`url(#${id}-clip)`}><rect className={styles.logoShine} x="-80" y="-20" width="60" height="240" fill={`url(#${id}-shine)`} transform="rotate(20 100 100)" /></g>}
   </svg>;
 }
@@ -145,10 +145,10 @@ function GatePillar({ side }: { side: "left" | "right" }) {
     <svg viewBox="0 0 60 520" preserveAspectRatio="none">
       <defs>
         <GoldGradient id={`${id}-gold`} />
-        <linearGradient id={`${id}-stone`} x1="0" x2="1"><stop offset="0" stopColor="#e5e3d1" /><stop offset=".45" stopColor="#fffdf3" /><stop offset="1" stopColor="#d9d8c1" /></linearGradient>
+        <linearGradient id={`${id}-stone`} x1="0" x2="1"><stop offset="0" stopColor="#ece2d2" /><stop offset=".45" stopColor="#fffaf3" /><stop offset="1" stopColor="#ddd0bc" /></linearGradient>
       </defs>
       <rect x="9" y="58" width="42" height="420" fill={`url(#${id}-stone)`} />
-      <path d="M19 70V466M30 70V466M41 70V466" stroke="#cfcbb1" strokeWidth="1.2" />
+      <path d="M19 70V466M30 70V466M41 70V466" stroke="#d6c7b0" strokeWidth="1.2" />
       <rect x="2" y="40" width="56" height="20" rx="2" fill={`url(#${id}-gold)`} />
       <rect x="6" y="30" width="48" height="10" rx="2" fill={`url(#${id}-gold)`} opacity=".8" />
       <ellipse cx="30" cy="18" rx="11" ry="12" fill={`url(#${id}-gold)`} />

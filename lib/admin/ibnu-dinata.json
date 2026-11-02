@@ -23,5 +23,15 @@
   "music": "/song/youre-still-the-one.mp3",
   "musicTitle": "You're Still the One",
   "illustration": "/images/invitations/ibnu-dinata/couple-illustration.webp",
-  "botanical": "/images/invitations/ibnu-dinata/botanical-spray.webp"
+  "botanical": "/images/invitations/ibnu-dinata/botanical-spray-burgundy.webp",
+  "heroPhoto": "/images/invitations/ibnu-dinata/photo-05.webp",
+  "photos": [
+    "/images/invitations/ibnu-dinata/photo-01.webp",
+    "/images/invitations/ibnu-dinata/photo-02.webp",
+    "/images/invitations/ibnu-dinata/photo-03.webp",
+    "/images/invitations/ibnu-dinata/photo-04.webp",
+    "/images/invitations/ibnu-dinata/photo-05.webp",
+    "/images/invitations/ibnu-dinata/photo-06.webp",
+    "/images/invitations/ibnu-dinata/photo-07.webp"
+  ]
 }

@@ -81,9 +81,9 @@ export async function generateMetadata({
       description,
       url: `${siteUrl}/${invitation.public_slug}`,
       type: "website",
-      ...(isIbnuDinata ? { images: [{ url: ibnuDinata.illustration, width: 1024, height: 1536, alt: "Ilustrasi pernikahan Ibnu & Dinata" }] } : {}),
+      ...(isIbnuDinata ? { images: [{ url: ibnuDinata.heroPhoto, width: 1400, height: 2100, alt: "Ibnu Hardani & Pebriani Dinata" }] } : {}),
     },
-    ...(isIbnuDinata ? { twitter: { card: "summary_large_image" as const, title, description, images: [ibnuDinata.illustration] } } : {}),
+    ...(isIbnuDinata ? { twitter: { card: "summary_large_image" as const, title, description, images: [ibnuDinata.heroPhoto] } } : {}),
     robots: {
       index: true,
       follow: true,

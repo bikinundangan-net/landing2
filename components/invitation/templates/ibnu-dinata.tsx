@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { Cormorant_Garamond, Playfair_Display } from "next/font/google";
-import { ArrowUpRight, CalendarDays, CalendarHeart, Clock3, Gift, House, MapPin, MessageCircleHeart, Users } from "lucide-react";
+import { ArrowUpRight, CalendarDays, CalendarHeart, Clock3, Gift, House, Images, MapPin, MessageCircleHeart, Users } from "lucide-react";
 import type { CSSProperties } from "react";
 import type { InvitationTemplateProps } from "./shared";
-import { FloralOrnament, GiftCopy, GoldDivider, GuestForms, IbnuDinataLogo, InvitationCountdown, InvitationGate, Parallax, Reveal, RevealGroup, RevealItem, ScrollCue, Sparkles } from "./ibnu-dinata-client";
+import { FloralOrnament, GiftCopy, GuestForms, IbnuDinataLogo, InvitationCountdown, InvitationGate, Parallax, Reveal, RevealGroup, RevealItem, ScrollCue, Sparkles } from "./ibnu-dinata-client";
 import { ThemedGallery } from "./themed-invitation-client";
 import content from "@/lib/admin/ibnu-dinata.json";
 import { siteUrl } from "@/lib/site";
@@ -28,18 +28,17 @@ const navItems = [
   { href: "#beranda", label: "Beranda", Icon: House },
   { href: "#mempelai", label: "Mempelai", Icon: Users },
   { href: "#acara", label: "Acara", Icon: CalendarHeart },
+  { href: "#galeri", label: "Galeri", Icon: Images },
   { href: "#hadiah", label: "Hadiah", Icon: Gift },
   { href: "#rsvp", label: "Ucapan", Icon: MessageCircleHeart },
 ];
 
-export function IbnuDinataInvitation({ invitation, firstEvent, display, galleryAssets, heroAsset }: InvitationTemplateProps) {
+export function IbnuDinataInvitation({ invitation, firstEvent, display }: InvitationTemplateProps) {
   const event = firstEvent ?? content.event;
   const clock = (time: string) => time.slice(0, 5).replace(":", ".");
   const eventTime = `${clock(event.event_time || content.event.event_time)}–${clock(event.event_end_time || content.event.event_end_time)} WIB`;
   const date = new Intl.DateTimeFormat("id-ID", { weekday: "long", day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Jakarta" }).format(new Date(`${event.event_date}T12:00:00+07:00`));
   const entries = invitation.guestbook_entries ?? [];
-  const realGallery = galleryAssets.filter(asset => !asset.public_url.includes("couple-illustration"));
-  const hero = heroAsset?.public_url || content.illustration;
 
   return <main className={`${styles.shell} ${displayFont.variable} ${bodyFont.variable}`}>
     <div className={styles.paper}>
@@ -54,7 +53,7 @@ export function IbnuDinataInvitation({ invitation, firstEvent, display, galleryA
             <p className={styles.heroDate}>MINGGU, 8 NOVEMBER 2026</p>
           </div>
           <div className={styles.portraitWrap}>
-            <div className={styles.portrait}><Image src={hero} alt={hero === content.illustration ? "Ilustrasi pasangan pengantin Muslim tanpa wajah di taman bunga putih" : "Ibnu Hardani dan Pebriani Dinata"} width={1024} height={1536} preload sizes="(min-width: 620px) 440px, 82vw" /></div>
+            <div className={styles.portrait}><Image src={content.heroPhoto} alt="Ibnu Hardani dan Pebriani Dinata" width={1400} height={2100} preload sizes="(min-width: 620px) 440px, 82vw" /></div>
             <Sparkles count={6} className={styles.portraitSparkles} />
           </div>
           <ScrollCue />
@@ -106,7 +105,11 @@ export function IbnuDinataInvitation({ invitation, firstEvent, display, galleryA
         <section className={`${styles.section} ${styles.storySection}`}>
           <Reveal variant="blur"><p className={styles.eyebrow}>SEPENGGAL CERITA KAMI</p><h2 className={styles.sectionTitle}>Berawal dari<br /><em>sebuah pertemuan.</em></h2></Reveal>
           <Reveal variant="zoom" className={styles.storyCard}><div className={styles.storyYear}>2020</div><p className={styles.story}>{invitation.love_story || content.story}</p></Reveal>
-          {realGallery.length > 0 && <Reveal className={styles.gallery}><h3>Galeri Kenangan</h3><ThemedGallery images={realGallery.map(asset => ({ src: asset.public_url, alt: asset.file_name }))} /></Reveal>}
+        </section>
+
+        <section id="galeri" className={`${styles.section} ${styles.gallerySection} ${styles.patterned}`}>
+          <Reveal variant="blur"><p className={styles.eyebrow}>MOMEN BAHAGIA</p><h2 className={styles.sectionTitle}>Galeri <em>Kenangan</em></h2></Reveal>
+          <Reveal variant="up" delay={0.1} className={styles.gallery}><ThemedGallery images={content.photos.map((src, index) => ({ src, alt: `Foto prewedding Ibnu & Dinata ${index + 1}` }))} /></Reveal>
         </section>
 
         <section id="hadiah" className={`${styles.section} ${styles.giftSection}`}>

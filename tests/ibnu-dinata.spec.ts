@@ -50,7 +50,9 @@ for (const viewport of [{ width: 360, height: 640 }, { width: 390, height: 844 }
     await expect(page.getByTestId("opening-petals")).toHaveCount(0);
     expect(await page.locator("#invitation-content > section").first().evaluate(el => getComputedStyle(el).transform)).toBe("none");
     await expect(page.locator("audio")).toHaveAttribute("src", "/song/youre-still-the-one.mp3");
-    await expect(page.getByRole("heading", { name: "Galeri Kenangan" })).toHaveCount(0);
+    await page.locator("#galeri").scrollIntoViewIfNeeded();
+    await expect(page.getByRole("heading", { name: "Galeri Kenangan" })).toBeVisible();
+    await expect(page.locator("#galeri img[alt^='Foto prewedding']")).toHaveCount(7);
     expect(errors).toEqual([]);
   });
 }
@@ -125,14 +127,14 @@ test("music starts with the opening click and the disc button pauses and resumes
   await expect.poll(() => audio.evaluate(el => (el as HTMLAudioElement).paused)).toBe(false);
 });
 
-test("metadata includes date, illustration, and canonical URL", async ({ request }) => {
+test("metadata includes date, couple photo, and canonical URL", async ({ request }) => {
   const response = await request.get("/ibnu-dinata");
   expect(response.ok()).toBeTruthy();
   const html = await response.text();
   const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
   expect(canonical).toBe(`${(process.env.NEXT_PUBLIC_SITE_URL || "https://bikinundangan.net").replace(/\/$/, "")}/ibnu-dinata`);
   expect(html).toContain("07.00–09.00 WIB");
-  expect(html).toContain("couple-illustration.webp");
+  expect(html).toContain("photo-05.webp");
 });
 
 test("copy account number handles success and denied clipboard", async ({ page, context }) => {

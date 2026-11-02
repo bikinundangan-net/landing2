@@ -1,13 +1,23 @@
 # Ibnu & Dinata illustration assets
 
-Generated with the built-in imagegen tool on 27 October 2026. Images were inspected, resized, and encoded as WebP with Sharp; the botanical ornament retains transparency. The couple is an illustration without facial features, not a photograph of the couple.
+Generated with the built-in imagegen tool on 27 October 2026. Images were inspected, resized, and encoded as WebP with Sharp; the botanical ornament retains transparency. The couple illustration is no longer shown on the page; the hero and gallery use the photographs below.
 
 - `couple-illustration.webp`: portrait watercolor of a Muslim Indonesian wedding couple without facial features, groom in ivory traditional attire and peci, bride in an ivory modest dress and hijab, white bouquet, sage garden arch and white flowers, warm ivory paper, no text or logos.
-- `botanical-spray.webp`: transparent isolated watercolor spray of eucalyptus, three ivory white roses, baby's breath and fine antique gold stems; airy tall composition with visible margins, no text, frame, vase or background.
-- `floral-arch.webp`: 1400 × 700 transparent garland of ivory roses, peonies, hydrangea and eucalyptus, used on the cover, hero, section dividers, RSVP header and closing.
-- `corner-bouquet.webp`: 1000 × 1000 transparent L-shaped bouquet, used at the four cover corners and along the page edges.
+- `botanical-spray-burgundy.webp`: transparent isolated watercolor spray of eucalyptus, three ivory white roses, baby's breath and fine antique gold stems; airy tall composition with visible margins, no text, frame, vase or background.
+- `floral-arch-burgundy.webp`: 1400 × 700 transparent garland of ivory roses, peonies, hydrangea and eucalyptus, used on the cover, hero, section dividers, RSVP header and closing.
+- `corner-bouquet-burgundy.webp`: 1000 × 1000 transparent L-shaped bouquet, used at the four cover corners and along the page edges.
 
 Original imagegen prompts specified fine botanical detail, a muted sage/ivory palette, no watermark, and no embedded typography. Generated originals remain in the imagegen output directory; these optimized copies are the website assets.
+
+## Burgundy recolor (2 November 2026)
+
+The three floral assets were originally generated in sage and ivory. To match the red curtains and maroon kebaya in the photos they were recolored pixel by pixel with Sharp (raw RGBA, alpha preserved) and saved as new `*-burgundy.webp` files; the sage versions were removed. Each pixel is weighted by hue, chroma and luminance: sage foliage is gradient-mapped to deep wine (`#1a0408` → `#74222c`), ivory petals and baby's breath to burgundy (`#1e030a` → `#9a2a38`, capped so highlights never read as pink), and antique-gold stems keep their original colour. Watercolor shading is carried through by luminance. No CSS filter is applied on the page.
+
+## Prewedding photographs
+
+Supplied by the couple on 2 November 2026 (WhatsApp exports, 2316 × 3480). Resized to 1400 × 2100 and encoded as WebP (quality 80) with Sharp. The original JPEGs are not committed.
+
+- `photo-01.webp` … `photo-07.webp`: in the order of the original file names; `photo-05.webp` (standing together before the red curtains) is the hero and Open Graph image.
 
 ## Final prompts (built-in imagegen)
 
